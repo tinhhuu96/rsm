@@ -32,3 +32,8 @@
 en:
   hello: "Hello world"
   rsm: "Rsm"
+index:
+  fram: "Framgia"
+  recruit: "Recruit"
+  home: "Home"
+  latest: "Latest news"
