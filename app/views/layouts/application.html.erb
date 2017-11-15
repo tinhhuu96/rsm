@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t "rsm" %></title>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= favicon_link_tag "framgia.png" %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
@@ -9,6 +10,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="page-container">
+      <%= render "layouts/header" %>
+      <section class="site-content site-section">
+        <%= yield %>
+      </section>>
+      <footer class="site-footer site-section">
+        <%= render "layouts/footer" %>
+      </footer>
+    </div>
   </body>
 </html>
