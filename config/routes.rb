@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     get "edit", to: "devises/users#edit", as: :edit_user_registration
     delete "logout", to: "devises/sessions#destroy", as: :destroy_user_session
   end
+
+  resources :companies
   root "static_pages#index"
   resources :users
 end

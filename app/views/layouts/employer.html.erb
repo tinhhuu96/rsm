@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= favicon_link_tag "framgia.png" %>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body>
+    <div id="page-container">
+      <%= render "layouts/employer_header" %>
+      <section class="site-content">
+        <div class="tab-pane active">
+          <section id="home" class="cp_tab_content cp_herro_banner">
+            <%= image_tag(@company.banner) %>
+          </section>
+        </div>
+      <section class="cp_basic_info info_company">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 cp_logo  mobile-hide">
+              <div><%= image_tag(@company.logo) %></div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 cp_basic_info_details">
+              <h2 id="cp_company_name"><%= @company.name %></h2>
+              <ul>
+                <li>
+                  <span class="li-items-limit" title="<%= @company.address %>">
+                    <%= @company.address %>
+                  </span>
+                </li>
+                  <span class="line">|</span>
+                  <%= link_to t("framgia_recruit"), @company.url_company, class: "website-company"  %></li>
+                <li><span class="li-items-limit" title="<%= @company.majors %>"><%= @company.majors %></span>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 cp_follow_survey text-right">
+              <%= link_to t("follow"), "", class: "btn-animation follow-company" %>
+            </div>
+          </div>
+        </div>
+      </section>
+        <%= yield %>
+      </section>
+      <footer class="site-footer site-section">
+        <%= render "layouts/footer" %>
+      </footer>
+    </div>
+  </body>
+</html>

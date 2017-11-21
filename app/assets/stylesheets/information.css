@@ -12,6 +12,8 @@
  *= require bootstrap.min
  *= require plugins1
  *= require main1
+ *= require app.min
+ *= require company.min
  *= require themes1
  *= require migin1
  *= require font-awesome
