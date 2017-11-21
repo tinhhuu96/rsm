@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: [:registrations, :sessions]
-  as :user do
-    get "/signup", to: "registrations#new", as: :new_user_registration
-    post "/signup", to: "registrations#create", as: :user_registration
-    get "/profile", to: "registrations#edit", as: :edit_user_registration
-    put "/signup", to: "registrations#update", as: nil
-    delete "/signup", to: "registrations#destroy", as: nil
-    get "/login", to: "sessions#new", as: :new_user_session
-    post "/login", to: "sessions#create", as: :user_session
-    delete "/logout", to: "sessions#destroy"
-  end
 
+  devise_for :user, path: "devises", controllers: {
+    passwords: "devises/passwords",
+    registrations: "devises/registrations",
+    sessions: "devises/sessions",
+  }, skip: [:sessions, :registrations]
+  as :user do
+    get "login", to: "devises/sessions#new", as: :new_user_session
+    post "login", to: "devises/sessions#create", as: :user_session
+    get "signup", to: "devises/registrations#new", as: :new_user_registration
+    post "signup", to: "devises/registrations#create", as: :user_registration
+    put "/signup", to: "devises/users#update"
+    get "edit", to: "devises/users#edit", as: :edit_user_registration
+    delete "logout", to: "devises/sessions#destroy", as: :destroy_user_session
+  end
   root "static_pages#index"
+  resources :users
 end
+
