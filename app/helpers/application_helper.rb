@@ -7,8 +7,4 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
-
-  def check_mail vr_resource
-    vr_resource.pending_reconfirmation? ? vr_resource.unconfirmed_email : vr_resource.email
-  end
 end
