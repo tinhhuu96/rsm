@@ -12,22 +12,23 @@ $(document).on('click', '#cancel_user_edit', function(){
   $('#edit_user_'+user_id).remove();
   $('#show-user').show(1000);
 });
-$(document).on('click', '#cancel_club_new', function(){
-  $('#new_club').remove();
-  $('#btn-add-club').show();
+$(document).on('click', '#cancel_club_new',function(){
+    $('#new_club').remove();
+    $('#btn-add-club').show();
 });
-$(document).on('click', '#cancel_club_edit', function(){
-  var club_id = $('#cancel_club_edit').val();
-  $('#edit_club_' + club_id).remove();
-  $('#info_club_' + club_id).show();
+$(document).on('click', '#cancel_club_edit',function(){
+    var club_id = $('#cancel_club_edit').val();
+    $('#edit_club_'+club_id).remove();
+    $('#info_club_'+club_id).show();
 });
 $(document).on('click', '#club_current',function(){
-  if($('#club_end_time').attr('disabled')) {
-    $('#club_end_time').removeAttr('disabled');
-  }
-  else {
-    $('#club_end_time').attr({disabled:'disabled'});
-  }
+    if ($('#club_end_time').attr('disabled')) {
+      $('#club_end_time').removeAttr('disabled');
+    }
+    else {
+      $('#club_end_time').attr({disabled:'disabled'});
+    }
+    $('#club_end_time').val('');
 });
 $(document).on('turbolinks:load', function() {
   $('.datepick').datepicker( {

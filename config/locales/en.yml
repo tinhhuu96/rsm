@@ -29,6 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
+  date_format: "%d-%m-%Y"
   not_found: "Couldn't find %{error_message}"
   search: "Search.."
   app: "App Framgia"
@@ -191,3 +192,36 @@ en:
     plcmajor: "Software Engineering"
     plcorganization: "123 Liverpool, United Kingdom"
     plcclass: "Good"
+  clubs:
+    another:
+      club_notfound: "Oop! This club isn't exists"
+    create:
+      create_success: "The club had been add into your profile"
+      create_fail: "Sorry, something was wrong! The club can't save"
+    update:
+      update_success: "The club had been update success"
+      update_fail: "Sorry, something was wrong! The club can't save update"
+    destroy:
+      destroy_success: "The club had been delete from profile"
+      destroy_fail: "Sorry, something was wrong! The club can't delete"
+    helpers:
+      present: "Present"
+    _index:
+      club_title: "Clubs"
+      describle: "Describing the clubs that you have participated in as detailed as possible in your employability"
+      add: "Additonal"
+    _club:
+      confirm: "Are you sure you want to delete this club?"
+      pos: "Position: "
+      between: " : "
+    _form:
+      name: "Club Name (*)"
+      pos: "Position (*)"
+      from: "From"
+      to: "To"
+      require: "(*) Required Information"
+      cancel: "Cancel"
+      save: "Save"
+    model:
+      date1: "must be after start date"
+      date2: "can't be a date in future"

@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_user, only: :show
 
   def show
+    @clubs = @user.clubs
     @achievements = @user.achievements
     @certificates = @user.certificates
   end
