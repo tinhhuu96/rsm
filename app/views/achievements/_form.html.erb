@@ -1,0 +1,50 @@
+<div id= "show-form">
+  <%= form_for @achievement, html: {class: "new-section"}, remote: true do |f| %>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label><strong class="text-red">*</strong><%= t "achievements.name" %></label>
+          <%= f.text_field :name, autofocus: true, class: "form-control edit-control",
+            placeholder: t("passwords.new.name") %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label><strong class="text-red">*</strong><%= t "achievements.majors" %></label>
+          <%= f.text_field :majors, autofocus: true, class: "form-control edit-control",
+            placeholder: t("achievements.example") %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label><strong class="text-red">*</strong><%= t "achievements.organization" %></label>
+          <%= f.text_field :organization, autofocus: true, class: "form-control edit-control",
+            placeholder: t("achievements.organization") %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label><strong class="text-red">*</strong><%= t "achievements.received_time" %></label>
+          <% if @achievement.received_time.present? %>
+            <%= f.text_field :received_time, data: {provide: "datepicker"},
+              class: "form-control edit-control", value: @achievement.received_time.strftime(Settings.date_format) %>
+          <% else %>
+            <%= f.text_field :received_time, data: {provide: "datepicker"}, class: "form-control edit-control" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group push-top-md edit-field">
+      <div class="col-sm-6">( <strong class="text-red">*</strong>)<%= t "achievements.required" %></div>
+      <div class="col-sm-6 text-right">
+        <button type="button" class="btn-cancel btn btn-default"><%= t "achievements.cancle" %></button>
+        <%= f.submit t("achievements.save"), class: "btn-save btn btn-primary" do  %>
+          <i class="fa fa-plus"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <div class="bottom-form"></div>
+</div>

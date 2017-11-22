@@ -1,2 +1,8 @@
 male: 1
 female: 0
+date_format: "%m/%d/%Y"
+date:
+  formats:
+    default: "%d/%m/%Y"
+    short: "%b %d"
+    long: "%B %d, %Y"

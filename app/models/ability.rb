@@ -12,6 +12,7 @@ class Ability
         can :manage, :all
       end
       can :read, :all
+      can :manage, Achievement
     end
   end
 end

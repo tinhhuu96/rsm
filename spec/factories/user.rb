@@ -5,8 +5,8 @@ FactoryGirl.define do
     password_confirmation "123123123"
     sex 1
     phone "0965600364"
-    email "pha@gmail.com"
-    address "cc"
+    sequence(:email) {|n| "psrsson#{n}@example.com" }
+    address "Tam Ky"
     birthday "1996-01-13"
   end
 end
