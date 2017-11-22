@@ -47,6 +47,10 @@ en:
   detail: "Details"
   account: "Edit"
   can_not_find_company: "can not find company !"
+  optional: "(Optional)"
+  save: "Save"
+  update_success: "update success"
+  can_not_update: "can not update"
   mailer:
     hi: "Hi "
     thank: " Thanks for used my service"
@@ -129,3 +133,16 @@ en:
       title: "Register"
       login: "Login"
       profile: "Profile"
+  companies:
+    edit:
+      company_info: "My Company Profile"
+      account_info: "Account Information"
+      email_address: "Email Address"
+      change_email: "Change email address"
+      change_pass: "Change password"
+      company_name: "Company Name"
+      company_address: "Company Address"
+      company_majors: "Company Industry"
+      contact_name: "Contact Name"
+      company_phone: "Phone Number"
+      company_profile: "Company Profile"
