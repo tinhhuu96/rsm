@@ -37,6 +37,16 @@ en:
   register: " Register"
   male: "Male"
   female: "Female"
+  framgia_recruit: "recruit.framgia.vn"
+  follow: "Follow (187)"
+  view_all_job: "View all Job"
+  job_for_you: "All Job For You"
+  job_demo: "【～$1500】Android Developer"
+  job_demo_position: employees
+  job_demo_time: "14/11/2017"
+  detail: "Details"
+  account: "Edit"
+  can_not_find_company: "can not find company !"
   mailer:
     hi: "Hi "
     thank: " Thanks for used my service"

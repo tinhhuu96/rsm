@@ -1,0 +1,40 @@
+<div class="cp_tab_content cp_our_jobs_section" id="jobs">
+  <div class="container">
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" aria-expanded="true" aria-controls="jobsListing"
+              href="#jobsListing" class="collapse-jobs-listing color_view_job">
+              <%= t "view_all_job" %>
+              <span><i class="fa fa-angle-down"></i></span></a>
+          </h4>
+        </div>
+        <div id="jobsListing" class="panel-collapse cp_our_jobs_container collapse in" aria-expanded="true" style="">
+          <div class="panel-body">
+            <div class="cp_our_jobs_listing" id="ajax_cp_our_jobs_listing">
+              <h3 class="boder_job"><%= t "job_for_you" %></h3>
+              <div class="jobs_listing_block ">
+                <div class="cp_our_job_item  show ">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-10 cp_Job_summary_info">
+                      <h4><%= link_to t("job_demo"),"" %></h4>
+                      <ul>
+                        <li><i class="fa fa-briefcase"></i><%= t "job_demo_position" %></li>
+                        <li><i class="fa fa-map-marker"></i><%= @company.address %></li>
+                        <li><i class="fa fa-calendar-o"></i><%= t "job_demo_time" %></li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 cp_job_view_detail">
+                      <%= link_to t("detail"), "" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115043638) do
+ActiveRecord::Schema.define(version: 20171121032351) do
 
   create_table "achievements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -86,6 +86,11 @@ ActiveRecord::Schema.define(version: 20171115043638) do
     t.string "majors"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "contact_person"
+    t.text "company_info"
+    t.string "logo"
+    t.string "banner"
+    t.string "url_company"
     t.index ["name"], name: "index_companies_on_name"
   end
 
