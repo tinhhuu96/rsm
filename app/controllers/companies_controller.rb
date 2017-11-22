@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
   layout "employer"
   before_action :load_company, only: %i(show edit update)
-  before_action :load_current_user, only: %i(edit)
+  before_action :load_current_user, only: %i(edit show)
 
   def show; end
 

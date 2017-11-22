@@ -15,14 +15,14 @@
       <section class="site-content">
         <div class="tab-pane active">
           <section id="home" class="cp_tab_content cp_herro_banner">
-            <%= image_tag(@company.banner) %>
+            <%= image_tag(@company.banner.url) %>
           </section>
         </div>
       <section class="cp_basic_info info_company">
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 cp_logo  mobile-hide">
-              <div><%= image_tag(@company.logo) %></div>
+              <div><%= image_tag(@company.logo.url) %></div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 cp_basic_info_details">
               <h2 id="cp_company_name"><%= @company.name %></h2>
