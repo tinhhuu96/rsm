@@ -27,7 +27,7 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "pry-byebug"
 gem "bootstrap-datepicker-rails"
-gem "cancancan", "~> 1.10"
+gem "cancancan", "~> 2.0"
 gem "carrierwave", "1.1.0"
 gem "mini_magick", "4.7.0"
 group :development, :test do
@@ -36,6 +36,8 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "rspec-rails", "~> 3.5"
   gem "factory_girl_rails"
+  gem "pry-rails"
+  gem "pry"
 end
 group :development do
   gem "mysql2"
