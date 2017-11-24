@@ -1,0 +1,7 @@
+<% if @certificate.errors.any? %>
+  alertify.error('<%= j (render partial: "shared/error_messages", locals: {object: @certificates}) %>');
+<% else %>
+  $('#edit_certificate_<%= params[:id] %>').remove();
+  $('#info_certificate_<%= params[:id] %>').replaceWith('<%= j render(@certificate) %>').show();
+  alertify.success('<%= flash[:success] %>');
+<% end %>

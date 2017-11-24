@@ -9,3 +9,8 @@ date:
 achievement:
   cancel_edit: "cancel_achievement_edit"
   cancel_new: "cancel_achievement_new"
+certificate:
+  maximum: 255
+certificate_cancel:
+  edit: "cancel_certificate_edit"
+  new: "cancel_certificate_new"

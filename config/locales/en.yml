@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
   not_found: "Couldn't find %{error_message}"
+  search: "Search.."
   app: "App Framgia"
   please: " Please"
   login: " Login"
@@ -173,3 +174,20 @@ en:
   shared:
     error: " Error"
     error_messages: "You have error"
+  certificate:
+    name: "Name"
+    major: "Major"
+    organization: "Organization"
+    classification: "Classification"
+    reveived: "Received_time"
+    certi: "Certificates"
+    add: "Add"
+    save: "Save"
+    cancel: "Cancel"
+    confirm: "Are you sure to delete ?"
+    success: "Success"
+    fail: "Fail"
+    plcname: "Minh Micheal"
+    plcmajor: "Software Engineering"
+    plcorganization: "123 Liverpool, United Kingdom"
+    plcclass: "Good"

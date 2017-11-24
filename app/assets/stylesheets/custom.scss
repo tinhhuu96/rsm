@@ -10,12 +10,29 @@
   font-style: italic;
 }
 .profile .section-detail legend.box-md {
+$white: #fff;
+$grey-light1: #eee;
+$grey-light2: #ddd;
+$gray: #e0e0e0;
+$grey: #666;
+
+.box {
+  background: $white;
+  margin-bottom: 15px;
+  border: 0;
+  box-shadow: 0 .5px 0 rgba(0,0,0,.1);
+}
+.my-profile .section-detail legend.box-md {
+  background: $white !important;
+  color: $grey !important;
   margin: 0;
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
   padding: 12px 25px;
   padding-left: 25px;
+  border-bottom: 1px solid $grey-light1;
+  border-top: 1px solid $grey-light2;
 }
 .form-btn-edit {
   position: absolute;
@@ -32,6 +49,9 @@
   padding: 25px 30px;
   padding-bottom: 0;
   z-index: 2;
+.content-section{
+  position: relative;
+  padding: 25px 30px;
 }
 .view-control {
   word-wrap: break-word;
@@ -47,4 +67,6 @@
 }
 .bottom-form{
   padding-bottom: 50px;
+  border-top: 1px $grey-light2 solid !important;
+  background-color: $gray;
 }
