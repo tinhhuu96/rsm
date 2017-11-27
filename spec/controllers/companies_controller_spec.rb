@@ -12,7 +12,6 @@ RSpec.describe CompaniesController, type: :controller do
         expect(response).to redirect_to(company_path)
       end
     end
-
     context "update faild" do
       it "update with name" do
         patch :update, params: {id: subject.id, company:{name: ""}}

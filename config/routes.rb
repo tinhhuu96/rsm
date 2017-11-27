@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   resources :companies
   root "static_pages#index"
   resources :users
+  resources :achievements
 end
 

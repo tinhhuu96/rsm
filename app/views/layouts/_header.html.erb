@@ -35,7 +35,7 @@
             <a href="about.html"><%= t "index.home" %></a>
             <ul>
               <li>
-                <%= link_to edit_user_registration_path(current_user) do %>
+                <%= link_to user_path(current_user) do %>
                   <%= t "users.new.profile" %>
                   <i class="fa fa-user fa-fw pull-right"></i>
                 <% end %>

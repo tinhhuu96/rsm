@@ -84,11 +84,10 @@
             </div>
           </div>
           <div class="field">
-            <%= f.label :current_password %><i><%= t "registrations.new.current" %></i><br />
-            <%= f.password_field :current_password, class: "form-control" %>
             <div class="col-xs-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                <%= f.label :current_password %><i><%= t "registrations.new.current" %></i>
                 <%= f.password_field :current_password, class: "form-control" %>
               </div>
             </div>

@@ -1,0 +1,8 @@
+<% if @achievement.errors.any? %>
+  alertify.error('<%= j (render partial: "shared/error_messages", locals: {object: @achievement}) %>');
+<% else %>
+    $('#show-form').hide(1000);
+    $('#btn-add-achievements').show(1000);
+    alertify.success('<%= flash[:success] %>');
+    $('#form-achievements').append('<%= j render(@achievement) %>');
+<% end %>
