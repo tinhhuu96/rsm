@@ -22,3 +22,4 @@
 //= require bootstrap-datepicker
 //= require turbolinks
 //= require format_datepicker
+//= require load_image
