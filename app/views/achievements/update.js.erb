@@ -1,0 +1,6 @@
+<% if @achievement.errors.any? %>
+  alertify.error('<%= j (render partial: "shared/error_messages", locals: {object: @achievement}) %>');
+<% else %>
+  $('#show-form').hide(1000);
+  $('#info_achievement_<%= params[:id] %>').replaceWith('<%= j render(@achievement) %>').show();
+<% end %>

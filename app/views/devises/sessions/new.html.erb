@@ -2,6 +2,14 @@
 <%= image_tag "login_full_bg.jpg", class: "full-bg animation-pulseSlow" %>
 <div id="login-container" class="animation-fadeIn">
   <div class="login-title text-center">
+    <div class="row">
+      <div class="col-xs-12 text-left">
+        <%= link_to root_path, class: "site-logo" do %>
+          <i class="fa fa-reply" aria-hidden="true"></i>
+          <strong><%= t "index.fram" %></strong><%= t "index.recruit" %>
+        <% end %>
+      </div>
+    </div>
     <h1>
       <i class="gi gi-flash"></i>
       <strong><%= t "app" %></strong><br>

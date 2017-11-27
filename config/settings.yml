@@ -6,3 +6,6 @@ date:
     default: "%d/%m/%Y"
     short: "%b %d"
     long: "%B %d, %Y"
+achievement:
+  cancel_edit: "cancel_achievement_edit"
+  cancel_new: "cancel_achievement_new"

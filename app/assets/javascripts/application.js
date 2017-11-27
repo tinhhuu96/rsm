@@ -23,3 +23,4 @@
 //= require turbolinks
 //= require format_datepicker
 //= require load_image
+//= require profile

@@ -29,6 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
+  not_found: "Couldn't find %{error_message}"
   app: "App Framgia"
   please: " Please"
   login: " Login"
@@ -163,6 +164,12 @@ en:
     example: "Example: Information Technology"
     save: "Save"
     cancel: "Cancel"
+    notfound: "Achievements does not exit"
+    update_success: "Update successful"
+    can_not_update: "Can not update"
+    destroy_success: "Destroy successful"
+    destroy_fail: "destroy fail"
+    confirm: "Are you sure?"
   shared:
     error: " Error"
     error_messages: "You have error"
