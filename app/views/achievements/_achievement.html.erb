@@ -1,6 +1,6 @@
 <div id="info_achievement_<%= achievement.id %>" class="sortable content-section">
   <span class="form-btn-edit">
-    <%= link_to achievement_path(achievement), method: :delete, data: {confirm: t("clubs._club.confirm")},
+    <%= link_to achievement_path(achievement), method: :delete, data: {confirm: t("achievements.confirm")},
       class: "btn btn-sm btn-default", remote: true do %>
       <i class="glyphicon glyphicon-trash"></i>
     <% end %>

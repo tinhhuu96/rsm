@@ -12,7 +12,8 @@ class Ability
         can :manage, :all
       end
       can :read, :all
-      can :manage, Achievement
+      can :manage, Achievement, user_id: user.id
     end
   end
 end
+

@@ -1,5 +1,5 @@
 <div id= "show-form">
-  <%= form_for @achievement, html: {class: "new-section"}, remote: true do |f| %>
+  <%= form_for @achievement, html: {class: "new-section bottom-form"}, remote: true do |f| %>
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group">
@@ -39,12 +39,14 @@
     <div class="form-group push-top-md edit-field">
       <div class="col-sm-6">( <strong class="text-red">*</strong>)<%= t "achievements.required" %></div>
       <div class="col-sm-6 text-right">
-        <button type="button" class="btn-cancel btn btn-default"><%= t "achievements.cancle" %></button>
+        <button id="<%= define_cancel_achievement_id @achievement %>" type="button"
+          class="btn-cancel btn btn-default" value="<%= @achievement.id %>">
+            <%= t "achievements.cancle" %>
+        </button>
         <%= f.submit t("achievements.save"), class: "btn-save btn btn-primary" do  %>
           <i class="fa fa-plus"></i>
         <% end %>
       </div>
     </div>
   <% end %>
-  <div class="bottom-form"></div>
 </div>
