@@ -51,6 +51,10 @@ en:
   save: "Save"
   update_success: "update success"
   can_not_update: "can not update"
+  edit_company: "Edit Company"
+  banner_edit: "banner_edit"
+  banner_show: "banner_show"
+  company: "Company"
   mailer:
     hi: "Hi "
     thank: " Thanks for used my service"

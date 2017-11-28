@@ -19,7 +19,8 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit :name, :address, :majors, :contact_person, :phone, :company_info
+    params.require(:company).permit :name, :address, :majors, :contact_person,
+      :phone, :company_info, :banner, :logo
   end
 
   def load_current_user

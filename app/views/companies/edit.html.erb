@@ -1,3 +1,5 @@
+<% provide(:title, t("edit_company")) %>
+<% provide(:banner, t("banner_edit")) %>
 <div class="ibox-content m-t">
   <div id="email-address">
     <div class="panel-body row">
@@ -88,10 +90,20 @@
 
               <div class="form-group">
                 <%= f.label :banner, class: "col-sm-3 control-label required" %>
-                <div class="col-sm-9">
-                  <%= f.file_field :banner %>
+                <div class="col-sm-3">
+                  <%= f.file_field :banner, id: "bannerSelect" %>
                 </div>
+                <%= image_tag @company.banner.url, class: "banner_img_load", id: "banner_img" %>
+              </div><br>
+
+              <div class="form-group">
+                <%= f.label :logo, class: "col-sm-3 control-label required" %>
+                <div class="col-sm-3">
+                  <%= f.file_field :logo, id: "logoSelect" %>
+                </div>
+                <%= image_tag @company.logo.url, class: "logo_img_load", id: "logo_img" %>
               </div>
+              <a href="#" id="anhyeuem">ahahjk</a>
 
               <div class="form-group">
                 <div class="text-right col-sm-12">
@@ -104,3 +116,4 @@
     </div>
   </div>
 </div>
+

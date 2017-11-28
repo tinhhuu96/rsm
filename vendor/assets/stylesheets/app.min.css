@@ -8897,3 +8897,17 @@ a{
     border-bottom-color: #00b9f2;
 }
 .cp_follow_survey a.following{color: #00b9f2 !important; border-color: #00b9f2}
+.banner_edit{
+  width: 100%;
+  height: 270px;
+}
+.banner_show{
+  width: auto;
+}
+.banner_img_load{
+  width: 175px;
+  height: 50px;
+}
+.logo_img_load{
+  width: 50px;
+}
