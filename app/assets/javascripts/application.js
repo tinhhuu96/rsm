@@ -24,3 +24,5 @@
 //= require format_datepicker
 //= require load_image
 //= require profile
+//= require pagination
+//= require clear_value

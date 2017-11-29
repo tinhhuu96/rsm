@@ -5,8 +5,10 @@ class Ability
     can :read, :all
     if user.present?
       if user.employer?
-        can :update, Company do |company|
-          user.members.last.end_time.nil? && company.id == user.members.last.company_id
+        if user.members.present?
+          can :update, Company do |company|
+            company.id == user.members.last.company_id && user.members.last.end_time.nil?
+          end
         end
       else user.admin?
         can :manage, :all

@@ -1,0 +1,7 @@
+<% if @job.errors.any? || flash[:danger].present? %>
+  $(".form-group").removeClass("has-error");
+  $('#job-create-form').html('<%= j render "jobs/form" %>');
+<% else %>
+  $('#JobModal').modal('hide');
+  $('#jobs').prepend('<%= j render(@job) %>');
+<% end %>

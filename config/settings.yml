@@ -22,3 +22,9 @@ clubs:
     pos_max_length: 100
     cont_max_length: 5000
     cont_min_length: 20
+pagination:
+  jobs_perpage: 5
+jobs:
+  description:
+    maximum_length: 255
+

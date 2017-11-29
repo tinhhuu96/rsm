@@ -1,0 +1,8 @@
+<% if flash[:success].present? %>
+  $('#job-<%= params[:id] %>').hide().after('<%= j render(@job) %>');
+  $('#JobModal').modal('hide');
+  <% flash.clear %>
+<% else %>
+  $('#JobModal').modal('hide');
+  <% flash.clear %>
+<% end %>
