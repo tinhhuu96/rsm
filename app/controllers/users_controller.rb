@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: %i(show)
+  before_action :load_user, only: :show
 
   def show
     @achievements = @user.achievements
+    @certificates = @user.certificates
   end
 
   private

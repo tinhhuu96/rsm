@@ -26,6 +26,7 @@ class CompaniesController < ApplicationController
   def load_current_user
     @user = current_user
   end
+
   def load_company
     @company = Company.find_by id: params[:id]
     return if @company
