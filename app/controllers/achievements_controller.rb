@@ -36,11 +36,6 @@ class AchievementsController < ApplicationController
   private
 
   def params_achievements
-    achievement = params.require(:achievement).permit :name, :majors, :organization, :received_time, :user_id
-    if achievement[:received_time].present?
-      achievement[:received_time] = ConvertDate.format_date(achievement[:received_time])
-    end
-    achievement
+    params.require(:achievement).permit :name, :majors, :organization, :received_time, :user_id
   end
 end
-

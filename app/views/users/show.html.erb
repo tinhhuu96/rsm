@@ -1,28 +1,13 @@
-<br>
 <div class="container">
   <div class="row">
     <div class="col-sm-8 col-md-9">
       <div class="well well-sm">
         <div class="row">
-          <div class="col-sm-6 col-md-4">
+          <div class="col-sm-2 col-md-2">
             <%= image_tag "avatar_2x.png", class: "img-responsive" %>
           </div>
           <div class="col-sm-6 col-md-8">
-            <h4><%= @user.name %></h4>
-            <small>
-              <i class="glyphicon glyphicon-map-marker"></i>
-              <cite title=""><%= @user.address %></cite>
-            </small>
-            <p>
-              <i class="glyphicon glyphicon-envelope"></i><%= @user.email %>
-              <br />
-              <i class="glyphicon glyphicon-gift"></i><%= @user.birthday %>
-            </p>
-            <div class="btn-group">
-              <%= link_to edit_user_registration_path(current_user) do %>
-                <i class="fa fa-pencil-square-o fa-2x"></i>
-              <% end %>
-            </div>
+            <%= render @user %>
           </div>
         </div>
       </div>

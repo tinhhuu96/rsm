@@ -123,7 +123,7 @@ en:
       waiting: "Currently waiting confirmation for:"
       leave: "(leave blank if you don't want to change it)"
       characters: "characters minimum"
-      current: "(we need your current password to confirm your changes)"
+      current: " (we need your current password to confirm your changes)"
       cancel: "Cancel my account"
       uphappy: "Unhappy?"
       back: "Back"
@@ -176,6 +176,9 @@ en:
       title: "Register"
       login: "Login"
       profile: "Profile"
+      update_success: "User update success"
+      update_fail: "User update fail"
+      change_pass: "Change password"
   companies:
     edit:
       company_info: "My Company Profile"
