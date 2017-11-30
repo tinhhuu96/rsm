@@ -1,0 +1,8 @@
+<% if @club.errors.any? %>
+  alertify.error('<%= j (render partial: "shared/error_messages", locals: {object: @club}) %>');
+<% else %>
+  $('#new_club').remove();
+  $('#btn-add-club').show();
+  $('#form-club').append('<%= j render(@club) %>');
+  alertify.success('<%= flash[:success] %>');
+<% end %>

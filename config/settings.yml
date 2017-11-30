@@ -14,3 +14,11 @@ certificate:
 certificate_cancel:
   edit: "cancel_certificate_edit"
   new: "cancel_certificate_new"
+selected: "1"
+clubs:
+  model:
+    current_fall: "1"
+    name_max_length: 150
+    pos_max_length: 100
+    cont_max_length: 5000
+    cont_min_length: 20

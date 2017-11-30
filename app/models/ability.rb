@@ -13,6 +13,7 @@ class Ability
       end
       can :read, :all
       can :manage, Achievement, user_id: user.id
+      can :manage, Club, user_id: user.id
     end
   end
 end

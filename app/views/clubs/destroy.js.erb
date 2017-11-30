@@ -1,0 +1,6 @@
+<% if flash[:success].present? %>
+  $('#info_club_<%= params[:id] %>').remove();
+  alertify.success('<%= flash[:success] %>');
+<% else %>
+  alertify.error('<%= flash[:danger] %>');
+<% end %>

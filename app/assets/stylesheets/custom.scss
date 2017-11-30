@@ -1,5 +1,10 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+$white: #fff;
+$grey-light1: #eee;
+$grey-light2: #ddd;
+$gray: #e0e0e0;
+$grey: #666;
 .box {
   margin-bottom: 15px;
 }
@@ -9,12 +14,6 @@
 .placeholder {
   font-style: italic;
 }
-.profile .section-detail legend.box-md {
-$white: #fff;
-$grey-light1: #eee;
-$grey-light2: #ddd;
-$gray: #e0e0e0;
-$grey: #666;
 
 .box {
   background: $white;
@@ -49,6 +48,7 @@ $grey: #666;
   padding: 25px 30px;
   padding-bottom: 0;
   z-index: 2;
+}
 .content-section{
   position: relative;
   padding: 25px 30px;
