@@ -5,15 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Company.create!(name: "Framgia",
-             phone: "0912489574",
-             address: "DN",
-             majors: "IT-Software",
-             contact_person: "Nguyen Van A",
-             company_info: "Framgia Da Nang City",
-             logo: "framgia_logo.png",
-             banner: "framgia_banner.jpg")
-Member.create!(company_id: 1,
-            user_id: 1,
-            position: "employer"
-  )
+Company.create!(
+  name: "Framgia",
+  phone: Faker::Number.number(10),
+  address: "DN",
+  majors: "IT-Software",
+  contact_person: "Nguyen Van A",
+  company_info: "Framgia Da Nang City",
+  logo: "framgia_logo.png",
+  banner: "framgia_banner.jpg")
+Member.create!(
+  company_id: 1,
+  user_id: 1,
+  position: "employer"
+)
+10.times do |i|
+  Job.create!(
+    company_id: 1,
+    user_id: 1,
+    name: Faker::Job.title,
+    min_salary: 500,
+    max_salary: 1000,
+    content: Faker::Lorem.paragraphs,
+    level: "University",
+    language: "Vietnamese, Japan",
+    skill: Faker::Job.key_skill,
+    position: "Manager",
+    description: Faker::Lorem.paragraphs
+)
+end

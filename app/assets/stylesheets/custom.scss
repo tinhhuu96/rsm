@@ -9,6 +9,8 @@ $grey: #666;
 $gray-light-1: #e2e2e2;
 $gray-light-2: #f4f4f4;
 $grey-light1: #eee;
+$gray-medium-1: #999;
+$gray-medium-2: #ddd;
 $gray-dark-hard-1: #333;
 $gray-dark-hard-2: #424242;
 $light-blue-1: #2DCEFF;
@@ -189,6 +191,11 @@ $gray-medium-1: #ff6666;
 }
 
 /* Show Job */
+
+.site-section-top {
+  height: 84px;
+  padding-top: 0px;
+}
 
 .job_requirement {
   li {

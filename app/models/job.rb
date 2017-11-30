@@ -13,6 +13,15 @@ class Job < ApplicationRecord
   validates :language, presence: true
   validates :position, presence: true
   validates :skill, presence: true
+  validates :min_salary, presence: true
+  validates :max_salary, presence: true
 
   scope :sort_lastest, ->{order(created_at: :desc)}
+
+  private
+
+  def max_salary_less_than_min_salary
+    return if min_salary.blank? || max_salary.blank?
+    errors.add :max_salary, I18n.t("jobs.validates.check_max_salary") if max_salary < min_salary
+  end
 end

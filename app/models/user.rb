@@ -20,5 +20,5 @@ class User < ApplicationRecord
   has_many :members, dependent: :destroy
   validates :name, presence: true
 
-  enum role: [:user, :employer, :admin]
+  enum role: %i(user employer admin)
 end

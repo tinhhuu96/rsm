@@ -28,3 +28,5 @@ config/environments/*.local.yml
 coverage/*
 db/schema.rb
 spec/coverage
+/coverage/*
+Gemfile.lock
