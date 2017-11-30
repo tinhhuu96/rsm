@@ -1,0 +1,24 @@
+<div class="job-form">
+  <%= simple_form_for @job, remote: true do |f| %>
+    <%= f.hidden_field :company_id,
+      value: current_user.members.last.company.id %>
+    <%= f.input :name, label: t(".job_name"),
+      input_html: {class: "form-control job-create-name"} %>
+    <%= f.input :description, label: t(".description"),
+      input_html: {class: "form-control"} %>
+    <%= f.input :language, label: t(".language"),
+      input_html: {class: "form-control"} %>
+    <%= f.input :position,
+      input_html: {class: "form-control"} %>
+    <%= f.input :level, label: t(".level"),
+      input_html: {class: "form-control"} %>
+    <%= f.input :skill, label: t(".skill"),
+      input_html: {class: "form-control"} %>
+    <%= f.input :content, label: t(".content"),
+      input_html: {class: "form-control job-create-content"} %>
+    <div class=" centerize create-job-btn ">
+      <%= f.button :submit, label: t("jobs.form.save_job"),
+        input_html: {class: "btn btn-primary"} %>
+    </div>
+  <% end %>
+</div>

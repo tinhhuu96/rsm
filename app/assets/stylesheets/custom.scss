@@ -1,10 +1,24 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
 $white: #fff;
 $grey-light1: #eee;
 $grey-light2: #ddd;
 $gray: #e0e0e0;
 $grey: #666;
+$gray-light-1: #e2e2e2;
+$gray-light-2: #f4f4f4;
+$grey-light1: #eee;
+$gray-dark-hard-1: #333;
+$gray-dark-hard-2: #424242;
+$light-blue-1: #2DCEFF;
+$light-blue-2: #00B9F2;
+$blue-super-light: #f7fdff;
+$orange-light: #f7941d;
+$orange-medium: #e38008;
+$orange-dark: #b76706;
+$red-light: #ff6666;
+
 .box {
   margin-bottom: 15px;
 }
@@ -69,4 +83,333 @@ $grey: #666;
   padding-bottom: 50px;
   border-top: 1px $grey-light2 solid !important;
   background-color: $gray;
+}
+}
+/* Jobs in Company */
+.create-job-modal {
+  .job-modal-dialog {
+    width: 900px;
+  }
+}
+.cp_our_job_item {
+  width: 100%;
+  clear: both;
+  padding: 5px 0 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: inline-block;
+  border-bottom: 1px solid $gray-light-1;
+  display: none;
+  li {
+    display: inline-block;
+    padding: 0 5px;
+    color: $gray-medium-1;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  ul {
+    padding-left: 0px;
+  }
+  i {
+    margin-right: 5px;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.cp_job_view_detail a {
+  display: inline-block;
+  width: 100%;
+  max-width: 150px;
+  border: 1px solid $gray-medium-1;
+  height: 42px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: $gray-dark-hard-1;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  font-size: 13px;
+}
+
+.job-create-content {
+  min-height: 100px;
+  line-height: 24px;
+}
+
+.job-create-name {
+  font-weight: bold;
+}
+
+.job-modal-dialog {
+  width: 900px;
+}
+
+.create-job-btn {
+  position: relative;
+}
+
+.centerize {
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+}
+
+.no_jobs {
+  text-align: center;
+  font-size: 20px;
+  color: $gray-medium-1;
+  margin-bottom: 15px;
+}
+
+.show_jobs {
+  h3 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid $gray-light-1;
+  }
+}
+
+.show_companies {
+  .post-job {
+    margin-bottom: 10px;
+  }
+  .jobs-count {
+    margin-top: 10px;
+  }
+}
+.job-form {
+  textarea.form-control {
+    min-height: 150px;
+    line-height: 24px;
+  }
+}
+
+/* Show Job */
+
+.job_requirement {
+  li {
+    padding: 0 10px;
+    font-size: 15px;
+    text-transform: uppercase;
+    list-style-type: none;
+    margin: 10px 0px 10px 0px;
+  }
+  ul {
+    padding-left: 0px;
+  }
+  i {
+    margin-right: 5px;
+  }
+}
+
+.job_content {
+  p {
+    white-space: pre-line;
+    font-size: 15px
+  }
+}
+
+.page-job-detail {
+  position: relative;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.page-job-detail.page-job-detail_no-background .page-background {
+  background-image: linear-gradient(-180deg, $light-blue-1 2%, $light-blue-2 100%);
+  height: 160px;
+}
+
+.page-job-detail .page-background {
+  height: 238px;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  background-position: top center;
+  background-size: cover;
+}
+.page-job-detail .page-background2 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  background-position: top center;
+  background-size: cover;
+}
+
+.page-job-detail.page-job-detail_no-background .page-background2 {
+  background-color: $grey-light1;
+  margin-top: 160px;
+  height: 99%;
+  z-index: 0;
+}
+
+.page-job-detail .page-foreground {
+  z-index: 1;
+  position: relative;
+}
+
+.page-job-detail.page-job-detail_no-background .page-job-detail__header {
+  margin-top: 80px;
+}
+
+.page-job-detail__detail .tab-pane-job-info .tab-sidebar {
+  left: 70%;
+}
+
+.page-job-detail__detail .tab-sidebar {
+  width: 30%;
+}
+
+.page-job-detail__detail .box-summary {
+  border: 1px solid rgba(0, 185, 242, 0.5);
+  padding: 23px;
+  background-color: $blue-super-light;
+  border-radius: 3px;
+}
+
+.page-job-detail__detail .tab-pane-job-info .tab-main-content {
+  right: 30%;
+}
+
+.page-job-detail__detail .tab-main-content {
+  width: 70%;
+  padding-right: 40px;
+}
+
+.page-job-detail__header .logo-wrapper {
+  height: auto;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  img {
+    max-height: 105px;
+  }
+}
+
+.page-job-detail__detail h2 {
+  font-size: 21px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: Roboto, Arial, sans-serif;
+  margin-top: 5px;
+  margin-bottom: 17px;
+  border-bottom: 2px solid rgba(206, 211, 213, 0.5);
+}
+
+.page-job-detail__detail .nav-tabs li a {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 100;
+  font-size: 13px;
+  border: 0;
+  line-height: 17px;
+  padding: 12px 35px 10px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background: $grey-light1;
+  color: $gray-dark-hard-2
+}
+
+.page-job-detail__detail .presentation .nav>li.active {
+  background-color: $gray-light-1
+}
+
+.page-job-detail__detail .box-summary .summary-item {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(206, 211, 213, 0.5);
+}
+
+.page-job-detail__detail .box-summary .summary-content .content-label {
+  text-transform: uppercase;
+  color: $gray-medium-1;
+  display: block;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.page-job-detail__header .job-title {
+  font-weight: 500;
+  font-size: 27px;
+  margin-bottom: 8px;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.summary-icon {
+  i {
+    font-size: 30px;
+  }
+}
+
+.page-job-detail__header .company-name {
+  text-transform: uppercase;
+  display: inline;
+}
+
+.col-btn {
+  display: flex;
+  align-items: center;
+}
+
+.job-apply-btn {
+  .btn-primary {
+    width: 170px;
+    background-color: $orange-light;
+    border-color: $orange-light;
+    color: $white;
+    font-size: 20px;
+    left: 10px;
+  }
+  .btn-primary:focus, .btn-primary:hover, .btn-primary:active, .btn-primary.active, .open .btn-primary.dropdown-toggle {
+    background-color: $orange-medium;
+    border-color: $orange-dark;
+    color: $white;
+  }
+}
+
+.salary {
+  .text-primary {
+    color: $orange-light;
+    font-size: 25px;
+  }
+}
+.banner-top {
+  img {
+    width: 100%;
+  }
+}
+/* Create Job Modal Form */
+
+.has-error {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: $red-light;
+}
+
+.container {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{
+  background-color: $gray-light-2;
+  border-color: $grey-light2;
+  color: inherit;
+  cursor: default;
+  z-index: 2
+}
+
+.pagination>span>a,.pagination>span>span,.pagination>.current,.pagination>.gap{
+  background-color: $white;
+  border: 1px solid $grey-light2;
+  color: inherit;
+  float: left;
+  line-height: 1.42857;
+  margin-left: -1px;
+  padding: 4px 10px;
+  position: relative;
+  text-decoration: none
 }
