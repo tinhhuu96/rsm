@@ -10,7 +10,7 @@ class Ability
             company.id == user.members.last.company_id && user.members.last.end_time.nil?
           end
         end
-      else user.admin?
+      elsif user.admin?
         can :manage, :all
       end
       can :read, :all

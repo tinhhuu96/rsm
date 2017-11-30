@@ -30,6 +30,8 @@ gem "carrierwave", "1.1.0"
 gem "mini_magick", "4.7.0"
 gem "simple_form"
 gem "kaminari"
+gem "smart_listing"
+gem "will_paginate", "~> 3.1.0"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"

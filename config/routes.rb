@@ -22,5 +22,9 @@ Rails.application.routes.draw do
   resources :certificates, except: :index
   resources :clubs, except: %i(index show)
   resources :jobs
+  namespace :employers do
+    resources :managers
+    resources :manager_members
+  end
 end
 

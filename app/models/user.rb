@@ -21,4 +21,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   enum role: %i(user employer admin)
+  enum sex: %i(female male)
+  mount_uploader :picture, PictureUploader
 end

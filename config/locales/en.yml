@@ -64,6 +64,8 @@ en:
   view: "View"
   home: "Home"
   lastest: "Lastest"
+  account: "Account"
+  search: "search..."
   date:
     formats:
       default: "%Y-%m-%d"
@@ -94,6 +96,9 @@ en:
               blank: "Skill cannot be blank."
             position:
               blank: "Position cannot be blank."
+  employer: "Employer"
+  Male: "Male"
+  Female: "Female"
   mailer:
     hi: "Hi "
     thank: " Thanks for used my service"
@@ -316,3 +321,36 @@ en:
       job_cant_create: "Job can not be created"
     validates:
       check_max_salary: "Max salary must greater than min salary"
+  layouts:
+    employers:
+      manager:
+        all_member: "All Members"
+        add_member: "Add Member"
+        employer: "Employer"
+        dashboard: "Dashboard"
+        member: "  Member  "
+        header_Style: "Header Style"
+        updates: "Updates"
+        Messages: "Messages"
+        subscriptions: "Subscriptions"
+        profile: "Profile"
+        settings: "Settings"
+        lock_Account: "Lock Account"
+        logout: " Logout"
+        crafted: "Crafted with"
+        by: "by"
+        edu: "Chicken Team"
+        proUI: "ProUI 3.0"
+  employers:
+    manager_members:
+      index:
+        id: "ID"
+        name: "Name"
+        Position: "Position"
+        email: "Email"
+        sex: "Sex"
+        start_time: "Start Time"
+        end_time: "End Time"
+        delete: "Delete"
+        add_member: "Add New Member"
+        all_member: "All Members"
