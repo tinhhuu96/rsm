@@ -18,7 +18,14 @@ class User < ApplicationRecord
   has_many :appointments, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :members, dependent: :destroy
+  has_many :companies, through: :members
   validates :name, presence: true
 
   enum role: %i(user employer admin)
+  enum sex: %i(female male)
+  mount_uploader :picture, PictureUploader
+
+  def is_user? user
+    user == self
+  end
 end

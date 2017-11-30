@@ -12,8 +12,10 @@
       <div id="form-club">
         <%= render partial: "clubs/club", collection: @clubs, as: :club %>
       </div>
-      <%= link_to t("clubs._index.add"), new_club_path, id: "btn-add-club",
-        class: "btn btn-default btn-block no-border add-one-more-section", remote: true %>
+      <% if  current_user.is_user? @user %>
+        <%= link_to t("clubs._index.add"), new_club_path, id: "btn-add-club",
+          class: "btn btn-default btn-block no-border add-one-more-section", remote: true %>
+      <% end %>
     </fieldset>
   </div>
 </div>

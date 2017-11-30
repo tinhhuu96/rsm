@@ -242,7 +242,7 @@ ActiveRecord::Schema.define(version: 20171201014822) do
     t.string "email"
     t.string "phone"
     t.text "address"
-    t.boolean "sex"
+    t.integer "sex"
     t.integer "role", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -255,6 +255,7 @@ ActiveRecord::Schema.define(version: 20171201014822) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "picture"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

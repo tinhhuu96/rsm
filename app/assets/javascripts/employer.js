@@ -18,12 +18,4 @@
 //= require plugins.min
 //= require bootstrap
 //= require app
-//= require login
-//= require bootstrap-datepicker
-//= require turbolinks
-//= require format_datepicker
-//= require load_image
-//= require profile
-//= require pagination
-//= require clear_value
-//= require alertify/lib/alertify.min.js
+//= require employer.min
