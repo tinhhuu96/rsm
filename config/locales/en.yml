@@ -314,3 +314,5 @@ en:
     create:
       job_created: "Job has been created"
       job_cant_create: "Job can not be created"
+    validates:
+      check_max_salary: "Max salary must greater than min salary"

@@ -1075,7 +1075,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #222222;
 }
 input,
 button,
@@ -5940,7 +5940,8 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
+    width: 900px;
+    width: 80%;
     margin: 30px auto;
   }
   .modal-content {
@@ -7189,14 +7190,14 @@ a.ic-social-google:hover span{background-color: #f34a38}
     font-size: 14px;
 }
 /* our jobs */
-.cp_our_jobs_container{clear: both;width: 100%; padding: 50px 25px; background-color: #fff;  border: 1px solid #e9e9e9; position: relative; margin-bottom: 0;}
+.cp_our_jobs_container{clear: both;width: 100%; padding: 25px 25px; background-color: #fff;  border: 1px solid #e9e9e9; position: relative; margin-bottom: 0;}
 .cp_our_jobs_listing{padding-right: 50px;}
 .cp_our_jobs_listing.full_col {width: 100%; padding-right: 0;}
 .cp_our_jobs_listing h3{font-size: 20px; text-transform: capitalize; margin: 0 0 20px;padding: 0 0 15px; border-bottom: 2px solid #000; display: inline-block; width: auto;}
 .cp_our_job_item{
     width: 100%;
     clear: both;
-    padding: 5px 0 20px;
+    padding: 5px 0 10px;
     margin-top: 10px;
     display: inline-block;
     border-bottom: 1px solid #e2e2e2;
@@ -7224,7 +7225,7 @@ a.ic-social-google:hover span{background-color: #f34a38}
 }
 .cp_our_job_item  li:first-child{padding-left: 0;}
 .cp_our_job_item  li i{padding-right: 5px;}
-.cp_our_job_item:last-child{border-bottom: 0}
+.cp_our_job_item:last-child{border-bottom: 1}
 .cp_job_view_detail{text-align: right;}
 .cp_job_view_detail a{
     display: inline-block;
@@ -8902,7 +8903,7 @@ a{
   height: 270px;
 }
 .banner_show{
-  width: auto;
+  width: 100%;
 }
 .banner_img_load{
   width: 175px;

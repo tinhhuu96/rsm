@@ -8,24 +8,14 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
-
   <body>
     <div id="page-container">
       <%= render "layouts/header" %>
-      <%= render "layouts/backward-header" %>
-      <div class="row">
-        <div class="col-md-3">
-          <% flash.each do |message_type, message| %>
-          <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-              <i class="fa fa-window-close" aria-hidden="true"></i>
-            </button>
-            <hr class="message-inner-separator">
-            <p><%= message %></p>
-          </div>
-          <% end %>
+      <section class="site-section site-section-light
+        site-section-top themed-background-dark">
+        <div class="container">
         </div>
-      </div>
+      </section>
       <section class="site-content">
         <%= yield %>
       </section>

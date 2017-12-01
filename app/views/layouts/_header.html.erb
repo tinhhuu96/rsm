@@ -32,7 +32,7 @@
         </li>
         <% if user_signed_in? %>
           <li>
-            <a href="about.html"><%= t "index.home" %></a>
+            <%= link_to current_user.name, edit_user_registration_path(current_user) %>
             <ul>
               <li>
                 <%= link_to user_path current_user do %>
@@ -61,9 +61,3 @@
     </nav>
   </div>
 </header>
-<section class="site-section site-section-light site-section-top themed-background-dark">
-  <div class="container">
-    <h1 class="animation-slideDown"><strong><%= t "index.latest" %></strong></h1>
-    <h2 class="h3 animation-slideUp"><%= t "index.home" %></h2>
-  </div>
-</section>

@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   resources :achievements
   resources :certificates, except: :index
   resources :clubs, except: %i(index show)
+  resources :jobs
 end
 

@@ -294,6 +294,8 @@ header nav {
     padding-top: 11px;
     padding-bottom: 40px;
     background-color: #252525;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-heading {

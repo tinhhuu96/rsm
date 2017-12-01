@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120163007) do
+ActiveRecord::Schema.define(version: 20171201014822) do
 
   create_table "achievements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 20171120163007) do
     t.string "classification"
     t.date "received_time"
     t.bigint "user_id"
-    t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-    t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["name"], name: "index_certificates_on_name"
     t.index ["user_id"], name: "index_certificates_on_user_id"
   end
@@ -139,6 +139,9 @@ ActiveRecord::Schema.define(version: 20171120163007) do
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.float "min_salary", limit: 24
+    t.float "max_salary", limit: 24
     t.index ["company_id"], name: "index_jobs_on_company_id"
     t.index ["name"], name: "index_jobs_on_name"
     t.index ["user_id"], name: "index_jobs_on_user_id"
