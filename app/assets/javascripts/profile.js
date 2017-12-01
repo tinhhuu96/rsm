@@ -45,4 +45,3 @@ $(document).on('click', '#cancel_certificate_edit', function(){
   $('#edit_certificate_' + certificate_id).remove();
   $('#info_certificate_' + certificate_id).show();
 });
-

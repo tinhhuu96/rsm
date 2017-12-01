@@ -18,6 +18,7 @@ $orange-light: #f7941d;
 $orange-medium: #e38008;
 $orange-dark: #b76706;
 $red-light: #ff6666;
+$gray-medium-1: #ff6666;
 
 .box {
   margin-bottom: 15px;
@@ -79,12 +80,14 @@ $red-light: #ff6666;
 .block {
   display: block;
 }
-.bottom-form{
+.bottom-form
+ {
   padding-bottom: 50px;
   border-top: 1px $grey-light2 solid !important;
   background-color: $gray;
-}
-}
+ }
+
+
 /* Jobs in Company */
 .create-job-modal {
   .job-modal-dialog {
