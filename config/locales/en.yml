@@ -478,3 +478,14 @@ en:
     dislike: "Dislike"
   placeholder:
     blank: "No information"
+  apply:
+    havenot: "You have not applied_job"
+    bookmark: "Bookmarked_Job"
+    applyjob: "Applied_Job"
+    applynow: "Apply Now"
+    position: "Position"
+    subdate: "Submit_Date"
+    corp: "Corp : "
+    level: "Level : "
+    applied: "Applied"
+    fail: "Fail"

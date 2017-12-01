@@ -19,4 +19,5 @@
  *= require_tree .
  *= require_self
  *= require_tree ../../../node_modules/alertify/themes
+ *= require form_tab
  */

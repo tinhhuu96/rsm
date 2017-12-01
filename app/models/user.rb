@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :jobs, dependent: :destroy
   has_many :bookmark_likes, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
-  has_many :applys, dependent: :destroy
+  has_many :applies, dependent: :destroy
   has_many :appointments, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :members, dependent: :destroy
@@ -22,7 +22,7 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   enum role: %i(user employer admin)
-  enum sex: %i(female male)
+  enum sex: {female: 0, male: 1}
   mount_uploader :picture, PictureUploader
 
   def is_user? user

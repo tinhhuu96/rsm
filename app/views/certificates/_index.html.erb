@@ -15,8 +15,10 @@
         <%= render partial: "certificates/certificate", collection: @certificates, as: :certificate %>
       </div>
       <% if current_user.is_user? @user %>
-        <%= link_to (t"certificate.add"), new_certificate_path, id: "btn-add-certificate",
-          class: "btn btn-default btn-block no-border add-one-more-section", remote: true %>
+        <%= link_to (t"certificate.add"), new_certificate_path,
+          id: "btn-add-certificate",
+            class: "btn btn-default btn-block no-border add-one-more-section",
+              remote: true %>
       <% end %>
     </fieldset>
   </div>

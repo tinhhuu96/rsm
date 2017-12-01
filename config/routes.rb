@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :achievements
   resources :certificates, except: :index
   resources :clubs, except: %i(index show)
+  resources :applies
   resources :jobs
   namespace :employers do
     resources :companies
@@ -30,4 +31,3 @@ Rails.application.routes.draw do
   resources :experiences
   resources :reward_benefits
 end
-

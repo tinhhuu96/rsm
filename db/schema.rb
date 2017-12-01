@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201014822) do
+ActiveRecord::Schema.define(version: 20171208033711) do
 
   create_table "achievements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20171201014822) do
   end
 
   create_table "applies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.boolean "status"
+    t.integer "status", default: 0
     t.bigint "user_id"
     t.bigint "job_id"
     t.datetime "created_at", null: false
@@ -140,11 +140,11 @@ ActiveRecord::Schema.define(version: 20171201014822) do
     t.string "language"
     t.string "skill"
     t.string "position"
+    t.text "description"
     t.bigint "user_id"
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "description"
     t.float "min_salary", limit: 24
     t.float "max_salary", limit: 24
     t.index ["company_id"], name: "index_jobs_on_company_id"
