@@ -1,8 +1,7 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
-    can :read, :all
+  def initialize user
     if user.present?
       if user.employer?
         if user.members.present?
@@ -10,7 +9,7 @@ class Ability
             company.id == user.members.last.company_id && user.members.last.end_time.nil?
           end
         end
-      else user.admin?
+      elsif user.admin?
         can :manage, :all
       end
       can :read, :all
@@ -20,4 +19,3 @@ class Ability
     end
   end
 end
-

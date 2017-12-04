@@ -75,6 +75,11 @@ ActiveRecord::Schema.define(version: 20171201014822) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "position", null: false
+    t.date "start_time"
+    t.date "end_time"
+    t.text "content"
+    t.boolean "current", default: false
     t.index ["name"], name: "index_clubs_on_name"
     t.index ["user_id"], name: "index_clubs_on_user_id"
   end

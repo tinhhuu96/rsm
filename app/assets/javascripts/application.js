@@ -26,3 +26,4 @@
 //= require profile
 //= require pagination
 //= require clear_value
+//= require alertify/lib/alertify.min.js
