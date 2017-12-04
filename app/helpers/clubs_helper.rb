@@ -6,6 +6,7 @@ module ClubsHelper
       club.end_time
     end
   end
+
   def define_cancel_club_id club
     if club.id?
       "cancel_club_edit"

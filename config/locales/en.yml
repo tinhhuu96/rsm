@@ -316,3 +316,21 @@ en:
       job_cant_create: "Job can not be created"
     validates:
       check_max_salary: "Max salary must greater than min salary"
+  activerecord:
+    errors:
+      models:
+        club:
+          attributes:
+            name:
+              blank: "Name can not be blank"
+              too_long: "Name must be less than 150 characters"
+            position:
+              blank: "Position can not be blank"
+              too_long: "Position must be less than 100 characters"
+            start_time:
+              blank: "Date start can not be blank"
+            end_time:
+              blank: "Date end can not be blank, you can choose present"
+            content:
+              too_long: "Content must be less than 5000 characters"
+              too_short: "Content very short, must be over 20 characters"

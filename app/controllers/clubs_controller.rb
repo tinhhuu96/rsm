@@ -1,25 +1,24 @@
 class ClubsController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource param_method: :club_params
+  load_and_authorize_resource param_method: :params_club
 
   def create
     respond_to do |format|
-      @club = current_user.clubs.new club_params
+      @club = current_user.clubs.new params_club
       if @club.save
         format.js{flash[:success] = t ".create_success"}
       else
-        format.js{flash[:danger] = t ".create_fail"}
+        format.js
       end
     end
   end
 
-
   def update
     respond_to do |format|
-      if @club.update_attributes club_params
+      if @club.update_attributes params_club
         format.js{flash[:success] = t ".update_success"}
       else
-        format.js{flash[:danger] = t ".update_fail"}
+        format.js
       end
     end
   end
@@ -36,8 +35,8 @@ class ClubsController < ApplicationController
 
   private
 
-  def club_params
-    club_param = params.require(:club).permit :name, :content, :current, :start_time, :end_time,
+  def params_club
+    params.require(:club).permit :name, :content, :current, :start_time, :end_time,
       :position, :user_id
   end
 end

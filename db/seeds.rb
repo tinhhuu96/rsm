@@ -5,6 +5,39 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+1.upto(5) do |x|
+  name = Faker::Name.name
+  email = "employer#{x}@gmail.com"
+  pass = "123123"
+  pass_conf = "123123"
+  role = "employer"
+  User.create!(name: name, email: email, password: pass,
+               password_confirmation: pass_conf, role: role)
+end
+1.upto(5) do |x|
+  name = Faker::Name.name
+  email = "user#{x}@gmail.com"
+  pass = "123123"
+  pass_conf = "123123"
+  role = "user"
+  User.create!(name: name, email: email, password: pass,
+               password_confirmation: pass_conf, role: role)
+end
+
+1.upto(10) do |x|
+  1.upto(5) do
+    name =   Faker::Team.creature << " Club"
+    position = Faker::Job.title
+    start_time = Faker::Date.between(1000.days.ago, 100.days.ago)
+    current = rand(2)
+    if current==0
+      end_time = Faker::Date.between(99.days.ago, Date.today)
+    end
+    content = Faker::Lorem.paragraph << Faker::Lorem.paragraph
+    Club.create!(name: name, user_id: x, position: position,
+      start_time: start_time, end_time: end_time, content: content, current: current)
+  end
+end
 Company.create!(
   name: "Framgia",
   phone: Faker::Number.number(10),
