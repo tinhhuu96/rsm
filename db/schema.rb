@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20171201014822) do
   end
 
   create_table "bookmark_likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.boolean "bookmark"
+    t.integer "bookmark", default: 0
     t.bigint "user_id"
     t.bigint "job_id"
     t.datetime "created_at", null: false

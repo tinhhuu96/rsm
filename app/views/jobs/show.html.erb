@@ -58,6 +58,26 @@
                       <%= t ".apply_now" %>
                     </button>
                   </div>
+                  <div class="col-xs-6 col-xs-push-6 col-md-12 col-md-push-0 job-like-btn">
+                    <% if user_signed_in? %>
+                      <% if @liked.present? %>
+                        <span class="liked">
+                          <i class="fa fa-thumbs-up text-gray"></i>
+                          <%= t "bookmark_like.liked" %>
+                        </span>
+                      <% else %>
+                        <%= render "bookmark_likes/form_like_job" %>
+                      <% end %>
+                      <% if @bookmarked.present? %>
+                        <span class = "book-marked">
+                          <i class="fa fa-heart text-gray"></i>
+                          <%= t "bookmark_like.save" %>
+                        </span>
+                      <% else %>
+                        <%= render "bookmark_likes/form" %>
+                      <% end %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>

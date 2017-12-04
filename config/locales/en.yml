@@ -315,6 +315,7 @@ en:
       test_salary: "$500 - $700"
     method:
       cant_find_job: "Job can not be found"
+      cant_find_bookmark: "Can not find user bookmared"
       cant_find_employer: "Employer can not be found"
       cant_find_company: "Company can not be found"
     create:
@@ -374,3 +375,12 @@ en:
         delete: "Delete"
         add_member: "Add New Member"
         all_member: "All Members"
+  bookmark_like:
+    save: "Bookmarked"
+    insert: "Bookmark"
+    create: "Bookmark has been created"
+    error: "Bookmark fail"
+    cannot_save: "Bookmark can not be saved"
+    bookmark_like: "Liked"
+    like: "like"
+    liked: "Liked"

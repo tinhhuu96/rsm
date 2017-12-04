@@ -29,3 +29,6 @@ jobs:
     maximum_length: 255
 employers:
   page: 10
+bookmark:
+  bookmarked: 0
+  liked: 1

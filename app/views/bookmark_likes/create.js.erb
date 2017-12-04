@@ -1,0 +1,9 @@
+<% if @bookmark_like.errors.any? %>
+  alertify.error('<%= j (render partial: "shared/error_messages", locals: {object: @bookmark_like}) %>');
+<% else %>
+  <% if @bookmark_like.bookmark? %>
+    $('.form-bookmark').hide(2000).after('<span class = "book-marked"><i class="fa fa-heart text-gray"></i><%= I18n.t "bookmark_like.save" %></span>');
+  <% else %>
+    $('.form-like').hide(2000).after('<span class="liked"><i class="fa fa-thumbs-up text-gray"></i><%= t "bookmark_like.liked" %></span>');
+  <% end %>
+<% end %>
