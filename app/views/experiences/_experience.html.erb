@@ -1,0 +1,41 @@
+<div id="info_experience_<%= experience.id %>" class="sortable content-section">
+  <% if current_user.is_user? @user %>
+    <span class="form-btn-edit">
+      <%= link_to experience, method: :delete, data: {confirm: t("experiences._experience.confirm")},
+        class: "btn btn-sm btn-default", remote: true do %>
+        <i class="glyphicon glyphicon-trash"></i>
+      <% end %>
+      <%= link_to edit_experience_path(experience), class: "btn btn-sm btn-default", remote: true do %>
+        <i class="glyphicon glyphicon-pencil"></i>
+      <% end %>
+    </span>
+  <% end %>
+  <div>
+    <div class="view-field">
+      <h4 class="view-control"><%= experience.company %></h4>
+    </div>
+  </div>
+  <div>
+    <div class="view-field">
+      <strong class="view-control"><%= t "experiences._experience.project_name" %><%= experience.name %></strong>
+    </div>
+  </div>
+  <div>
+    <div class="view-field">
+      <p>
+        <span class="view-control" data-control="from-date">
+          <%= experience.start_time %>
+        </span>
+        :
+        <span class="view-control" data-control="to-date" data-type="manual">
+          <%= experience.end_time %>
+        </span>
+      </p>
+    </div>
+  </div>
+  <div>
+    <div class="view-field">
+      <div class="view-control"><%= experience.project_detail %></div>
+    </div>
+  </div>
+</div>

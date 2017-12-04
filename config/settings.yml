@@ -22,6 +22,14 @@ clubs:
     pos_max_length: 100
     cont_max_length: 5000
     cont_min_length: 20
+experiences:
+  cancel_edit: "cancel_experience_edit"
+  cancel_new: "cancel_experience_new"
+  model:
+    name_max_length: 150
+    company_max_length: 150
+    detail_max_length: 5000
+    detail_min_length: 20
 pagination:
   jobs_perpage: 5
 jobs:

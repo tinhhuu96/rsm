@@ -1,0 +1,68 @@
+<%= javascript_include_tag "format_datepicker", "data-turbolinks-track": "reload" %>
+<%= form_for @experience, html: {class: "new-section"}, remote: true do |f| %>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label><strong class="text-red">*</strong><%= t "experiences._form.name" %></label>
+        <%= f.text_field :name, autofocus: true, class: "form-control edit-control" %>
+        <span class="exp-name-invalid error-message"></span>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label><strong class="text-red">*</strong><%= t "experiences._form.company" %></label>
+        <%= f.text_field :company, class: "form-control edit-control" %>
+        <span class="exp-company-invalid error-message"></span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :start_time, t("experiences._form.from") %>
+        <% if @experience.start_time.present? %>
+          <%= f.text_field :start_time, data: {provide: "datepicker"},
+            class: "datepick form-control", value: @experience.start_time.strftime(t "date_format") %>
+        <% else %>
+          <%= f.text_field :start_time, data: {provide: "datepicker"},
+            class: "datepick form-control" %>
+        <% end %>
+        <span class="exp-start_time-invalid error-message"></span>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :end_time, t("experiences._form.to") %>
+        <% if @experience.end_time.present? %>
+          <%= f.text_field :end_time, data: {provide: "datepicker"},
+            class: "datepick form-control", value: @experience.end_time.strftime(t "date_format") %>
+        <% else %>
+          <%= f.text_field :end_time, data: {provide: "datepicker"},
+            class: "datepick form-control" %>
+        <% end %>
+        <span class="exp-end_time-invalid error-message"></span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= f.label :project_detail %>
+        <%= f.text_area :project_detail, class: "form-control" %>
+        <span class="exp-project_detail-invalid error-message"></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group push-top-md edit-field">
+    <div class="row">
+      <div class="col-sm-6"><%= t "experiences._form.require" %></div>
+      <div class="col-sm-6 text-right">
+        <button id="<%= define_cancel_experience_id @experience %>" type="button"
+          class="btn-cancel btn btn-default" value="<%= @experience.id %>">
+          <%= t "experiences._form.cancel" %>
+        </button>
+        <%= f.submit t("experiences._form.save"), class: "btn-save btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>
