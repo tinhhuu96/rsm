@@ -1,3 +1,4 @@
+<%= javascript_include_tag "format_datepicker", "data-turbolinks-track": "reload" %>
 <div id= "new-certificate">
   <%= form_for @certificate, html: {class: "new-section"}, remote: true do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
@@ -35,7 +36,7 @@
       <div class="col-sm-6">
         <div class="form-group">
           <label><strong class="text-red">*</strong><%= t "certificate.received" %></label>
-          <%= f.text_field :received_time, "data-provide": "datepicker", class: "form-control edit-control" %>
+          <%= f.text_field :received_time, "data-provide": "datepicker", class: "datepick form-control edit-control" %>
         </div>
       </div>
     </div>
