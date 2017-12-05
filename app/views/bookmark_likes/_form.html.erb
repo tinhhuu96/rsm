@@ -1,0 +1,7 @@
+<div class="col-md-6 form-bookmark">
+  <%= simple_form_for @bookmark, remote: true do |f| %>
+    <%= f.hidden_field :job_id %>
+    <%= f.hidden_field :bookmark %>
+    <%= f.button :submit, t("bookmark_like.insert"), class: "fa fa-thumbs-up" %>
+  <% end %>
+</div>

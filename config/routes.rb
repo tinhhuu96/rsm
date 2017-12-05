@@ -26,5 +26,6 @@ Rails.application.routes.draw do
     resources :companies
     resources :members
   end
+  resources :bookmark_likes
 end
 

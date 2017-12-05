@@ -1,26 +1,6 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-
-$white: #fff;
-$grey-light1: #eee;
-$grey-light2: #ddd;
-$gray: #e0e0e0;
-$grey: #666;
-$gray-light-1: #e2e2e2;
-$gray-light-2: #f4f4f4;
-$grey-light1: #eee;
-$gray-medium-1: #999;
-$gray-medium-2: #ddd;
-$gray-dark-hard-1: #333;
-$gray-dark-hard-2: #424242;
-$light-blue-1: #2DCEFF;
-$light-blue-2: #00B9F2;
-$blue-super-light: #f7fdff;
-$orange-light: #f7941d;
-$orange-medium: #e38008;
-$orange-dark: #b76706;
-$red-light: #ff6666;
-$gray-medium-1: #ff6666;
+@import 'color';
 
 .box {
   margin-bottom: 15px;
@@ -363,12 +343,20 @@ $gray-medium-1: #ff6666;
 
 .job-apply-btn {
   .btn-primary {
-    width: 170px;
+    margin-left: 16px;
+    margin-bottom: 10px;
+    width: 183px;
     background-color: $orange-light;
     border-color: $orange-light;
     color: $white;
     font-size: 20px;
     left: 10px;
+  }
+  .lock{
+    background: $white;
+    font-size: 16px;
+    color: $light-yellow;
+    margin-top: 10px;
   }
   .btn-primary:focus, .btn-primary:hover, .btn-primary:active, .btn-primary.active, .open .btn-primary.dropdown-toggle {
     background-color: $orange-medium;
@@ -422,4 +410,43 @@ $gray-medium-1: #ff6666;
   padding: 4px 10px;
   position: relative;
   text-decoration: none
+}
+.text-gray{
+  height: 21px;
+  opacity: 1;
+  margin-top: 15px;
+  font-size: 15px;
+}
+.job-like-btn {
+  position: relative;
+  .btn {
+    margin: auto;
+    width: 84px;
+    height: 40px;
+    background: $light-color;
+    font-size: .9rem;
+    font-family: Futura;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid darken($accent-color, 10%);
+    box-shadow: 0px 2px 0px rgba($dark-color,.1);
+    outline: none;
+    &:hover {
+      color: darken($accent-color, 10%);
+      transform: scale(1.2);
+    }
+  }
+  &:active {
+    transform: scale(1.4);
+  }
+  .fa {
+    font-size:15px;
+  }
+}
+.book-marked {
+  font-size: 13px;
+}
+.liked {
+  margin: 20px;
 }
