@@ -64,6 +64,9 @@ en:
   view: "View"
   home: "Home"
   lastest: "Lastest"
+  account: "Account"
+  search: "search..."
+  can_not_find_company: "can not find company"
   date:
     formats:
       default: "%Y-%m-%d"
@@ -94,6 +97,9 @@ en:
               blank: "Skill cannot be blank."
             position:
               blank: "Position cannot be blank."
+  employer: "Employer"
+  Male: "Male"
+  Female: "Female"
   mailer:
     hi: "Hi "
     thank: " Thanks for used my service"
@@ -334,3 +340,37 @@ en:
             content:
               too_long: "Content must be less than 5000 characters"
               too_short: "Content very short, must be over 20 characters"
+  layouts:
+    employers:
+      employer:
+        all_member: "All Members"
+        add_member: "Add Member"
+        employer: "Employer"
+        dashboard: "Dashboard"
+        member: "  Member  "
+        header_Style: "Header Style"
+        updates: "Updates"
+        Messages: "Messages"
+        subscriptions: "Subscriptions"
+        profile: "Profile"
+        settings: "Settings"
+        lock_Account: "Lock Account"
+        logout: " Logout"
+      footer_employer:
+        crafted: "Crafted with"
+        by: "by"
+        edu: "Chicken Team"
+        proUI: "ProUI 3.0"
+  employers:
+    members:
+      index:
+        id: "ID"
+        name: "Name"
+        position: "Position"
+        email: "Email"
+        sex: "Sex"
+        start_time: "Start Time"
+        end_time: "End Time"
+        delete: "Delete"
+        add_member: "Add New Member"
+        all_member: "All Members"

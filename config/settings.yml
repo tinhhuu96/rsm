@@ -27,3 +27,5 @@ pagination:
 jobs:
   description:
     maximum_length: 255
+employers:
+  page: 10

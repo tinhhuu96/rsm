@@ -1,21 +1,25 @@
 class Ability
   include CanCan::Ability
 
-  def initialize user
+  def initialize user, controller_namespace = nil
     if user.present?
-      if user.employer?
-        if user.members.present?
-          can :update, Company do |company|
-            company.id == user.members.last.company_id && user.members.last.end_time.nil?
+      case controller_namespace
+        when "Employers"
+          can :manage, :all if user.employer? || user.admin?
+        when ""
+          can :read, :all
+          can :update, User, id: user.id
+        else
+          if user.employer?
+            if user.members.present?
+              can :update, Company do |company|
+                company.id == user.members.last.company_id && user.members.last.end_time.nil?
+              end
+            end
+          elsif user.admin?
+            can :manage, :all
           end
-        end
-      elsif user.admin?
-        can :manage, :all
       end
-      can :read, :all
-      can :manage, Achievement, user_id: user.id
-      can :manage, Club, user_id: user.id
-      can :update, User, id: user.id
     end
   end
 end

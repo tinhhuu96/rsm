@@ -12,9 +12,11 @@
       <div id="form-achievements">
         <%= render partial: "achievements/achievement", collection: @achievements, as: :achievement %>
       </div>
-      <%= link_to t("clubs._index.add"), new_achievement_path, id: "btn-add-achievements",
-        class: "btn btn-default btn-block no-border add-one-more-section",
+      <% if current_user.is_user? @user %>
+        <%= link_to t("clubs._index.add"), new_achievement_path, id: "btn-add-achievements",
+          class: "btn btn-default btn-block no-border add-one-more-section",
           remote: true %>
+      <% end %>
     </fieldset>
   </div>
 </div>
