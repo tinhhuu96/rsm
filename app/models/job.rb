@@ -4,7 +4,10 @@ class Job < ApplicationRecord
   has_many :applies
   has_many :feedbacks
   has_many :bookmark_likes
-  has_many :reward_benefits
+  has_many :reward_benefits, dependent: :destroy, inverse_of: :job
+
+  accepts_nested_attributes_for :reward_benefits, allow_destroy: true,
+    reject_if: ->(attrs){attrs["content"].blank?}
 
   validates :content, presence: true
   validates :name, presence: true

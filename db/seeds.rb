@@ -38,6 +38,7 @@ end
       start_time: start_time, end_time: end_time, content: content, current: current)
   end
 end
+
 Company.create!(
   name: "Framgia",
   phone: Faker::Number.number(10),
@@ -46,12 +47,15 @@ Company.create!(
   contact_person: "Nguyen Van A",
   company_info: "Framgia Da Nang City",
   logo: "framgia_logo.png",
-  banner: "framgia_banner.jpg")
+  banner: "framgia_banner.jpg"
+)
+
 Member.create!(
   company_id: 1,
   user_id: 1,
   position: "employer"
 )
+
 10.times do |i|
   Job.create!(
     company_id: 1,

@@ -31,6 +31,7 @@ gem "mini_magick", "4.7.0"
 gem "simple_form"
 gem "kaminari"
 gem "smart_listing"
+gem "cocoon"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"

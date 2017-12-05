@@ -28,4 +28,8 @@ config/environments/*.local.yml
 coverage/*
 db/schema.rb
 spec/coverage
+/coverage/*
+coverage/.last_run.json
+coverage/.resultset.json
+coverage/index.html
 Gemfile.lock

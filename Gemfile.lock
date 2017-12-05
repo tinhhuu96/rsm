@@ -67,6 +67,7 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
+    cocoon (1.2.11)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -471,6 +472,7 @@ DEPENDENCIES
   cancancan (~> 2.0)
   capybara (~> 2.13)
   carrierwave (= 1.1.0)
+  cocoon
   coffee-rails (~> 4.2)
   config
   database_cleaner

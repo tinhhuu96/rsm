@@ -1,12 +1,14 @@
 class JobsController < ApplicationController
   layout "job"
 
+  before_action :authenticate_user!, except: %i(index show)
   before_action :load_job, except: %i(index new create)
   before_action :load_employer, only: :show
   before_action :load_company, only: :show
   before_action :load_jobs, only: :show
   before_action :create_bookmark, only: :show
   before_action :create_like, only: :show
+  before_action :load_reward_benefits, only: :show
 
   def show
     return unless @job.bookmark_likes.present?
@@ -57,7 +59,8 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit :content, :name, :level, :language,
-      :skill, :position, :company_id, :description, :min_salary, :max_salary
+      :skill, :position, :company_id, :description, :min_salary, :max_salary,
+        reward_benefits_attributes: %i(id content job_id _destroy)
   end
 
   def load_job
@@ -96,5 +99,9 @@ class JobsController < ApplicationController
     @employer = @job.user
     return if @employer
     flash.now[:danger] = t "jobs.method.cant_find_employer"
+  end
+
+  def load_reward_benefits
+    @reward_benefits = @job.reward_benefits
   end
 end
