@@ -1,5 +1,7 @@
 class CompaniesController < ApplicationController
   layout "employer"
+
+  before_action :authenticate_user!
   before_action :load_company, only: %i(show edit update)
   before_action :load_jobs, only: :show
 
