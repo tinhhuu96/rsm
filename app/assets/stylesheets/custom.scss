@@ -469,6 +469,16 @@
   .fa {
     font-size:15px;
   }
+  .btn-dislike {
+    font-size: 16px;
+    background: $accent-color;
+    color: $dark-color;
+  }
+  .btn-disbookmark {
+    font-size: 15px;
+    background: $accent-color;
+    color: $dark-color;
+  }
 }
 .book-marked {
   font-size: 13px;

@@ -47,6 +47,12 @@
                 <% end %>
               </li>
               <li>
+                <%= link_to bookmark_likes_path do %>
+                  <%= t("layouts._header.bookmark") %>
+                  <i class="fa fa-id-badge pull-right"></i>
+                <% end %>
+              </li>
+              <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
                   <i class="fa fa-ban fa-fw pull-right"></i>
                   <%= t("layouts._header.logout") %>

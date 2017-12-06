@@ -1,7 +1,5 @@
-<div class="col-md-6 form-like">
-  <%= simple_form_for @like, remote: true do |f| %>
-    <%= f.hidden_field :job_id %>
-    <%= f.hidden_field :bookmark %>
-    <%= f.button :submit, t("bookmark_like.like"), class: "fa fa-thumbs-up" %>
-  <% end %>
-</div>
+<%= simple_form_for @like, remote: true do |f| %>
+  <%= f.hidden_field :job_id %>
+  <%= f.hidden_field :bookmark, value: t "bookmark_like.like" %>
+  <%= f.button :submit, t("bookmark_like.btn_like"), class: "fa fa-thumbs-up" %>
+<% end %>

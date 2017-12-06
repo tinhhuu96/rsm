@@ -436,6 +436,7 @@ en:
     create: "Bookmark has been created"
     error: "Bookmark fail"
     cannot_save: "Bookmark can not be saved"
-    bookmark_like: "Liked"
+    btn_like: "Like"
     like: "like"
     liked: "Liked"
+    dislike: "Dislike"
