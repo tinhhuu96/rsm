@@ -1,11 +1,11 @@
-class ClubsController < ApplicationController
+class ExperiencesController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource param_method: :params_club
+  load_and_authorize_resource param_method: :params_experience
 
   def create
     respond_to do |format|
-      @club = current_user.clubs.new params_club
-      if @club.save
+      @experience = current_user.experiences.new params_experience
+      if @experience.save
         format.js{flash[:success] = t ".create_success"}
       else
         format.js
@@ -15,7 +15,7 @@ class ClubsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @club.update_attributes params_club
+      if @experience.update_attributes params_experience
         format.js{flash[:success] = t ".update_success"}
       else
         format.js
@@ -25,7 +25,7 @@ class ClubsController < ApplicationController
 
   def destroy
     respond_to do |format|
-      if @club.destroy
+      if @experience.destroy
         format.js{flash[:success] = t ".destroy_success"}
       else
         format.js{flash[:danger] = t ".destroy_fail"}
@@ -35,8 +35,8 @@ class ClubsController < ApplicationController
 
   private
 
-  def params_club
-    params.require(:club).permit :name, :content, :current, :start_time, :end_time,
-      :position, :user_id
+  def params_experience
+    params.require(:experience).permit :name, :company, :project_detail,
+      :start_time, :end_time, :user_id
   end
 end

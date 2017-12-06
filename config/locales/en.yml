@@ -323,6 +323,40 @@ en:
       job_cant_create: "Job can not be created"
     validates:
       check_max_salary: "Max salary must greater than min salary"
+  experiences:
+    another:
+      exp_notfound: "Oop! This experience isn't exists"
+    create:
+      create_success: "The experience had been add into your profile"
+      create_fail: "Sorry, something was wrong! The experience can't save"
+    update:
+      update_success: "The experience had been update success"
+      update_fail: "Sorry, something was wrong! The experience can't save update"
+    destroy:
+      destroy_success: "The experience had been delete from profile"
+      destroy_fail: "Sorry, something was wrong! The experience can't delete"
+    helpers:
+      present: "Present"
+    _index:
+      experience_title: "Experiences"
+      describle: "Writing the project that you had participated in. Describing
+        the projects as detailed as possible in your employability"
+      add: "Additonal"
+    _experience:
+      confirm: "Are you sure you want to delete this experience?"
+      project_name: "Project Name : "
+    _form:
+      name: "Project Name"
+      company: "Company"
+      from: "From"
+      to: "To"
+      require: "(*) Required Information"
+      cancel: "Cancel"
+      save: "Save"
+  validates:
+    start_time_future: "Start date can not be a future day"
+    end_time_future: "End date can not be a future day"
+    end_before_start: "End date must be after Start date"
   activerecord:
     errors:
       models:
@@ -341,6 +375,21 @@ en:
             content:
               too_long: "Content must be less than 5000 characters"
               too_short: "Content very short, must be over 20 characters"
+        experience:
+          attributes:
+            name:
+              blank: "Name project can not be blank"
+              too_long: "Name must be less than 150 characters"
+            company:
+              blank: "Name company can not be blank"
+              too_long: "Company must be less than 150 characters"
+            start_time:
+              blank: "Date start can not be blank with date end exists"
+            end_time:
+              blank: "Date end can not be blank with date start exists"
+            project_detail:
+              too_long: "Project detail must be less than 5000 characters"
+              too_short: "Project detail very short, must be over 20 characters"
   layouts:
     employers:
       employer:

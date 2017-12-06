@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @clubs = @user.clubs
     @achievements = @user.achievements
     @certificates = @user.certificates
+    @experiences = @user.experiences
   end
 
   def update
