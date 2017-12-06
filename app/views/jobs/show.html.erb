@@ -38,16 +38,17 @@
                     <div class="col-sm-12">
                       <span class="salary">
                         <strong class="text-primary text-lg">
-                          <%= @job.min_salary.round %> - <%= @job.max_salary.round %>
+                          <%= @job.min_salary.round.to_s + Settings.currency.dollar %>
+                           - <%= @job.max_salary.round.to_s + Settings.currency.dollar %>
                         </strong>
                       </span>
                     </div>
                   </div>
-                <div class="row">
-                  <div class="col-sm-12">
-                    <%= time_ago_in_words(@job.created_at) %> <%= t ".ago" %>
+                  <div class="row">
+                    <div class="col-sm-12 time_ago">
+                      <%= time_ago_in_words(@job.created_at) %> <%= t ".ago" %>
+                    </div>
                   </div>
-                </div>
                 </div>
               </div>
               <div class="col-lg-3 col-md-4 col-btn  ">
@@ -165,6 +166,14 @@
               </div>
             </div>
             <div class="col-md-8  col-sm-12 tab-main-content">
+              <% if @reward_benefits.any? %>
+                <div class="job-description mobile-box">
+                  <h2><%= t ".reward_benefits" %></h2>
+                  <div class="job_content">
+                    <p><%= render @reward_benefits %></p>
+                  </div>
+                </div>
+              <% end %>
               <div class="job-description mobile-box">
                 <h2><%= t ".job_description" %></h2>
                 <div class="job_content">

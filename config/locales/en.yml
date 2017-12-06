@@ -67,6 +67,7 @@ en:
   account: "Account"
   search: "search..."
   can_not_find_company: "can not find company"
+  gap: "..."
   date:
     formats:
       default: "%Y-%m-%d"
@@ -198,6 +199,11 @@ en:
       contact_name: "Contact Name"
       company_phone: "Phone Number"
       company_profile: "Company Profile"
+    show:
+      post_job: "Post Job"
+      jobs: "Jobs "
+      close: "Close"
+      no_jobs: "There is no jobs available at this time"
   achievements:
     create: "Create successful"
     majors: "Majors: "
@@ -270,11 +276,7 @@ en:
     model:
       date1: "must be after start date"
       date2: "can't be a date in future"
-    show:
-      post_job: "Post Job"
-      jobs: "Jobs"
-      no_jobs: "There is no jobs available at this time"
-      close: "Close"
+  jobs:
     form:
       job_name: "Job title"
       description: "Description"
@@ -283,9 +285,10 @@ en:
       skill: "Required Skills"
       content: "Job Detail"
       level: "Required Level"
-  jobs:
-    form:
       save_job: "Save Job"
+      benefit: "Benefit: "
+      remove: "Remove this"
+      add_benefit: "Add more benefit"
     update:
       job_updated: "Job has been updated."
       job_cant_update: "Can not be updated."
@@ -313,6 +316,7 @@ en:
       jobs: "Jobs"
       ago: "ago"
       test_salary: "$500 - $700"
+      reward_benefits: "Rewards and Benefits"
     method:
       cant_find_job: "Job can not be found"
       cant_find_bookmark: "Can not find user bookmared"
@@ -323,6 +327,8 @@ en:
       job_cant_create: "Job can not be created"
     validates:
       check_max_salary: "Max salary must greater than min salary"
+    job:
+      up_to: " - Up to "
   experiences:
     another:
       exp_notfound: "Oop! This experience isn't exists"

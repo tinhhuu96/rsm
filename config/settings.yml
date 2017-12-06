@@ -34,9 +34,12 @@ pagination:
   jobs_perpage: 5
 jobs:
   description:
+    limit_show: 150
     maximum_length: 255
 employers:
   page: 10
 bookmark:
   bookmarked: 0
   liked: 1
+currency:
+  dollar: "$"

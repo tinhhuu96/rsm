@@ -27,3 +27,4 @@
 //= require pagination
 //= require clear_value
 //= require alertify/lib/alertify.min.js
+//= require cocoon
