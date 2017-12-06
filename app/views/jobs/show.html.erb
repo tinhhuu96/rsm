@@ -61,22 +61,25 @@
                   </div>
                   <div class="col-xs-6 col-xs-push-6 col-md-12 col-md-push-0 job-like-btn">
                     <% if user_signed_in? %>
-                      <% if @liked.present? %>
-                        <span class="liked">
-                          <i class="fa fa-thumbs-up text-gray"></i>
-                          <%= t "bookmark_like.liked" %>
-                        </span>
-                      <% else %>
-                        <%= render "bookmark_likes/form_like_job" %>
-                      <% end %>
-                      <% if @bookmarked.present? %>
-                        <span class = "book-marked">
-                          <i class="fa fa-heart text-gray"></i>
-                          <%= t "bookmark_like.save" %>
-                        </span>
-                      <% else %>
-                        <%= render "bookmark_likes/form" %>
-                      <% end %>
+                      <div class="col-md-6 form-like">
+                        <% if @liked.present? %>
+                          <%= link_to t("bookmark_like.dislike"), @liked, method: :delete, class: "btn btn-dislike",
+                            remote: true %>
+                        <% else %>
+                          <%= render "bookmark_likes/form_like_job" %>
+                        <% end %>
+                      </div>
+                      <div class="col-md-6 form-bookmark">
+                        <% if @bookmarked.present? %>
+                          <%= link_to @bookmarked, method: :delete,
+                            class: "btn btn-disbookmark", remote: true do %>
+                            <i class="fa fa-user-times"></i>
+                            <%= t("bookmark_like.mark") %>
+                          <% end %>
+                        <% else %>
+                          <%= render "bookmark_likes/form" %>
+                        <% end %>
+                      </div>
                     <% end %>
                   </div>
                 </div>
