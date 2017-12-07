@@ -4,9 +4,8 @@ class ClubsController < ApplicationController
 
   def create
     respond_to do |format|
-      @club = current_user.clubs.new params_club
       if @club.save
-        format.js{flash[:success] = t ".create_success"}
+        format.js{@message = t ".create_success"}
       else
         format.js
       end
@@ -16,7 +15,7 @@ class ClubsController < ApplicationController
   def update
     respond_to do |format|
       if @club.update_attributes params_club
-        format.js{flash[:success] = t ".update_success"}
+        format.js{@message = t ".update_success"}
       else
         format.js
       end
@@ -26,9 +25,9 @@ class ClubsController < ApplicationController
   def destroy
     respond_to do |format|
       if @club.destroy
-        format.js{flash[:success] = t ".destroy_success"}
+        format.js{@message_success = t ".destroy_success"}
       else
-        format.js{flash[:danger] = t ".destroy_fail"}
+        format.js{@message_failed = t ".destroy_fail"}
       end
     end
   end

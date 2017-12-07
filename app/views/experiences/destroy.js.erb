@@ -1,6 +1,9 @@
-<% if flash[:success].present? %>
+<% if @message_success.present? %>
   $('#info_experience_<%= params[:id] %>').remove();
-  alertify.success('<%= flash[:success] %>');
+  <% if current_user.experiences.blank? %>
+    $('.placeholder-experience').show();
+  <% end %>
+  alertify.success('<%= @message_success %>');
 <% else %>
-  alertify.error('<%= flash[:danger] %>');
+  alertify.error('<%= @message_failed %>');
 <% end %>

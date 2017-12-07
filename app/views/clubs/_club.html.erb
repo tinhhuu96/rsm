@@ -1,5 +1,5 @@
 <div id="info_club_<%= club.id %>" class="sortable content-section">
-  <% if current_user.is_user? @user %>
+  <% if can? :modify, club %>
     <span class="form-btn-edit">
       <%= link_to club, method: :delete, data: {confirm: t("clubs._club.confirm")},
         class: "btn btn-sm btn-default", remote: true do %>

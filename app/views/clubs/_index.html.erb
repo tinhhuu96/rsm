@@ -4,11 +4,13 @@
       <legend class="box-md">
         <i class="fa fa-fw fa-bank"></i><%= t "clubs._index.club_title" %>
       </legend>
-      <% if @clubs.blank? %>
-        <div class="placeholder-section box-md">
+      <div class="placeholder-club box-md <%= define_style_placeholder @clubs %>">
+        <% if current_user.is_user? @user %>
           <p class="placeholder"><%= t "clubs._index.describle" %></p>
-        </div>
-      <% end %>
+        <% else %>
+          <p class="placeholder"><%= t "placeholder.blank" %></p>
+        <% end %>
+      </div>
       <div id="form-club">
         <%= render partial: "clubs/club", collection: @clubs, as: :club %>
       </div>

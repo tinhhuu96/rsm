@@ -1,29 +1,23 @@
 class CertificatesController < ApplicationController
-  before_action :load_certificate, only: %i(edit update destroy)
-
-  def new
-    @certificate = Certificate.new
-  end
+  before_action :authenticate_user!
+  load_and_authorize_resource param_method: :params_certificate
 
   def create
-    @certificate = Certificate.new params_certificate
     respond_to do |format|
       if @certificate.save
-        format.js{flash[:success] = t "certificate.success"}
+        format.js{@message = t "certificate.success"}
       else
-        format.js{flash[:danger] = t "certificate.fail"}
+        format.js
       end
     end
   end
 
-  def edit; end
-
   def update
     respond_to do |format|
       if @certificate.update_attributes params_certificate
-        format.js{flash[:success] = t "certificate.success"}
+        format.js{@message = t "certificate.success"}
       else
-        format.js{flash[:danger] = t "certificate.fail"}
+        format.js
       end
     end
   end
@@ -31,9 +25,9 @@ class CertificatesController < ApplicationController
   def destroy
     respond_to do |format|
       if @certificate.destroy
-        format.js{flash[:success] = t "certificate.success"}
+        format.js{@message_success = t "certificate.success"}
       else
-        format.js{flash[:danger] = t "certificate.fail"}
+        format.js{@message_failed = t "certificate.fail"}
       end
     end
   end
@@ -44,10 +38,4 @@ class CertificatesController < ApplicationController
     params.require(:certificate).permit :name, :majors, :organization, :classification, :received_time, :user_id
   end
 
-  def load_certificate
-    @certificate = Certificate.find_by id: params[:id]
-    return if @certificate
-    flash[:warning] = t "certificate.fail"
-    redirect_to user_path
-  end
 end

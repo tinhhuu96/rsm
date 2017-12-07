@@ -1,5 +1,5 @@
 <div id="info_achievement_<%= achievement.id %>" class="sortable content-section">
-  <% if current_user.is_user? @user %>
+  <% if can? :modify, achievement %>
     <span class="form-btn-edit">
       <%= link_to achievement_path(achievement), method: :delete, data: {confirm: t("achievements.confirm")},
         class: "btn btn-sm btn-default", remote: true do %>

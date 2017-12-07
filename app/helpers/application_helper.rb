@@ -11,4 +11,8 @@ module ApplicationHelper
   def header_title title = ""
     title
   end
+
+  def define_style_placeholder list
+    Settings.placeholder.display_none if list.present?
+  end
 end

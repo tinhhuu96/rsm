@@ -18,6 +18,7 @@ class Job < ApplicationRecord
   validates :skill, presence: true
   validates :min_salary, presence: true
   validates :max_salary, presence: true
+  validate :max_salary_less_than_min_salary
   scope :sort_lastest, ->{order(created_at: :desc)}
 
   private

@@ -4,11 +4,13 @@
       <legend class="box-md">
         <i class="fa fa-fw fa-bank"></i><%= t "certificate.certi" %>
       </legend>
-      <% if @certificates.blank? %>
-        <div class="placeholder-section box-md">
-          <p class="placeholder"><%= t "clubs._index.describle" %></p>
-        </div>
-      <% end %>
+      <div class="placeholder-certificate box-md <%= define_style_placeholder @certificates %>">
+        <% if current_user.is_user? @user %>
+          <p class="placeholder"><%= t "certificate.describle" %></p>
+        <% else %>
+          <p class="placeholder"><%= t "placeholder.blank" %></p>
+        <% end %>
+      </div>
       <div id="form-certificate">
         <%= render partial: "certificates/certificate", collection: @certificates, as: :certificate %>
       </div>
