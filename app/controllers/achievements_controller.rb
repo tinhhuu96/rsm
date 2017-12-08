@@ -3,12 +3,11 @@ class AchievementsController < ApplicationController
   load_and_authorize_resource param_method: :params_achievements
 
   def create
-    @achievement = current_user.achievements.new params_achievements
     respond_to do |format|
       if @achievement.save
-        format.js{flash[:success] = t "achievements.create"}
+        format.js{@message = t "achievements.create"}
       else
-        format.js{flash[:danger] = t "achievements.error"}
+        format.js
       end
     end
   end
@@ -16,9 +15,9 @@ class AchievementsController < ApplicationController
   def update
     respond_to do |format|
       if @achievement.update_attributes params_achievements
-        format.js{flash[:success] = t "achievements.update_success"}
+        format.js{@message = t "achievements.update_success"}
       else
-        format.js{flash[:danger] = t "achievements.can_not_update"}
+        format.js
       end
     end
   end
@@ -26,9 +25,9 @@ class AchievementsController < ApplicationController
   def destroy
     respond_to do |format|
       if @achievement.destroy
-        format.js{flash[:success] = t "achievements.destroy_success"}
+        format.js{@message_success = t "achievements.destroy_success"}
       else
-        format.js{flash[:danger] = t "achievements.destroy_fail"}
+        format.js{@message_failed = t "achievements.destroy_fail"}
       end
     end
   end

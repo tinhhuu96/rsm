@@ -1,6 +1,10 @@
 <% if @achievement.errors.any? %>
-  alertify.error('<%= j (render partial: "shared/error_messages", locals: {object: @achievement}) %>');
+  $('.achievement-name-invalid').text('<%= @achievement.errors.messages[:name][0] %>');
+  $('.achievement-majors-invalid').text('<%= @achievement.errors.messages[:majors][0] %>');
+  $('.achievement-organization-invalid').text('<%= @achievement.errors.messages[:organization][0] %>');
+  $('.achievement-received_time-invalid').text('<%= @achievement.errors.messages[:received_time][0] %>');
 <% else %>
-  $('#show-form').hide(1000);
+  $('#edit_achievement_<%= params[:id] %>').remove();
   $('#info_achievement_<%= params[:id] %>').replaceWith('<%= j render(@achievement) %>').show();
+  alertify.success('<%= @message %>');
 <% end %>

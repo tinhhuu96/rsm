@@ -68,6 +68,11 @@ en:
   search: "search..."
   can_not_find_company: "can not find company"
   gap: "..."
+  errors:
+    not_found_achievement: "Couldn't find Achievement"
+    not_found_certificate: "Couldn't find Certificate"
+    not_found_club: "Couldn't find Club"
+    not_found_experience: "Couldn't find Experiences"
   date:
     formats:
       default: "%Y-%m-%d"
@@ -223,6 +228,7 @@ en:
     destroy_success: "Destroy successful"
     destroy_fail: "destroy fail"
     confirm: "Are you sure?"
+    describle: "Describing the achievements that you have achieved as detailed as possible in your employability"
   shared:
     error: " Error"
     error_messages: "You have error"
@@ -243,6 +249,7 @@ en:
     plcmajor: "Software Engineering"
     plcorganization: "123 Liverpool, United Kingdom"
     plcclass: "Good"
+    describle: "Describing the certificates that you have been received as detailed as possible in your employability"
   clubs:
     another:
       club_notfound: "Oop! This club isn't exists"
@@ -396,6 +403,35 @@ en:
             project_detail:
               too_long: "Project detail must be less than 5000 characters"
               too_short: "Project detail very short, must be over 20 characters"
+        achievement:
+          attributes:
+            name:
+              blank: "Name can not be blank"
+              too_long: "Name must be less than 150 characters"
+            majors:
+              blank: "Majors can not be blank"
+              too_long: "Majors must be less than 150 characters"
+            received_time:
+              blank: "Received time start can not be blank"
+            organization:
+              blank: "Organization can not be blank"
+              too_long: "Organization must be less than 150 characters"
+        certificate:
+          attributes:
+            name:
+              blank: "Name can not be blank"
+              too_long: "Name must be less than 255 characters"
+            majors:
+              blank: "Majors can not be blank"
+              too_long: "Majors must be less than 255 characters"
+            received_time:
+              blank: "Received time start can not be blank"
+            organization:
+              blank: "Organization can not be blank"
+              too_long: "Organization must be less than 255 characters"
+            classification:
+              blank: "Classification can not be blank"
+              too_long: "Classification must be less than 255 characters"
   layouts:
     employers:
       employer:
@@ -440,3 +476,5 @@ en:
     like: "like"
     liked: "Liked"
     dislike: "Dislike"
+  placeholder:
+    blank: "No information"

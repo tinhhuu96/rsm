@@ -4,11 +4,13 @@
       <legend class="box-md">
         <i class="fa fa-fw fa-bank"></i><%= t "experiences._index.experience_title" %>
       </legend>
-      <% if @experiences.blank? %>
-        <div class="placeholder-section box-md">
+      <div class="placeholder-experience box-md <%= define_style_placeholder @experiences %>">
+        <% if current_user.is_user? @user %>
           <p class="placeholder"><%= t "experiences._index.describle" %></p>
-        </div>
-      <% end %>
+        <% else %>
+          <p class="placeholder"><%= t "placeholder.blank" %></p>
+        <% end %>
+      </div>
       <div id="form-experience">
         <%= render partial: "experiences/experience", collection: @experiences, as: :experience %>
       </div>

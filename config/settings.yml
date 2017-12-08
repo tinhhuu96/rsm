@@ -44,3 +44,5 @@ bookmark:
 currency:
   dollar: "$"
   page: 5
+placeholder:
+  display_none: "display-none"

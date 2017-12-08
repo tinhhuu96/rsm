@@ -4,11 +4,13 @@
       <legend class="box-md">
         <i class="fa fa-fw fa-bank"></i><%= t "clubs._index.achievements" %>
       </legend>
-      <% if @achievements.blank? %>
-        <div class="placeholder-section box-md">
-          <p class="placeholder"><%= t "clubs._index.describle" %></p>
-        </div>
-      <% end %>
+      <div class="placeholder-achievement box-md <%= define_style_placeholder @achievements %>">
+        <% if current_user.is_user? @user %>
+          <p class="placeholder"><%= t "achievements.describle" %></p>
+        <% else %>
+          <p class="placeholder"><%= t "placeholder.blank" %></p>
+        <% end %>
+      </div>
       <div id="form-achievements">
         <%= render partial: "achievements/achievement", collection: @achievements, as: :achievement %>
       </div>
