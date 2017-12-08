@@ -14,10 +14,12 @@ class JobsController < ApplicationController
   def show
     @applied = @job.applies.find_by user_id: current_user.id
     return unless @job.bookmark_likes.present?
-    @bookmarked = @job.bookmark_likes.find_by user_id: current_user.id,
-      bookmark: BookmarkLike.bookmarks.keys[Settings.bookmark.bookmarked]
-    @liked = @job.bookmark_likes.find_by user_id: current_user.id,
-      bookmark: BookmarkLike.bookmarks.keys[Settings.bookmark.liked]
+    if user_signed_in?
+      @bookmarked = @job.bookmark_likes.find_by user_id: current_user.id,
+        bookmark: BookmarkLike.bookmarks.keys[Settings.bookmark.bookmarked]
+      @liked = @job.bookmark_likes.find_by user_id: current_user.id,
+        bookmark: BookmarkLike.bookmarks.keys[Settings.bookmark.liked]
+    end
   end
 
   def new

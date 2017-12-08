@@ -499,10 +499,29 @@
 .add_benefit_links {
   margin-left: 20px;
 }
-
 .display-none {
   display: none;
 }
-.cc{
-  height: 1000px;
+.btn-share{
+  cursor: pointer;
+  opacity: .9;
+  padding: 10px 30px 8px;
+  border-radius: 3px;
+  text-align: right;
+  transition: opacity .3s,background .3s;
+  position: fixed;
+  z-index: 2;
+}
+.social-share-button .ssb-icon {
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 44px 46px !important;
+  display: inline-block !important;
+  height: 50px !important;
+  width: 60px !important;
+}
+.social-share-button {
+  position: absolute;
+  right: 1px;
+  top: 0px;
 }
