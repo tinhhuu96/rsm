@@ -30,6 +30,7 @@
 en:
   date_format: "%d-%m-%Y"
   not_found: "Couldn't find %{error_message}"
+  recruit: "Company %{company} recruiting"
   search: "Search.."
   app: "App Framgia"
   please: " Please"
@@ -303,6 +304,7 @@ en:
       job_destroyed: "Job has been destroyed."
       job_cant_destroy: "Can not be destroyed"
     show:
+      salary: "Slary up to "
       job_description: "Job Decription"
       job_detail: "Job Detail"
       job_requirement: "Job Requirement"
