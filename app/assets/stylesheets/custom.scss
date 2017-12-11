@@ -2,16 +2,12 @@
 @import 'bootstrap';
 @import 'color';
 
-.box {
-  margin-bottom: 15px;
-}
 .box-md {
   padding: 32px;
 }
 .placeholder {
   font-style: italic;
 }
-
 .box {
   background: $white;
   margin-bottom: 15px;
@@ -390,7 +386,14 @@
     color: $white;
   }
 }
-
+.label-applied{
+  width: 170px;
+  background-color: $white;
+  border-color: $orange-light;
+  color: $orange-light;
+  font-size: 20px;
+  left: 10px;
+}
 .salary {
   .text-primary {
     color: $orange-light;
@@ -499,4 +502,7 @@
 
 .display-none {
   display: none;
+}
+.cc{
+  height: 1000px;
 }

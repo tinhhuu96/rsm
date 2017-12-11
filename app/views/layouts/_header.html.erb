@@ -35,7 +35,13 @@
             <%= link_to current_user.name, edit_user_registration_path(current_user) %>
             <ul>
               <li>
-                <%= link_to user_path current_user do %>
+                <%= link_to applies_path do %>
+                  <%= t "users.new.job" %>
+                  <i class="fa fa-user fa-fw pull-right"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to user_path(current_user) do %>
                   <%= t "users.new.profile" %>
                   <i class="fa fa-user fa-fw pull-right"></i>
                 <% end %>

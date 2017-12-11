@@ -37,6 +37,8 @@ jobs:
     limit_show: 150
     maximum_length: 255
 employers:
+apply:
+  image: 50
   page: 10
 bookmark:
   bookmarked: 0

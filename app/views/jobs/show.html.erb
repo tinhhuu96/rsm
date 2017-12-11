@@ -51,13 +51,14 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-btn  ">
+              <div class="col-lg-3 col-md-4 col-btn">
                 <div class="row">
                   <div class="col-xs-6 col-xs-push-6 col-md-12 col-md-push-0 job-apply-btn">
-                    <button type="button" class="btn btn-primary btn-block btn-apply track-event"
-                      data-evt-type="apply" onclick="initApplyForm();">
-                      <%= t ".apply_now" %>
-                    </button>
+                  <% if @applied.present? %>
+                    <button type = "button" class = "btn btn-primary btn-block btn-apply disabled"><%= t "apply.applied" %></button>
+                  <% else %>
+                    <%= render "applies/form" %>
+                  <% end %>
                   </div>
                   <div class="col-xs-6 col-xs-push-6 col-md-12 col-md-push-0 job-like-btn">
                     <% if user_signed_in? %>

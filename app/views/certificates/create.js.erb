@@ -4,6 +4,7 @@
   $('.certificate-organization-invalid').text('<%= @certificate.errors.messages[:organization][0] %>');
   $('.certificate-classification-invalid').text('<%= @certificate.errors.messages[:classification][0] %>');
   $('.certificate-received_time-invalid').text('<%= @certificate.errors.messages[:received_time][0] %>');
+  alertify.error('<%= j (render partial: "shared/error_messages", locals: {object: @certificate}) %>');
 <% else %>
   $('.placeholder-certificate').hide();
   $('#new-certificate').remove();
