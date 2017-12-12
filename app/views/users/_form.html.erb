@@ -1,4 +1,5 @@
 <%= javascript_include_tag "format_datepicker", "data-turbolinks-track": "reload" %>
+<%= javascript_include_tag "load_image", "data-turbolinks-track": "reload" %>
 <%= form_for @user, html: {class: "new-section"}, remote: true, method: :put do |f| %>
   <div class="row">
     <div class="name col-xs-6">
@@ -57,16 +58,49 @@
        </div>
     </div>
   </div>
-  <div class="form-group row push-top-md edit-field">
-    <div class="col-sm-6" >(<strong class="text-red">*</strong>)<%= t "achievements.required" %></div>
-      <div class="col-sm-6 text-right">
-        <button id="cancel_user_edit" type="button"
-          class="btn-cancel btn btn-default" value="<%= @user.id %>">
-            <%= t "achievements.cancle" %>
-        </button>
-        <%= f.submit t("achievements.save"), class: "btn-save btn btn-primary" do  %>
-          <i class="fa fa-plus"></i>
+  <div class="row">
+    <div class="name col-xs-12">
+      <div class="edit-field m-b">
+        <strong class="text-red">*</strong><%= f.label :picture, class: "profile_label" %>
+        <span class="btn btn-default btn-file">
+          <%= t "downloads.browse" %>
+          <%= f.file_field :picture, id: "bannerSelect", class: "logo_img_load" %>
+        </span>
+        <% if @user.picture.present? %>
+          <%= image_tag @user.picture.url, class: "transparent absolute", id: "banner_img",
+            size: Settings.apply.image %>
+        <% else %>
+          <%= image_tag "avatar_2x.png", class: "transparent absolute", id: "banner_img",
+            size: Settings.apply.image %>
         <% end %>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="name col-xs-12">
+      <div class="edit-field m-b">
+        <strong class="text-red">*</strong><%= t "downloads.curriculum" %>
+        <span class="btn btn-default btn-file">
+          <%= t "downloads.browse" %><%= f.file_field :cv, class: "transparent absolute" %>
+        </span>
+        <span class="small gray-light pull-left m-l-lg m-r-lg"></span>
+      </div>
+    </div>
+    <% if @user.cv.present? %>
+      <%= t "downloads.curriculum_your" %>
+      <%= link_to @user.name, @user.cv.url, class: "banner_img_load", id: "logo_img" %>
+    <% end %>
+  </div>
+  <div class="row edit-field">
+    <div class="col-sm-6"></div>
+    <div class="col-sm-6 text-right">
+      <button id="cancel_user_edit" type="button"
+        class="btn-cancel btn btn-default" value="<%= @user.id %>">
+          <%= t "achievements.cancle" %>
+      </button>
+      <%= f.submit t("achievements.save"), class: "btn-save btn btn-primary" do  %>
+        <i class="fa fa-plus"></i>
+      <% end %>
+    </div>
   </div>
 <% end %>

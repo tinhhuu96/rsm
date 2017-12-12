@@ -76,6 +76,12 @@ en:
     not_found_certificate: "Couldn't find Certificate"
     not_found_club: "Couldn't find Club"
     not_found_experience: "Couldn't find Experiences"
+    messages:
+      carrierwave_processing_error: "Cannot resize image."
+      carrierwave_integrity_error: "Not an image."
+      carrierwave_download_error: "Couldn't download image."
+      extension_whitelist_error: "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}"
+      extension_blacklist_error: "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}"
   can_not_find_user: "Can not find user"
   can_not_find_company: "Can not find company"
   can_not_find_achievement: "Can not find achievement"
@@ -499,3 +505,8 @@ en:
     level: "Level : "
     applied: "Applied"
     fail: "Fail"
+  downloads:
+    browse: "Browse"
+    download: "Download Profiles"
+    curriculum: "Curriculum vitae"
+    curriculum_your: "Curriculum vitae of you: "

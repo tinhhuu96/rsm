@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   resources :bookmark_likes
   resources :experiences
   resources :reward_benefits
+  resources :downloads
 end
