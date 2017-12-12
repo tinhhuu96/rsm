@@ -1,0 +1,31 @@
+<div id="info_certificate_<%= certificate.id %>" class="sortable content-section">
+  <div>
+    <div class="view-field">
+      <h4 class="view-control"><%= certificate.name %></h4>
+    </div>
+  </div>
+  <div>
+    <div class="view-field">
+      <strong class="view-control"><%= t "certificate.major" %></strong>
+      <%= certificate.majors %>
+    </div>
+  </div>
+  <div>
+    <div class="view-field">
+      <strong class="view-control"><%= t "certificate.organization" %></strong>
+      <%= certificate.organization %>
+    </div>
+  </div>
+  <div>
+    <div class="view-field">
+      <strong class="view-control"><%= t "certificate.classification" %></strong>
+      <%= certificate.classification %>
+    </div>
+  </div>
+  <div>
+    <div class="view-field">
+      <strong class="view-control"><%= t "certificate.received" %></strong>
+      <%= certificate.received_time %>
+    </div>
+  </div>
+</div>

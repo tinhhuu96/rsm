@@ -1,0 +1,26 @@
+<div id="info_achievement_<%= achievement.id %>" class="sortable content-section">
+  <div>
+    <div class="view-field">
+      <h4 class="view-control"><%= achievement.name %></h4>
+    </div>
+  </div>
+  <div>
+    <div class="view-field">
+      <strong class="view-control"><%= t "achievements.majors" %><%= achievement.majors %></strong>
+    </div>
+  </div>
+  <div>
+    <div class="view-field">
+      <strong class="view-control"><%= t "achievements.organization" %><%= achievement.organization %></strong>
+    </div>
+  </div>
+  <div>
+    <div class="view-field">
+      <p>
+        <span class="view-control" data-control="from-date">
+          <%= I18n.l achievement.received_time, format: :long %>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>

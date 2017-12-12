@@ -514,3 +514,35 @@
   color: #e74c3c !important;
   font-size: 12px;
 }
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+.check-cv{
+  background-color: $white-color;
+}
+.span-left{
+  padding-left: 20px;
+}
+.avatar_users {
+  width: 135px;
+  height: 135px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  vertical-align: top;
+}

@@ -9,4 +9,8 @@ class PictureUploader < CarrierWave::Uploader::Base
   def default_url(*)
     ActionController::Base.helpers.asset_path("fallback/" + [version_name, "logo_default.png"].compact.join("_"))
   end
+
+  def extension_whitelist
+    %w(jpg jpeg gif png)
+  end
 end

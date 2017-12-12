@@ -1,0 +1,17 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= favicon_link_tag "framgia.png" %>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body>
+    <section class="check-cv">
+      <%= yield %>
+    </section>
+  </body>
+</html>
+

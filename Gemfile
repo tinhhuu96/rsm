@@ -33,6 +33,8 @@ gem "kaminari"
 gem "smart_listing"
 gem "cocoon"
 gem "social-share-button", github: "huacnlee/social-share-button"
+gem "pdfkit"
+gem "wkhtmltopdf-binary"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"

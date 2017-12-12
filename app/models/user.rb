@@ -24,6 +24,7 @@ class User < ApplicationRecord
   enum role: %i(user employer admin)
   enum sex: {female: 0, male: 1}
   mount_uploader :picture, PictureUploader
+  mount_uploader :cv, CvUploader
 
   def is_user? user
     user == self
