@@ -1,3 +1,3 @@
 class Devises::RegistrationsController < Devise::RegistrationsController
-  layout "information"
+  layout "devise_user"
 end
