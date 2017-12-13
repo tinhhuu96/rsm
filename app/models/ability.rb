@@ -43,21 +43,20 @@ class Ability
 
   private
 
+  def permission_employer user
+    return unless user.employer?
+    if user.members.present?
+      manage_company user
+    end
+  end
+
   def manage_company user
     can :update, Company do |company|
       user.is_employer? company
     end
-  end
-
-  def permission_employer user
-    return unless user.employer?
-    if user.members.present?
-      can :update, Company do |company|
-        company.id == user.members.last.company_id && user.members.last.end_time.nil?
-      end
-    end
-    can :manage, Company, id: user.id
-    can :manage, Member, id: user.id
+    can :manage, Member
+    can :manage, Apply
+    can :manage, Job
   end
 
   def permission_admin
@@ -72,6 +71,5 @@ class Ability
     can :manage, Certificate, user_id: user.id
     can :manage, Experience, user_id: user.id
     can :manage, BookmarkLike, user_id: user.id
-    can :manage, Apply, user_id: user.id
   end
 end

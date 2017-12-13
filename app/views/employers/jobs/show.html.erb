@@ -1,0 +1,22 @@
+<div class="block full">
+  <div class="block-title">
+    <h2><strong><%= t "employers.apply.applyfor" %><%= @job.name %></strong></h2>
+  </div>
+  <table class="table table-bordered table-striped table-vcenter">
+    <thead>
+      <tr>
+        <th class="text-center""><%= t "employers.apply.id" %></th>
+        <th class="text-center"><%= t "employers.apply.user" %></th>
+        <th class="text-center"><%= t "employers.apply.email" %></th>
+        <th class="text-center"><%= t "employers.apply.phone" %></th>
+        <th class="text-center"><%= t "employers.apply.date" %></th>
+        <th class="text-center"><%= t "employers.apply.status" %></th>
+        <th class="text-center"><%= t ".delete" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "apply", collection: @applies, as: :apply  %>
+    </tbody>
+  </table>
+  <%= paginate @applies %>
+</div>

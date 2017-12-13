@@ -40,6 +40,8 @@ employers:
 apply:
   image: 50
   page: 10
+job:
+  page: 10
 bookmark:
   bookmarked: 0
   liked: 1

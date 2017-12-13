@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-md-9">
+      <div class="well well-sm">
+        <div class="row">
+          <div class="col-sm-2 col-md-2">
+            <%= image_tag @user.picture.url, class: "img-responsive" %>
+          </div>
+          <div class="col-sm-6 col-md-8">
+            <div id= "show-user">
+              <h4><%= @user.name %></h4>
+              <p>
+                <i class="fa fa-transgender"></i>  <%= @user.sex %>
+                <br />
+                <i class="fa fa-address-card"></i> <%= @user.address %>
+                <br />
+                <i class="fa fa-envelope"></i>  <%= @user.email %>
+                <br />
+                <i class="fa fa-phone"></i> <%= @user.phone %>
+                <br />
+                <i class="fa fa-birthday-cake"></i> <%= @user.birthday %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-md-9">
+      <%= render "certificates/index" %>
+      <%= render "clubs/index" %>
+    </div>
+  </div>
+</div>

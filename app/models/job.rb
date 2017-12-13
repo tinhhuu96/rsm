@@ -3,7 +3,7 @@ class Job < ApplicationRecord
   belongs_to :company
   has_many :applies, dependent: :destroy
   has_many :feedbacks
-  has_many :bookmark_likes
+  has_many :bookmark_likes, dependent: :destroy
   has_many :reward_benefits, dependent: :destroy, inverse_of: :job
 
   accepts_nested_attributes_for :reward_benefits, allow_destroy: true,
