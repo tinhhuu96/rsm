@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
     companies = Company.where subdomain: request.subdomain
     if companies.present?
       @company = companies.first
-    elsif request.subdomain != Settings.framgia
-      redirect_to root_url subdomain: Settings.framgia
+    elsif request.subdomain != Settings.www
+      redirect_to root_url subdomain: Settings.www
     end
   end
 
