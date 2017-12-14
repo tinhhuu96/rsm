@@ -2,7 +2,7 @@ class CompaniesController < ApplicationController
   layout "company_info"
 
   before_action :authenticate_user!, only: %i(update edit destroy)
-  before_action :load_company, only: %i(show edit update)
+  before_action :load_company, only: %i(edit update)
   before_action :load_jobs, only: :show
   before_action :create_job, only: :show, if: :user_signed_in?
   before_action :create_reward_benefits,
