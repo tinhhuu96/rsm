@@ -1,3 +1,3 @@
 class Devises::SessionsController < Devise::SessionsController
-  layout "information"
+  layout "devise_user"
 end
