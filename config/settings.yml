@@ -55,3 +55,7 @@ page_size:
 send_cv:
   type: "application/pdf"
   inline: "inline"
+img_cv: 200
+text_area:
+  rows: "10"
+  cols: "30"

@@ -64,3 +64,14 @@ $(document).on('click', '#cancel_experience_edit', function(){
   $('#edit_experience_' + experience_id).remove();
   $('#info_experience_' + experience_id).show();
 });
+
+$(document).on('click', '#checkcv', function(){
+  if ($("#checkcv").is(':checked')){
+    $('.cv-your').hide();
+    $('.files_field').show();
+  }
+  else{
+    $('.cv-your').show();
+    $('.files_field').hide();
+  }
+});

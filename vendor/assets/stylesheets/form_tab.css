@@ -6,11 +6,6 @@ section #content1, #content2, #content3, #content4 {
   padding: 20px 0 0;
   border-top: 1px solid #ddd;
 }
-
-input {
-  display: none;
-}
-
 label {
   display: inline-block;
   margin: 0 0 -1px;

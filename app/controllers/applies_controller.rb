@@ -1,5 +1,4 @@
 class AppliesController < ApplicationController
-  load_and_authorize_resource param_method: :apply_params
 
   def index
     @applies = current_user.applies.includes(:job, :company).newest_apply.
@@ -9,6 +8,9 @@ class AppliesController < ApplicationController
   def show; end
 
   def create
+    @apply = Apply.new apply_params
+    @apply.cv = current_user.cv if params[:checkcv].blank? && user_signed_in?
+    @apply.information = params[:apply][:information].permit!.to_h
     respond_to do |format|
       if @apply.save
         format.js{flash.now[:success] = t "apply.applied"}
@@ -21,6 +23,6 @@ class AppliesController < ApplicationController
   private
 
   def apply_params
-    params.require(:apply).permit :status, :user_id, :job_id
+    params.require(:apply).permit :status, :user_id, :job_id, :information, :cv
   end
 end
