@@ -1,5 +1,5 @@
 <div class="create-job-modal" id ="apply_button">
-  <button type="button" class="btn btn-primary btn-lg post-job" id="post-job-btn"
+  <button type="button" class="btn btn-primary btn-lg post-job"
     data-toggle="modal" data-target="#JobModal">
     <%= t "apply.applynow" %>
   </button>
@@ -9,11 +9,16 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">
-            <%= t "apply.apply_for" %><%= @job.name %>(<%= t "apply.slary" %>
-            <%= @job.min_salary.round.to_s + Settings.currency.dollar %>-
-            <%= t "apply.working" %><%= @company.address %>)</h4>
+            <%= t "apply.apply_for" %>
+            <strong class="title-modal">
+              <%= @job.name %>
+              (<%= t "apply.slary" %>
+              <%= @job.min_salary.round.to_s + Settings.currency.dollar %> -
+              <%= t "apply.working" %><%= @company.address %>)
+            </strong>
+          </h4>
         </div>
-        <div class="modal-body" id="job-create-form">
+        <div class="modal-body modal-create-form" id="job-create-form">
           <div class="container bootstrap snippet">
             <div class="panel-body inf-content">
               <div class="row">
@@ -84,8 +89,8 @@
           <%= simple_form_for @apply , remote: :true, class: "form-horizontal form-bordered" do |f| %>
             <%= f.hidden_field :job_id %>
             <%= f.hidden_field :user_id %>
-            <div class="col-md-9">
-              <table class="table table-condensed table-responsive table-user-information">
+            <div class="row">
+              <table class="col-md-12 table table-condensed table-responsive table-user-information">
                 <%= f.simple_fields_for :information do |p| %>
                   <%= p.hidden_field :name, value: current_user.name %>
                   <%= p.hidden_field :email, value: current_user.email %>
@@ -96,9 +101,7 @@
                         <span class="glyphicon glyphicon-asterisk text-primary"></span>
                         <%= t "apply.introducing" %>
                       </strong>
-                    </td>
-                    <td class="text-primary">
-                      <%= p.text_area :introducing, class: "form-control", cols: Settings.text_area.cols,
+                      <%= p.text_area :introducing, class: "form-control ckeditor", cols: Settings.text_area.cols,
                         rows: Settings.text_area.rows %>
                     </td>
                   </tr>
@@ -106,43 +109,41 @@
               </table>
             </div>
             <div class="row">
-              <div class="col-md-6 col-md-offset-3">
-                <div class = "cv-your">
-                  <% if current_user.cv.present? %>
-                    <i class="fa fa-book fa-fw"></i><span><%= t "apply.curriculum" %></span>
-                    <%= link_to current_user.name, current_user.cv.url %>
-                  <% else %>
-                    <h3><%= t "apply.not_curriculum" %></h3>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3">
-                <i class="fa fa-book fa-fw"></i><span><%= t "apply.news_cv" %></span>
-                <label class="switch switch-primary">
-                  <input type="checkbox" id="checkcv" name="checkcv" value="1">
-                  <span></span>
-                </label>
-                <div class="files_field">
-                  <strong class="text-red">*</strong><%= t "downloads.new_cv" %>
-                  <span class="btn btn-default btn-file">
+              <table class="col-md-12 table table-condensed table-responsive">
+              <tr>
+                <td>
+                  <i class="fa fa-book fa-fw"></i><span><%= t "apply.news_cv" %></span>
+                  <label class="switch switch-primary">
+                    <input type="checkbox" id="checkcv" name="checkcv" value="1">
+                    <span></span>
+                  </label>
+                </td>
+              </tr>
+
+              <tr class="files_field">
+                <td>
+                  <strong class="col-md-3">
+                    <span class="glyphicon glyphicon-tag text-primary"></span>
+                    <%= t "apply.new_cv" %>
+                  </strong>
+                  <span class="btn btn-default btn-file col-md-2">
                     <%= t "downloads.browse" %><%= f.file_field :cv, id: "file_cv", class: "transparent absolute" %>
                   </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-8 col-md-offset-4">
-              <button type="submit" class="btn btn-sm btn-warning">
-                <i class="fa fa-repeat"></i><%= t "apply.apply" %>
-              </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-sm btn-default pull-right btn-close-apply" data-dismiss="modal" id ="reset-job">
+                    <%= t ".close" %>
+                  </button>
+                  <button type="submit" class="btn btn-sm btn-warning pull-right">
+                    <i class="fa fa-repeat"></i><%= t "apply.apply" %>
+                  </button>
+                </td>
+              </tr>
+              </table>
             </div>
           <% end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" id ="reset-job">
-            <%= t ".close" %>
-          </button>
         </div>
       </div>
     </div>
