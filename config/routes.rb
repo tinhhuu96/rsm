@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :companies
-  get "/", to: "homepages#index", constraints: { subdomain: Settings.framgia }
+  get "/", to: "homepages#index", constraints: { subdomain: Settings.www }
   get "/", to: "companies#show", constraints: { subdomain: /.+/ }
   root "homepages#index"
 
