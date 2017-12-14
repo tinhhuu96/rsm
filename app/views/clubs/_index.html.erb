@@ -13,8 +13,10 @@
         <%= render partial: "clubs/club", collection: @clubs, as: :club %>
       </div>
       <% if  current_user.is_user? @user %>
-        <%= link_to t("clubs._index.add"), new_club_path, id: "btn-add-club",
-          class: "btn btn-default btn-block no-border add-one-more-section", remote: true %>
+        <% if can? :update, @user %>
+          <%= link_to t("clubs._index.add"), new_club_path, id: "btn-add-club",
+            class: "btn btn-default btn-block no-border add-one-more-section", remote: true %>
+        <% end %>
       <% end %>
       <div id = "area_form_club">
       </div>
