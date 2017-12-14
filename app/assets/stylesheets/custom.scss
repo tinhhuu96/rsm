@@ -262,11 +262,6 @@
   z-index: 0;
 }
 
-.page-job-detail .page-foreground {
-  z-index: 1;
-  position: relative;
-}
-
 .page-job-detail.page-job-detail_no-background .page-job-detail__header {
   margin-top: 80px;
 }
@@ -545,4 +540,14 @@
   border: 2px solid #fff;
   border-radius: 20px;
   vertical-align: top;
+}
+.files_your .btn-file input[type='file'] {
+  display: none;
+}
+.files_field{
+  display: none;
+  padding-bottom: 10px;
+}
+.bot-form{
+  margin-top: 10px;
 }

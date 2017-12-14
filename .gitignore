@@ -26,10 +26,11 @@ config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 coverage/*
-db/schema.rb
+/db/schema.rb
 spec/coverage
 /coverage/*
 coverage/.last_run.json
 coverage/.resultset.json
 coverage/index.html
-Gemfile.lock
+/Gemfile.lock
+/public/*

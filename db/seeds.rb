@@ -8,11 +8,13 @@
 1.upto(5) do |x|
   name = Faker::Name.name
   email = "employer#{x}@gmail.com"
+  address = "Tam Ky, Da Nang"
   pass = "123123"
   pass_conf = "123123"
   role = "employer"
+  phone = "0965600364"
   User.create!(name: name, email: email, password: pass,
-               password_confirmation: pass_conf, role: role)
+               password_confirmation: pass_conf, role: role, address: address, phone: phone)
 end
 1.upto(5) do |x|
   name = Faker::Name.name

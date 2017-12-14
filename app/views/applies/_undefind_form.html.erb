@@ -1,0 +1,103 @@
+<div class="create-job-modal" id ="apply_button">
+  <button type="button" class="btn btn-primary btn-lg post-job" id="post-job-btn"
+    data-toggle="modal" data-target="#JobModal">
+    <%= t "apply.applynow" %>
+  </button>
+  <div class="modal fade" id="JobModal" role="dialog">
+    <div class="modal-dialog job-modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">
+            <%= t "apply.apply_for" %><%= @job.name %>(<%= t "apply.slary" %>
+            <%= @job.min_salary.round.to_s + Settings.currency.dollar %>-
+            <%= t"apply.working" %><%= @company.address %>)</h4>
+        </div>
+        <div class="modal-body" id="job-create-form">
+          <div class="container bootstrap snippet">
+            <div class="panel-body inf-content">
+              <div class="row">
+                <div class="col-md-3">
+                  <%= image_tag "avatar_2x.png", class: "img-responsive" %>
+                </div>
+                <div class="col-md-5">
+                  <%= simple_form_for @apply , remote: :true, class: "form-horizontal form-bordered" do |f| %>
+                    <%= f.hidden_field :job_id %>
+                    <strong><%= t "apply.information" %></strong><br>
+                    <div class="table-responsive">
+                      <table class="table table-condensed table-responsive table-user-information">
+                        <tbody>
+                          <%= f.simple_fields_for :information do |p| %>
+                          <tr>
+                            <td>
+                              <strong>
+                                <span class="glyphicon glyphicon-user text-primary"></span>
+                                <%= t "apply.name" %>
+                              </strong>
+                            </td>
+                            <td class="text-primary">
+                              <%= p.text_field :name, class: "form-control" %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <strong>
+                                <span class="glyphicon glyphicon-envelope text-primary"></span>
+                                <%= t "apply.email" %>
+                              </strong>
+                            </td>
+                            <td class="text-primary">
+                              <%= p.text_field :email, class: "form-control" %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <strong>
+                                <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                <%= t "apply.phone" %>
+                              </strong>
+                            </td>
+                            <td class="text-primary">
+                              <%= p.text_field :phone, class: "form-control" %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <strong>
+                                <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                <%= t "apply.introducing" %>
+                              </strong>
+                            </td>
+                            <td class="text-primary">
+                              <%= p.text_area :introducing, class: "form-control", cols: Settings.text_area.cols,
+                                rows: Settings.text_area.rows %>
+                            </td>
+                          </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                      <strong class="text-red">*</strong><%= t "apply.curriculum" %>
+                      <span class="btn btn-default btn-file">
+                        <%= t "downloads.browse" %><%= f.file_field :cv, id: "file_cv", class: "transparent absolute" %>
+                      </span>
+                    </div>
+                    <div class ="bot-form"></div>
+                    <div class="col-md-8 col-md-offset-4">
+                      <button type="submit" class="btn btn-sm btn-warning bottom-bot">
+                      <i class="fa fa-repeat"></i><%= t "apply.apply" %></button>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id ="reset-job">
+            <%= t ".close" %>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

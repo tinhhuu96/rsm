@@ -12,9 +12,8 @@ class JobsController < ApplicationController
   before_action :build_apply, only: :show
 
   def show
-    @applied = @job.applies.find_by user_id: current_user.id
-    return unless @job.bookmark_likes.present?
     if user_signed_in?
+      @applied = @job.applies.find_by user_id: current_user.id
       @bookmarked = @job.bookmark_likes.find_by user_id: current_user.id,
         bookmark: BookmarkLike.bookmarks.keys[Settings.bookmark.bookmarked]
       @liked = @job.bookmark_likes.find_by user_id: current_user.id,
@@ -93,7 +92,8 @@ class JobsController < ApplicationController
   end
 
   def build_apply
-    @apply = current_user.applies.new job_id: @job.id
+    @apply = Apply.new job_id: @job.id
+    @apply.user_id = current_user.id if user_signed_in?
   end
 
   def load_company
