@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= favicon_link_tag "framgia.png" %>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "homepage", media: "all", "data-turbolinks-track": "reload" %>
+    <%= stylesheet_link_tag "f-style", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "homepage", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body class="home page page-id-21 page-template-default wp-custom-logo">
+      <%= render "layouts/homepage/header" %>
+      <main id="main-content">
+        <%= yield %>
+      </main>
+      <%= render "layouts/homepage/footer" %>
+      <%= render "layouts/homepage/map" %>
+  </body>
+</html>

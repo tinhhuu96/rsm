@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :get_company
 
   rescue_from ActiveRecord::RecordNotFound do |exception|
     @error_message = exception.model
@@ -14,6 +15,15 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
+  def get_company
+    companies = Company.where subdomain: request.subdomain
+    if companies.present?
+      @company = companies.first
+    elsif request.subdomain != Settings.framgia
+      redirect_to root_url subdomain: Settings.framgia
+    end
+  end
 
   def current_ability
     controller_name_segments = params[:controller].split("/")

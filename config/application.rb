@@ -10,7 +10,7 @@ module Rsm
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-    config.autoload_paths << Rails.root.join('convert_date')
+    config.autoload_paths << Rails.root.join("convert_date")
     config.autoload_paths += %W(#{config.root}/lib)
     config.middleware.use PDFKit::Middleware
 

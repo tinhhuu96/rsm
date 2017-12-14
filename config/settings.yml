@@ -59,3 +59,5 @@ img_cv: 200
 text_area:
   rows: "10"
   cols: "30"
+framgia: "framgia"
+recruit: "recruit"

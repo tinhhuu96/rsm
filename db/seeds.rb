@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.delete_all
 1.upto(5) do |x|
   name = Faker::Name.name
   email = "employer#{x}@gmail.com"
@@ -40,7 +41,9 @@ end
       start_time: start_time, end_time: end_time, content: content, current: current)
   end
 end
+User.create!(name: "Nguyen Van A", email: "nguyenvana@gmail.com", password: "123456")
 
+Company.delete_all
 Company.create!(
   name: "Framgia",
   phone: Faker::Number.number(10),
@@ -49,17 +52,34 @@ Company.create!(
   contact_person: "Nguyen Van A",
   company_info: "Framgia Da Nang City",
   logo: "framgia_logo.png",
-  banner: "framgia_banner.jpg"
+  banner: "framgia_banner.jpg",
+  subdomain: "framgia"
+)
+Company.create!(
+  name: "FSoft Da Nang",
+  phone: Faker::Number.number(10),
+  address: "Da Nang",
+  majors: "IT-Software",
+  contact_person: "Pham Van B",
+  company_info: "Fsoft Da Nang - FPT Complex",
+  logo: "framgia_logo.png",
+  banner: "framgia_banner.jpg",
+  subdomain: "fsoft"
 )
 
-User.create!(name: "Nguyen Van A", email: "nguyenvana@gmail.com", password: "123456")
-
+Member.delete_all
 Member.create!(
   company_id: 1,
   user_id: 1,
   position: "employer"
 )
+Member.create!(
+  company_id: 2,
+  user_id: 2,
+  position: "employer"
+)
 
+Job.delete_all
 100.times do |i|
   Job.create!(
     company_id: 1,
@@ -73,13 +93,5 @@ Member.create!(
     skill: Faker::Job.key_skill,
     position: "Manager",
     description: Faker::Lorem.paragraphs
-)
-end
-
-20.times do |i|
-  Apply.create!(
-    status: 0,
-    user_id: 1,
-    job_id: 1 + i
 )
 end
