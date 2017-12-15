@@ -19,3 +19,5 @@
 //= require bootstrap
 //= require app
 //= require employer.min
+//= require ckeditor/init
+//= require config_ckeditor

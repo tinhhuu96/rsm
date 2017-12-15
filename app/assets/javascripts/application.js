@@ -29,3 +29,5 @@
 //= require social-share-button
 //= require alertify/lib/alertify.min.js
 //= require cocoon
+//= require ckeditor/init
+//= require config_ckeditor
