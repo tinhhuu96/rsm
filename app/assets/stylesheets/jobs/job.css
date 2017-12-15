@@ -20,6 +20,8 @@
  *= require company.min
  *= require plugins
  *= require main
+ *= require main2
+ *= require apply
  *= require themes
  *= require form_tab
  *= require_tree ../../../../node_modules/alertify/themes

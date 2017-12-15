@@ -16,10 +16,10 @@ Rails.application.routes.draw do
     delete "logout", to: "devises/sessions#destroy", as: :destroy_user_session
   end
 
-  resources :companies
-  get "/", to: "homepages#index", constraints: { subdomain: Settings.www }
-  get "/", to: "companies#show", constraints: { subdomain: /.+/ }
+  resources :companies, except: :show
+  get "/", to: "companies#show", constraints: {subdomain: /.+/}
   root "homepages#index"
+
 
   resources :users
   resources :achievements

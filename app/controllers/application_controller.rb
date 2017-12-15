@@ -17,11 +17,14 @@ class ApplicationController < ActionController::Base
   protected
 
   def load_company
-    companies = Company.where subdomain: request.subdomain
-    if companies.present?
-      @company = companies.first
-    elsif request.subdomain != Settings.www
-      redirect_to root_url subdomain: Settings.www
+    @company = Company.find_by subdomain: request.subdomain
+    return @company if @company.present?
+    redirect_root_path
+  end
+
+  def redirect_root_path
+    if request.subdomain != Settings.www
+      redirect_to root_url
     end
   end
 

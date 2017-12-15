@@ -31,3 +31,4 @@
 //= require cocoon
 //= require ckeditor/init
 //= require config_ckeditor
+//= require ckeditor/config
