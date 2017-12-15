@@ -1,102 +1,95 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-md-9">
-      <div class="well well-sm">
-        <div class="row">
-          <div class="col-sm-2 col-md-2">
-            <% if @user.picture.present? %>
-              <%= show_avatar @user %>
-            <% else %>
-              <%= image_tag "avatar_2x.png", class: "img-responsive" %>
-            <% end%>
-          </div>
-          <div class="col-sm-6 col-md-8">
+  <div class="main_content">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="well well-sm">
+          <div class="row">
             <div id= "show-user">
-              <h4><%= @user.name %></h4>
-              <small>
-                <i class="glyphicon glyphicon-map-marker"></i>
-                <cite title=""><%= @user.address %></cite>
-              </small>
-              <p>
-                <i class="glyphicon glyphicon-envelope"></i><%= @user.email %>
-                <br />
-                <i class="glyphicon glyphicon-gift"></i><%= @user.birthday %>
-              </p>
+              <div class="col-sm-2 col-md-2">
+                <% if @user.picture.present? %>
+                  <%= show_avatar @user %>
+                <% else %>
+                  <%= image_tag "avatar_2x.png", class: "img-responsive" %>
+                <% end %>
+              </div>
+              <div class="col-sm-10 col-md-10">
+                <h4><%= @user.name %></h4>
+                <p class = "profile_user">
+                  <i class="glyphicon glyphicon-map-marker"></i>
+                  <cite title=""><%= @user.address %></cite>
+                </p>
+                <p class = "profile_user">
+                  <i class="glyphicon glyphicon-envelope"></i>
+                  <cite title=""><%= @user.email %></cite>
+                </p>
+                <p class = "profile_user">
+                  <i class="glyphicon glyphicon-gift"></i>
+                  <cite title=""><%= @user.birthday %></cite>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-8 col-md-9">
-      <div class="section-detail section-employment">
-        <div class="box border-info">
-          <fieldset>
-            <legend class="box-md">
-              <i class="fa fa-fw fa-trophy"></i><%= t "clubs._index.achievements" %>
-            </legend>
-            <% if @achievements.blank? %>
-              <div class="placeholder-section box-md">
-                <p class="placeholder"><%= t "clubs._index.describle" %></p>
-              </div>
-            <% end %>
-            <div id="form-achievements">
-              <%= render partial: "downloads/achievement", collection: @achievements, as: :achievement %>
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <% if @achievements.present? %>
+          <div class="section-detail section-employment">
+            <div class="box border-info">
+              <fieldset>
+                <legend class="box-md">
+                  <i class="fa fa-fw fa-trophy"></i><%= t "clubs._index.achievements" %>
+                </legend>
+                <div id="form-achievements">
+                  <%= render partial: "downloads/achievement", collection: @achievements, as: :achievement %>
+                </div>
+              </fieldset>
             </div>
-          </fieldset>
-        </div>
-      </div>
-      <div class="section-detail section-employment">
-        <div class="box border-info">
-          <fieldset>
-            <legend class="box-md">
-              <i class="fa fa-fw fa-certificate"></i><%= t "certificate.certi" %>
-            </legend>
-            <% if @certificates.blank? %>
-              <div class="placeholder-section box-md">
-                <p class="placeholder"><%= t "clubs._index.describle" %></p>
-              </div>
-            <% end %>
-            <div id="form-certificate">
-              <%= render partial: "downloads/certificate", collection: @certificates, as: :certificate %>
+          </div>
+        <% end %>
+        <% if @certificates.present? %>
+          <div class="section-detail section-employment">
+            <div class="box border-info">
+              <fieldset>
+                <legend class="box-md">
+                  <i class="fa fa-fw fa-certificate"></i><%= t "certificate.certi" %>
+                </legend>
+                <div id="form-certificate">
+                  <%= render partial: "downloads/certificate", collection: @certificates, as: :certificate %>
+                </div>
+              </fieldset>
             </div>
-          </fieldset>
-        </div>
-      </div>
-      <div class="section-detail section-employment">
-        <div class="box border-info">
-          <fieldset>
-            <legend class="box-md">
-              <i class="fa fa-fw fa-bank"></i><%= t "clubs._index.club_title" %>
-            </legend>
-            <% if @clubs.blank? %>
-              <div class="placeholder-section box-md">
-                <p class="placeholder"><%= t "clubs._index.describle" %></p>
-              </div>
-            <% end %>
-            <div id="form-club">
-              <%= render partial: "downloads/club", collection: @clubs, as: :club %>
+          </div>
+        <% end %>
+        <% if @clubs.present? %>
+          <div class="section-detail section-employment">
+            <div class="box border-info">
+              <fieldset>
+                <legend class="box-md">
+                  <i class="fa fa-fw fa-bars"></i><%= t "clubs._index.club_title" %>
+                </legend>
+                <div id="form-club">
+                  <%= render partial: "downloads/club", collection: @clubs, as: :club %>
+                </div>
+              </fieldset>
             </div>
-          </fieldset>
-        </div>
-      </div>
-      <div class="section-detail section-employment">
-        <div class="box border-info">
-          <fieldset>
-            <legend class="box-md">
-              <i class="fa fa-fw fa-bars"></i><%= t "experiences._index.experience_title" %>
-            </legend>
-            <% if @experiences.blank? %>
-              <div class="placeholder-section box-md">
-                <p class="placeholder"><%= t "experiences._index.describle" %></p>
-              </div>
-            <% end %>
-            <div id="form-experience">
-              <%= render partial: "downloads/experience", collection: @experiences, as: :experience %>
+          </div>
+        <% end %>
+        <% if @experiences.present? %>
+          <div class="section-detail section-employment">
+            <div class="box border-info">
+              <fieldset>
+                <legend class="box-md">
+                  <i class="fa fa-fw fa-bank"></i><%= t "experiences._index.experience_title" %>
+                </legend>
+                <div id="form-experience">
+                  <%= render partial: "downloads/experience", collection: @experiences, as: :experience %>
+                </div>
+              </fieldset>
             </div>
-          </fieldset>
-        </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

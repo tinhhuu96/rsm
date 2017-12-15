@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  layout "company_info"
+  layout "companies/company"
 
   before_action :authenticate_user!, only: %i(update edit destroy)
   before_action :load_company, only: %i(edit update)
