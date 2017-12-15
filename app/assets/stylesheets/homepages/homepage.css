@@ -9,18 +9,8 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *= require bootstrap.min
  *= require font-awesome
  *= require bootstrap-datepicker
- *= require custom
- *= require custom_login
- *= require profile
- *= require plugins
- *= require form_tab
- *= require company.min
- *= require app.min
- *= require main
- *= require themes
- *= require_tree ../../../node_modules/alertify/themes
- *= require_self
+ *= require homepages/homepage-custom
+ *= require_tree ../../../../vendor/assets/stylesheets/homepages
  */

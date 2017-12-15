@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  layout "job"
+  layout "jobs/job"
 
   before_action :authenticate_user!, except: %i(index show)
   before_action :load_job, except: %i(index new create)

@@ -1,7 +1,7 @@
 class DownloadsController < ApplicationController
   before_action :authenticate_user!
   before_action :load_info_user, only: [:show]
-  layout "cv_pdf"
+  layout "cv_pdf/cv_pdf"
 
   def show
     respond_to do |format|
