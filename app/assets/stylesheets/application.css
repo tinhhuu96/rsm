@@ -21,6 +21,9 @@
  *= require app.min
  *= require main
  *= require themes
- *= require_tree ../../../node_modules/alertify/themes
+ *= require form_tab
+ *= require bootstrap-datepicker
  *= require_self
+ *= require social-share-button
+ *= require_tree ../../../node_modules/alertify/themes
  */

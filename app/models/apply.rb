@@ -2,12 +2,11 @@ class Apply < ApplicationRecord
   belongs_to :job
   belongs_to :user, optional: true
   has_one :company, through: :job
-  validates :cv, presence: true
-  validates :information, presence: true
   enum status: {waitting: 0, reviewing: 1, approve: 2, rejected: 3, hired: 4}
   serialize :information, Hash
-  enum status: {Not_receive: 0, Received: 1}
-  scope :newest_apply, ->{order :created_at}
+  validates :cv, presence: true, allow_nil: true
+  validates :information, presence: true, allow_nil: true
+  scope :newest_apply, ->{order(created_at: :desc)}
   mount_uploader :cv, CvUploader
 
   validates_hash_keys :information do

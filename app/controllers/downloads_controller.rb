@@ -1,11 +1,11 @@
 class DownloadsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_info_user, only: [:show]
+  before_action :load_info_user, only: :show
   layout "cv_pdf/cv_pdf"
 
   def show
     respond_to do |format|
-      format.pdf{send_user_pdf}
+      format.pdf {send_user_pdf}
       format.html
     end
   end

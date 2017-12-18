@@ -8,9 +8,9 @@ class User < ApplicationRecord
   has_many :friends, dependent: :destroy
   has_many :microposts, dependent: :destroy
   has_many :active_follow, class_name: Relationship.name, foreign_key: "follower_id", dependent: :destroy
-  has_many :passive_follow, class_name: Relationship.name, as: :followed
+  has_many :passive_follow, class_name: Relationship.name, as: :followed, dependent: :destroy
   has_many :active_report, class_name: Report.name, foreign_key: "reporter_id", dependent: :destroy
-  has_many :passive_report, class_name: Report.name, as: :reported
+  has_many :passive_report, class_name: Report.name, as: :reported, dependent: :destroy
   has_many :jobs, dependent: :destroy
   has_many :bookmark_likes, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
@@ -28,6 +28,7 @@ class User < ApplicationRecord
   scope :not_role, ->(role){where.not role: role}
   mount_uploader :picture, PictureUploader
   mount_uploader :cv, CvUploader
+
   def is_user? user
     user == self
   end

@@ -1,9 +1,10 @@
-<% if flash[:success].present? %>
-  $('#job-<%= params[:id] %>').hide().after('<%= j render(@job) %>');
-  $('#JobModal').modal('hide');
-  <% flash.clear %>
-  alertify.success('<%= flash[:success] %>');
+<% if @job.errors.any? %>
+  $(".form-group").removeClass("has-error");
+  $('#manage-job-form').html('<%= j render "form" %>');
 <% else %>
+  $('#job-<%= @job.id %>').hide().after('<%= j render(@job) %>');
+  $('.employer-job-<%= @job.id %>').replaceWith('<%= j render(partial: "employers/jobs/job", locals: {job: @job})  %>');
   $('#JobModal').modal('hide');
   <% flash.clear %>
+  alertify.success('<%= @message %>');
 <% end %>

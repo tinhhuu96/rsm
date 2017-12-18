@@ -12,6 +12,6 @@ class Employers::EmployersController < ApplicationController
     @company = current_user.companies.last
     return if @company
     flash[:danger] = t "can_not_find_company"
-    redirect_to root_path
+    redirect_to employers_companies_path
   end
 end

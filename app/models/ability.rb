@@ -4,15 +4,15 @@ class Ability
   def initialize user, controller_namespace = nil
     if user.present?
       case controller_namespace
-        when "Employers"
+      when "Employers"
+        permission_employer user
+      else
+        if user.employer?
           permission_employer user
-        else
-          if user.employer?
-            permission_employer user
-          elsif user.admin?
-            permission_admin
-          end
-          permission_user user
+        elsif user.admin?
+          permission_admin
+        end
+        permission_user user
       end
       user_permissions user
     else

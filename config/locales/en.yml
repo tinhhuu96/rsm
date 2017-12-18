@@ -93,6 +93,11 @@ en:
   salary: "Salary"
   my_job: "My Job"
   dola: "$"
+  sidebar_jobs: "Jobs"
+  sidebar_all_job: "All Job"
+  update_error: "Update errors"
+  edit_job: "Edit"
+  close: "Close"
   errors:
     not_found_achievement: "Couldn't find Achievement"
     not_found_certificate: "Couldn't find Certificate"
@@ -337,7 +342,7 @@ en:
       add_benefit: "Add more benefit"
     update:
       job_updated: "Job has been updated."
-      job_cant_update: "Can not be updated."
+      job_cant_update: "Can not be updated !."
     destroy:
       job_destroyed: "Job has been destroyed."
       job_cant_destroy: "Can not be destroyed"
@@ -516,6 +521,8 @@ en:
       not_find: "Can not find"
       destroysuc: "Destroy successful"
       destroyfal: "Destroy fail"
+      updatess: "Update successful"
+      updatefail: "Update Fail"
     job:
       id: "ID"
       jobname: "Name"
@@ -559,6 +566,7 @@ en:
     expired: "Expired"
     expires_on: "Expires on"
     applied_on: "Applied on"
+    applyfail: "Apply Fail"
   downloads:
     browse: "Browse"
     download: "Download Profiles"

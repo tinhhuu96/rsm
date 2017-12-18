@@ -4,7 +4,6 @@ class ExperiencesController < ApplicationController
   load_and_authorize_resource param_method: :params_experience
   before_action :load_experiences, only: :destroy
 
-
   def create
     respond_to do |format|
       if @experience.save
