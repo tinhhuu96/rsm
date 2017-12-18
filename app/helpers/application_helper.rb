@@ -12,14 +12,13 @@ module ApplicationHelper
     title
   end
 
-
   def define_style_placeholder list
     Settings.placeholder.display_none if list.present?
   end
 
   def show_errors object, name_attribute, name_error
-   messages =  object.errors.messages[name_attribute]
-   return "#{messages[0]}" if messages.present?
+    messages = object.errors.messages[name_attribute]
+    return "#{messages[0]}" if messages.present?
   end
 
   def get_value_user object, user

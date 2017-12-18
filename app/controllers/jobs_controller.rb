@@ -41,7 +41,7 @@ class JobsController < ApplicationController
   def update
     respond_to do |format|
       if @job.update_attributes job_params
-        format.js{flash.now[:success] = t ".job_updated"}
+        format.js{@message = t ".job_updated"}
       else
         format.js
       end

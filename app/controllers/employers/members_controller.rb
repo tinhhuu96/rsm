@@ -1,6 +1,6 @@
 class Employers::MembersController < Employers::EmployersController
   before_action :current_ability
-  load_and_authorize_resource
+  load_resource
 
   def index
     @members = @company.members.page(params[:page]).per Settings.apply.page
@@ -18,7 +18,7 @@ class Employers::MembersController < Employers::EmployersController
       if @member.update_attributes member_params
         format.js{@message = t "update_success"}
       else
-        format.js
+        format.js{@message = t "update_error"}
       end
     end
   end

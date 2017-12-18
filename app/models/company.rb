@@ -1,11 +1,11 @@
 class Company < ApplicationRecord
-  has_many :appointments
-  has_many :projects
-  has_many :jobs
-  has_many :members
-  has_many :employers, through: :members
-  has_many :passive_report, class_name: Report.name, as: :reported
-  has_many :passive_follow, class_name: Relationship.name, as: :followed
+  has_many :appointments, dependent: :destroy
+  has_many :projects, dependent: :destroy
+  has_many :jobs, dependent: :destroy
+  has_many :members, dependent: :destroy
+  has_many :employers, through: :members, dependent: :destroy
+  has_many :passive_report, class_name: Report.name, as: :reported, dependent: :destroy
+  has_many :passive_follow, class_name: Relationship.name, as: :followed, dependent: :destroy
 
   mount_uploader :banner, ImageUploader
   mount_uploader :logo, LogoUploader

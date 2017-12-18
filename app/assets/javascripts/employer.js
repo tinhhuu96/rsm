@@ -21,3 +21,4 @@
 //= require employer.min
 //= require ckeditor/init
 //= require config_ckeditor
+//= require alertify/lib/alertify.min.js

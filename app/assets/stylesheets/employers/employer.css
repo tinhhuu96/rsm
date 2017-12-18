@@ -16,4 +16,5 @@
  *= require font-awesome
  *= require bootstrap-datepicker
  *= require_self
+ *= require_tree ../../../../node_modules/alertify/themes
  */

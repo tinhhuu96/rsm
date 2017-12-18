@@ -30,6 +30,9 @@ Rails.application.routes.draw do
   namespace :employers do
     resources :companies
     resources :members
+    resources :applies
+    resources :jobs
+    resources :users
   end
   resources :bookmark_likes
   resources :experiences

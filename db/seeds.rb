@@ -85,15 +85,13 @@ Job.delete_all
 100.times do |i|
   Job.create!(
     company_id: 1,
+5.times do |i|
+  Certificate.create!(
     user_id: 1,
-    name: Faker::Job.title,
-    min_salary: 500,
-    max_salary: 1000,
-    content: Faker::Lorem.paragraphs,
-    level: "University",
-    language: "Vietnamese, Japan",
-    skill: Faker::Job.key_skill,
-    position: "Manager",
-    description: Faker::Lorem.paragraphs
+    name: Faker::Team.name,
+    majors: "IT-Software",
+    organization: "Framgia",
+    classification: "Good",
+    received_time: "1/12/2017"
 )
 end

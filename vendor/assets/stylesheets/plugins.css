@@ -1837,3 +1837,15 @@ img.mfp-img {
     right: 0;
     padding-top: 0;
 }
+
+.color_date_job_expires{
+  color: blue;
+}
+
+.color_date_job_expired{
+  color: red;
+}
+
+.btn-submit-edit-applies{
+  display: none;
+}

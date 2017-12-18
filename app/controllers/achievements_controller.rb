@@ -4,7 +4,6 @@ class AchievementsController < ApplicationController
   load_and_authorize_resource param_method: :params_achievement
   before_action :load_achievements, only: :destroy
 
-
   def create
     respond_to do |format|
       if @achievement.save

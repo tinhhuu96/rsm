@@ -1,0 +1,48 @@
+<tr class="employer-job-<%= job.id %>">
+  <td class="text-center"><strong><%= job.id %></strong></a></td>
+  <td class="visible-lg"><%= link_to job.name, employers_job_path(job) %></td>
+  <td class="text-center"><strong>$<%= job.min_salary %> - $<%= job.max_salary %></strong></td>
+  <td class="text-center"><strong><%= job.position %></strong></td>
+  <% if ConvertDate.check_date job.end_time %>
+    <td class="text-center color_date_job_expires">
+      <strong>
+        <%= t "apply.expires_on" %><br><%= l job.end_time.to_date, format: :long %>
+      </strong>
+    </td>
+  <% else %>
+    <td class="text-center color_date_job_expired">
+      <strong>
+        <%= t "apply.expired" %><br><%= l job.end_time.to_date, format: :long %>
+      </strong>
+    </td>
+  <% end %>
+  <td class="text-center">
+    <%= link_to edit_job_path(job), class: "btn btn-sm btn-default", remote: true do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    <% end %>
+  </td>
+  <td class="text-center">
+    <%= link_to employers_job_path(job), method: :delete,
+      class: "btn btn-xs btn-danger fa fa-times",
+      data: {confirm: (t "employers.apply.sure")} do %>
+  <% end %>
+  </td>
+</tr>
+<div class="modal fade" id="JobModal" role="dialog">
+  <div class="modal-dialog job-modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= t "post_job" %></h4>
+      </div>
+      <div class="modal-body" id="manage-job-form">
+        <%= render "form" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <%= t "close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
