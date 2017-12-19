@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def get_company
+  def load_company
     @company = Company.find_by subdomain: request.subdomain
     return @company if @company.present?
     redirect_root_path
@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
 
   def redirect_root_path
     if request.subdomain != Settings.www
+      flash[:danger] = t "can_not_find_company"
       redirect_to root_url
     end
   end
@@ -39,3 +40,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: %i(name phone address sex birthday))
   end
 end
+

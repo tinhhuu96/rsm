@@ -1,6 +1,6 @@
 class Employers::MembersController < Employers::EmployersController
   before_action :current_ability
-  before_action :get_company
+  before_action :load_company
   load_resource
 
   def index

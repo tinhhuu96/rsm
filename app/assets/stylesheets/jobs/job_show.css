@@ -12,17 +12,15 @@
  *= require bootstrap.min
  *= require font-awesome
  *= require bootstrap-datepicker
- *= require social-share-button
  *= require custom
  *= require custom_login
- *= require profile
- *= require app.min
- *= require company.min
- *= require main
- *= require main2
- *= require apply
- *= require themes
+ *= require plugins
  *= require form_tab
+ *= require company.min
+ *= require app.min
+ *= require main
+ *= require jobs/job-custom
+ *= require themes
  *= require_tree ../../../../node_modules/alertify/themes
  *= require_self
  */

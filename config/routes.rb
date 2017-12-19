@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   resources :companies, except: :show
   get "/", to: "companies#show", constraints: {subdomain: /.+/}
-  root "homepages#index"
+
+
+  root "static_pages#index"
 
 
   resources :users
