@@ -1,0 +1,9 @@
+<%= collection_check_boxes(:member, :user_ids, @users, :id, :name) do |user| %>
+  <tr>
+    <td class="text-center"><strong><%= user.check_box %></strong></td>
+    <td class="text-center"><strong><%= image_tag user.object.picture.url, class: "img_tag_member" %></strong></td>
+    <td class="text-center"><strong><%= user.label %></strong></td>
+    <td class="text-center"><strong><%= user.object.email %></strong></td>
+    <td class="text-center"><strong><%= user.object.sex %></strong></td>
+  </tr>
+<% end %>

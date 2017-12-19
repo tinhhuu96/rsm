@@ -85,6 +85,8 @@ Job.delete_all
 100.times do |i|
   Job.create!(
     company_id: 1,
+  )
+end
 5.times do |i|
   Certificate.create!(
     user_id: 1,

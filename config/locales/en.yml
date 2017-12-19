@@ -98,6 +98,12 @@ en:
   update_error: "Update errors"
   edit_job: "Edit"
   close: "Close"
+  add_member_complete: "Add member completed"
+  can_not_add_member: "Can not add member !"
+  edit_member: "Edit member"
+  please_select: "Please select"
+  member_date1: "must be after start date"
+  member_date2: "can't be a date in future"
   errors:
     not_found_achievement: "Couldn't find Achievement"
     not_found_certificate: "Couldn't find Certificate"
@@ -112,6 +118,8 @@ en:
   can_not_find_user: "Can not find user"
   can_not_find_company: "Can not find company"
   can_not_find_achievement: "Can not find achievement"
+  add_member: "Add New Member"
+  action: "Action"
   date:
     formats:
       default: "%Y-%m-%d"
@@ -328,6 +336,11 @@ en:
       date2: "can't be a date in future"
     describle: "Describing the clubs that you have been received as detailed as possible in your employability"
   jobs:
+    show:
+      post_job: "Post Job"
+      jobs: "Jobs"
+      no_jobs: "There is no jobs available at this time"
+      close: "Close"
     form:
       job_name: "Job title"
       description: "Description"

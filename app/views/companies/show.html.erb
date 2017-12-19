@@ -17,7 +17,7 @@
             <div class="cp_our_jobs_listing" id="ajax_cp_our_jobs_listing">
               <div class = show_companies>
                 <div class="row">
-                  <% if can? :update, @company %>
+                  <% if can? :manage, @company %>
                     <div class="create-job-modal">
                       <button type="button" class="btn btn-info btn-lg post-job" id="post-job-btn"
                         data-toggle="modal" data-target="#JobModal">
