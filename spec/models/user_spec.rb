@@ -17,8 +17,8 @@ RSpec.describe User, type: :model do
     it {is_expected.to have_many :jobs}
     it {is_expected.to have_many :bookmark_likes}
     it {is_expected.to have_many :feedbacks}
-    it {is_expected.to have_many :applys}
-    it {is_expected.to have_many :appointments}
+    it {is_expected.to have_many :applies}
+    it {is_expected.to have_many :inforappointments}
     it {is_expected.to have_many :notifications}
     it {is_expected.to have_many :members}
   end
@@ -29,7 +29,7 @@ RSpec.describe User, type: :model do
     it {is_expected.to have_db_column(:email).of_type(:string)}
     it {is_expected.to have_db_column(:phone).of_type(:string)}
     it {is_expected.to have_db_column(:address).of_type(:text)}
-    it {is_expected.to have_db_column(:sex).of_type(:boolean)}
+    it {is_expected.to have_db_column(:sex).of_type(:integer)}
     it {is_expected.to have_db_column(:role).of_type(:integer)}
   end
   context "when name is not valid" do

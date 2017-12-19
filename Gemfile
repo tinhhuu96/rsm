@@ -39,6 +39,8 @@ gem "validates_serialized"
 gem "ckeditor"
 gem "figaro"
 gem "activerecord-import"
+gem "ransack"
+
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"

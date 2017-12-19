@@ -69,31 +69,78 @@ Company.create!(
   subdomain: "fsoft"
 )
 
+Branch.delete_all
+Branch.create!(
+  is_primary: 1,
+  street: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road",
+  ward: "",
+  district: "Nam Tu Liem",
+  province: "Ha Noi",
+  country: "Vietnam",
+  company_id: 1
+)
+
+Branch.create!(
+  is_primary: 1,
+  street: "FPT Complex Building",
+  ward: "Hoa Hai",
+  district: "Ngu Hanh Son",
+  province: "Da Nang",
+  country: "Vietnam",
+  company_id: 2
+)
+
+company = Company.all
+2.times do |n|
+  company.each { |company| company.branches.create!(
+    is_primary: 0,
+    street: Faker::Address.street_address,
+    ward: Faker::Address.city_prefix,
+    district: Faker::Address.city_prefix,
+    province: Faker::Address.city,
+    country: "Vietnam",
+
+  )}
+end
+
+Category.delete_all
+2.times do |n|
+  company.each { |company| company.categories.create!(
+    name: Faker::Job.title,
+    description: Faker::Lorem.sentences(1)
+  )}
+end
+
 Member.delete_all
 Member.create!(
   company_id: 1,
   user_id: 1,
-  position: "employer"
+  position: "employer",
+  start_time: Date.current - 1.years
 )
 Member.create!(
   company_id: 2,
   user_id: 2,
-  position: "employer"
+  position: "employer",
+  start_time: Date.current - 1.years
 )
 
 Job.delete_all
-100.times do |i|
-  Job.create!(
+2.times do |n|
+  Branch.all.each { |branch|
+    Job.create!(
+    content: Faker::Lorem.paragraphs,
+    name: Faker::Job.title,
+    level: "University",
     company_id: 1,
-  )
-end
-5.times do |i|
-  Certificate.create!(
-    user_id: 1,
-    name: Faker::Team.name,
-    majors: "IT-Software",
-    organization: "Framgia",
-    classification: "Good",
-    received_time: "1/12/2017"
-)
+    user_id: 11,
+    min_salary: 500,
+    max_salary: 1000,
+    language: "Vietnamese, Japan",
+    skill: Faker::Job.key_skill,
+    position: "Manager",
+    description: Faker::Lorem.paragraphs,
+    branch_id: branch.id,
+    category_id: 1
+  )}
 end

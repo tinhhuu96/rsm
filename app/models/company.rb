@@ -8,6 +8,8 @@ class Company < ApplicationRecord
   has_many :passive_follow, class_name: Relationship.name, as: :followed, dependent: :destroy
   has_many :activities, dependent: :destroy
   has_many :partners, dependent: :destroy
+  has_many :branches
+  has_many :categories
 
   accepts_nested_attributes_for :activities, allow_destroy: true,
     reject_if: ->(attrs){attrs["title"].blank?}

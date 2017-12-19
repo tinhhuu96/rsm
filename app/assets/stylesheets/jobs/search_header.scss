@@ -1,0 +1,29 @@
+@import 'color';
+
+.cp_herro_banner {
+  position: relative;
+}
+
+.search_jobs {
+  top: -200px;
+  background: $grey-light;
+  .row {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 1084px) {
+  .search_jobs {
+    top: -150px;
+  }
+}
+
+@media (max-width: 991px) {
+  .search_jobs {
+    top: -290px;
+  }
+
+  .banner_show {
+    height: 400px;
+  }
+}
