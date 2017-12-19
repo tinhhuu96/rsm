@@ -8,7 +8,7 @@
   </td>
   <td class="text-center"><strong><%= apply.user.email %></strong></td>
   <td class="text-center"><strong><%= apply.user.phone %></strong></td>
-  <td class="text-center visible-lg"><%= apply.created_at %></td>
+  <td class="text-center visible-lg"><%= l apply.created_at, format: :long %></td>
   <td class="text-center hidden-xs">
   <% else %>
     <strong>
@@ -17,7 +17,7 @@
   </td>
   <td class="text-center"><strong><%= apply.information[:email] %></strong></td>
   <td class="text-center"><strong><%= apply.information[:phone] %></strong></td>
-  <td class="text-center visible-lg"><%= apply.created_at %></td>
+  <td class="text-center visible-lg"><%= l apply.created_at, format: :long %></td>
   <td class="text-center hidden-xs">
   <% end %>
   <%= form_for [:employers, apply], remote: true do |f| %>
