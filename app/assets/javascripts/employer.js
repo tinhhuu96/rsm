@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+// This is a manifest file that'lL be compiled into application.js, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
@@ -14,11 +14,14 @@
 //= require jquery
 //= require rails-ujs
 //= require modernizr-2.7.1-respond-1.4.2.min
+//= require search
 //= require jquery-1.11.1.min
 //= require plugins.min
+//= require employer/plugins
 //= require bootstrap
-//= require app
-//= require employer.min
+//= require employer/app
+//= require bootstrap-datepicker
+//= require employer/datepicker
 //= require ckeditor/init
 //= require config_ckeditor
 //= require alertify/lib/alertify.min.js

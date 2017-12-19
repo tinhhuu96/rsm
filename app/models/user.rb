@@ -27,6 +27,7 @@ class User < ApplicationRecord
   scope :search, ->(content){where("name LIKE ?", "%#{content}%")}
   scope :not_member, ->{where("id NOT IN (SELECT user_id FROM members where end_time IS NUll)")}
   scope :not_role, ->(role){where.not role: role}
+
   mount_uploader :picture, PictureUploader
   mount_uploader :cv, CvUploader
 

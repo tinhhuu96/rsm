@@ -1,0 +1,34 @@
+<%= javascript_include_tag "format_datepicker", "data-turbolinks-track": "reload" %>
+<div class="member-form">
+  <% if @member.present? %>
+    <%= simple_form_for @member, url: employers_company_member_path, remote: :true do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, value: @member.user.name, class: "form-control", disabled: :true %>
+
+      <%= f.input :position, label: t("position"), input_html: {class: "form-control"} %>
+      <span class="member-position-invalid error-message"></span>
+
+      <%= f.label :start_time %>
+      <% if @member.start_time.present? %>
+        <%= f.text_field :start_time, data: {provide: "datepicker"},
+          class: "datepick form-control", value: (l @member.start_time, format: :long) %>
+      <% else %>
+        <%= f.text_field :start_time, data: {provide: "datepicker"}, class: "datepick form-control" %>
+      <% end %>
+      <%= f.error :start_time %>
+
+      <%= f.label :end_time %>
+      <% if @member.end_time.present? %>
+        <%= f.text_field :end_time, data: {provide: "datepicker"},
+          class: "datepick form-control", value: (l @member.end_time, format: :long) %>
+      <% else %>
+        <%= f.text_field :end_time, data: {provide: "datepicker"}, class: "datepick form-control" %>
+      <% end %>
+      <%= f.error :end_time %>
+
+      <div class=" centerize create-job-btn ">
+       <%= f.button :submit, t("save"), class: "btn btn-primary" %>
+    </div>
+    <% end %>
+  <% end %>
+</div>

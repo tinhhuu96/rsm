@@ -10,11 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *= require bootstrap.min
+ *= require bootstrap-datepicker
  *= require plugins
  *= require main2
  *= require themes
  *= require font-awesome
- *= require bootstrap-datepicker
  *= require_self
  *= require_tree ../../../../node_modules/alertify/themes
  */

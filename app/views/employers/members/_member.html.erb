@@ -1,4 +1,4 @@
-<tr>
+<tr id="member-<%= member.id%>">
   <td class="text-center"><strong><%= member.id %></strong></a></td>
   <td class="visible-lg"><%= member.user.name %></td>
   <td class="text-center"><strong><%= member.position %></strong></td>
@@ -7,8 +7,11 @@
   <td class="hidden-xs text-center"><%= member.start_time %></td>
   <td class="hidden-xs text-center"><%= member.end_time %></td>
   <td class="text-center">
-    <a href="javascript:void(0)" data-toggle="tooltip" class="btn btn-xs btn-danger">
-      <i class="fa fa-times"></i></a>
-    <% link_to "javascript:void(0)", class: "btn btn-xs btn-danger"  %>
+    <div class="btn-group">
+      <%= link_to edit_employers_company_member_path(@company, member),
+        class: "btn btn-xs btn-default", remote: :true do %>
+        <i class="fa fa-pencil"></i>
+      <% end %>
+    </div>
   </td>
 </tr>
