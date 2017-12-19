@@ -5,7 +5,7 @@ class Employers::MembersController < Employers::EmployersController
 
   def index
     @members = @company.members.page(params[:page]).per Settings.apply.page
-    @users = User.not_role(User.roles[:admin]).not_member.search params[:search]
+    @users = User.not_role(User.roles[:admin]).not_member.search_name_or_mail(params[:search])
     respond_to do |format|
       format.html
       format.js

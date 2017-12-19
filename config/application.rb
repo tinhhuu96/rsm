@@ -13,6 +13,12 @@ module Rsm
     config.autoload_paths << Rails.root.join("convert_date")
     config.autoload_paths += %W(#{config.root}/lib)
     config.middleware.use PDFKit::Middleware
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :options]
+      end
+    end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

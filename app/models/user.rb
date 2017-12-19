@@ -24,7 +24,7 @@ class User < ApplicationRecord
 
   enum role: %i(user employer admin)
   enum sex: {female: 0, male: 1}
-  scope :search, ->(content){where("name LIKE ?", "%#{content}%")}
+  scope :search_name_or_mail, ->(content){where("name LIKE ? or email LIKE ?", "%#{content}%", "%#{content}%")}
   scope :not_member, ->{where("id NOT IN (SELECT user_id FROM members where end_time IS NUll)")}
   scope :not_role, ->(role){where.not role: role}
 
