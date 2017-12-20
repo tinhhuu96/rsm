@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     resources :users
     resources :companies do
       resources :members
+      resources :activities
     end
     resources :appointments
   end

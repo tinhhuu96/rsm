@@ -23,4 +23,7 @@
 //= require employer/datepicker
 //= require ckeditor/init
 //= require config_ckeditor
+//= require load_image
+//= require hide_message
+//= require cocoon
 //= require alertify/lib/alertify.min.js

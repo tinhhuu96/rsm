@@ -19,6 +19,11 @@
       <div id="main-container">
         <%= render "layouts/employers/header_employer" %>
         <div id="page-content">
+          <div class="row" id="message-flash">
+            <% flash.each do |message_type, message| %>
+              <div class="alert alert-<%= message_type %>"><%= message %></div>
+            <% end %>
+          </div>
           <%= yield %>
         </div>
         <%= render "layouts/employers/footer_employer" %>

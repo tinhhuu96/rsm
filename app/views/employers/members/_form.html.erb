@@ -15,7 +15,7 @@
       <% else %>
         <%= f.text_field :start_time, data: {provide: "datepicker"}, class: "datepick form-control" %>
       <% end %>
-      <%= f.error :start_time %>
+      <%= f.error :start_time, class: "error-message" %>
 
       <%= f.label :end_time %>
       <% if @member.end_time.present? %>
@@ -24,7 +24,7 @@
       <% else %>
         <%= f.text_field :end_time, data: {provide: "datepicker"}, class: "datepick form-control" %>
       <% end %>
-      <%= f.error :end_time %>
+      <%= f.error :end_time, class: "error-message" %>
 
       <div class=" centerize create-job-btn ">
        <%= f.button :submit, t("save"), class: "btn btn-primary" %>
