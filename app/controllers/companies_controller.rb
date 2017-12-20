@@ -1,13 +1,8 @@
 class CompaniesController < ApplicationController
   layout "companies/company"
 
-  before_action :get_company, only: :show
   before_action :authenticate_user!, only: %i(update edit destroy)
   before_action :load_company, only: %i(edit update show)
-  before_action :load_jobs, only: :show
-  before_action :create_job, only: :show, if: :user_signed_in?
-  before_action :create_reward_benefits,
-    only: :show, if: :user_signed_in?
 
   def show; end
 
@@ -27,25 +22,5 @@ class CompaniesController < ApplicationController
   def company_params
     params.require(:company).permit :name, :address, :majors, :contact_person,
       :phone, :company_info, :banner, :logo
-  end
-
-  def load_company
-    return if @company
-    @company = Company.find_by id: params[:id]
-    return if @company
-    flash[:danger] = t "can_not_find_company"
-    redirect_to root_url
-  end
-
-  def load_jobs
-    @jobs = @company.jobs.sort_lastest.page(params[:page]).per(Settings.pagination.jobs_perpage)
-  end
-
-  def create_job
-    @job = @company.jobs.new user_id: current_user.id
-  end
-
-  def create_reward_benefits
-    @job.reward_benefits.build
   end
 end

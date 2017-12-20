@@ -4,6 +4,5 @@ class Employers::EmployersController < ApplicationController
   before_action :authenticate_user!
   before_action :current_ability
   load_and_authorize_resource
-  before_action :get_company
-
+  before_action :load_company
 end

@@ -2,14 +2,21 @@ class JobsController < ApplicationController
   layout "jobs/job"
 
   before_action :authenticate_user!, except: %i(index show)
+  before_action :load_company
   before_action :load_job, except: %i(index new create)
   before_action :load_employer, only: :show
-  before_action :load_company, only: :show
   before_action :load_jobs, only: :show
   before_action :create_bookmark, only: :show
   before_action :create_like, only: :show
   before_action :load_reward_benefits, only: :show
   before_action :build_apply, only: :show
+  before_action :create_job, only: :index, if: :user_signed_in?
+  before_action :create_reward_benefits,
+    only: :index, if: :user_signed_in?
+
+  def index
+    @jobs = @company.jobs.sort_lastest.page(params[:page]).per(Settings.pagination.jobs_perpage)
+  end
 
   def show
     if user_signed_in?
@@ -96,13 +103,6 @@ class JobsController < ApplicationController
     @apply.user_id = current_user.id if user_signed_in?
   end
 
-  def load_company
-    @company = @job.company
-    return if @company
-    flash.now[:danger] = t "jobs.method.cant_find_company"
-    redirect_to root_url
-  end
-
   def load_employer
     @employer = @job.user
     return if @employer
@@ -111,5 +111,13 @@ class JobsController < ApplicationController
 
   def load_reward_benefits
     @reward_benefits = @job.reward_benefits
+  end
+
+  def create_job
+    @job = @company.jobs.new user_id: current_user.id
+  end
+
+  def create_reward_benefits
+    @job.reward_benefits.build
   end
 end
