@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     resources :companies do
       resources :members
     end
+    resources :appointments
   end
   resources :bookmark_likes
   resources :experiences

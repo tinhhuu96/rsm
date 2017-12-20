@@ -1,0 +1,6 @@
+<% if @appointment.errors.any? %>
+  $('.modal-dialog').html('<%= j (render partial: "employers/appointments/appointmentform" ,locals: {apply: @apply, members: @members}) %>');
+<% else %>
+  $('#myModal').modal('hide');
+  alertify.success('<%= @message %>');
+<% end %>

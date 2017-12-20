@@ -14,11 +14,10 @@
 //= require jquery
 //= require rails-ujs
 //= require modernizr-2.7.1-respond-1.4.2.min
-//= require search
+//= require employers/search
 //= require jquery-1.11.1.min
-//= require plugins.min
-//= require employer/plugins
 //= require bootstrap
+//= require employer/plugins
 //= require employer/app
 //= require bootstrap-datepicker
 //= require employer/datepicker

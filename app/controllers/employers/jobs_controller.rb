@@ -4,6 +4,8 @@ class Employers::JobsController < Employers::EmployersController
   before_action :create_job, only: :index
 
   def show
+    @members = @company.members
+    @appointment = @company.appointments.build
     @applies = @job.applies.page(params[:page]).per Settings.apply.page
   end
 

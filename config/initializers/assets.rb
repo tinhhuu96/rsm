@@ -10,3 +10,5 @@ Rails.application.config.assets.precompile += %w( ckeditor/filebrowser/images/ga
 Rails.application.config.assets.precompile += %w( mailer.css )
 Rails.application.config.assets.precompile += %w( jobs/job.css )
 Rails.application.config.assets.precompile += %w( jobs/job_show.css )
+Rails.application.config.assets.precompile += %w( employer/plugins.js )
+Rails.application.config.assets.precompile += %w( employer/app.js )

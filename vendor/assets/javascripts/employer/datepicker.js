@@ -9,3 +9,10 @@ $(document).ready(function(){
     startView: 'months'
   });
 });
+
+$(document).ready(function(){
+  $('.datepicker').datepicker( {
+    format: 'dd-mm-yyyy',
+    startView: 'months'
+  });
+});
