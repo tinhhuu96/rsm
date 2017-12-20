@@ -36,6 +36,12 @@ en:
       framgia: " FRAMGIA RECRUIT"
       company: "Hello company "
       user: "Hello "
+      infor: "We send this email to inform you that you have been approved on"
+      of_company: "of company "
+      pleas: " please go to"
+      to_get: "to get interview"
+      good: "Good luck"
+      one: "on"
       person: "A person who has applied to your "
       jobs: "jobs, we notify you for a timely review candidate candidates."
       candidate: "CANDIDATE INFORMATION"
@@ -56,6 +62,7 @@ en:
   please: " Please"
   login: " Login"
   or: " or"
+  approve: "approve"
   edit: "Edit User"
   register: " Register"
   male: "Male"
@@ -336,6 +343,14 @@ en:
       date2: "can't be a date in future"
     describle: "Describing the clubs that you have been received as detailed as possible in your employability"
   jobs:
+    apply:
+      click: "click"
+      interviewe: "create an interview schedule"
+      address: "Address"
+      start: "Starttime"
+      end: "Endtime"
+      interview: "Interviewer"
+
     show:
       post_job: "Post Job"
       jobs: "Jobs"
@@ -696,3 +711,6 @@ en:
     info_applied: "There is a person applying for the position you are hiring"
     see_more: "See more..."
     dear: "Dear"
+  appointment:
+    create_success: "Create orders_controller success"
+    errror: "Create interviewer error"

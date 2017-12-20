@@ -59,6 +59,7 @@ class Ability
     can :manage, Member
     can :manage, Apply
     can :manage, Job
+    can :manage, Appointment
   end
 
   def permission_admin

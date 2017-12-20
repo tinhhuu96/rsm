@@ -14,12 +14,11 @@ class User < ApplicationRecord
   has_many :jobs, dependent: :destroy
   has_many :bookmark_likes, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
-  has_many :appointments, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :members, dependent: :destroy
   has_many :companies, through: :members
   has_many :applies, dependent: :destroy
-
+  has_many :inforappointments
   validates :name, presence: true
 
   enum role: %i(user employer admin)
