@@ -1,0 +1,93 @@
+<%= simple_form_for @company, url: employers_company_path,
+  html: {class: "select-remove-width form-horizontal"} do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name, t(".company_name"), class: "col-sm-3 control-label required" %>
+    <div class="col-sm-9">
+      <%= f.text_field :name, class: "form-control", required: :true %>
+      <%= f.error :name, class: "error-message" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :address, class: "col-sm-3 control-label required" do %>
+      <%= t ".company_address" %><br>
+      <small><%= t "optional" %></small>
+    <% end %>
+    <div class="col-sm-9">
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :majors, t(".company_majors"), class: "col-sm-3 control-label required" %>
+    <div class="col-sm-9">
+      <%= f.text_field :majors, class: "form-control", required: :true %>
+      <%= f.error :majors, class: "error-message" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :contact_person, class: "col-sm-3 control-label required" do %>
+      <%= t ".contact_name" %><br>
+      <small><%= t "optional" %></small>
+    <% end %>
+    <div class="col-sm-9">
+      <%= f.text_field :contact_person, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :phone, t(".company_phone"), class: "col-sm-3 control-label required" %>
+    <div class="col-sm-9">
+      <%= f.text_field :phone, class: "form-control", required: :true %>
+      <%= f.error :phone, class: "error-message" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :company_info, class: "col-sm-3 control-label required" do %>
+      <%= t ".company_profile" %><br>
+      <small><%= t "optional" %></small>
+    <% end %>
+    <div class="col-sm-9">
+      <%= f.text_area :company_info, cols: Settings.company.text_area.cols,
+        rows: Settings.company.text_area.rows, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :activities, t("activity"), class: "col-sm-3 control-label required" %>
+    <div class="col-sm-9">
+      <%= f.simple_fields_for :activities, class: "form-control" do |activity| %>
+        <%= render "activity_fields", f: activity %>
+      <% end %>
+      <div class="links add_benefit_links">
+        <%= link_to_add_association t("add_activity"), f, :activities,
+          partial: "activity_fields" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :banner, class: "col-sm-3 control-label required" %>
+    <div class="col-sm-3">
+      <%= f.file_field :banner, id: "bannerSelect" %>
+    </div>
+    <%= image_tag @company.banner.url, class: "banner_img_load", id: "banner_img" %>
+  </div><br>
+
+  <div class="form-group">
+    <%= f.label :logo, class: "col-sm-3 control-label required" %>
+    <div class="col-sm-3">
+      <%= f.file_field :logo, id: "logoSelect" %>
+    </div>
+    <%= image_tag @company.logo.url, class: "logo_img_load", id: "logo_img" %>
+  </div>
+
+  <div class="form-group">
+    <div class="text-right col-sm-12">
+      <%= f.submit t("save"), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
