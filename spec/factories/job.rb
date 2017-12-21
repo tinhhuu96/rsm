@@ -11,5 +11,7 @@ FactoryGirl.define do
     description Faker::Lorem.paragraphs
     association :user, factory: :user
     association :company, factory: :company
-  end
+    association :branch, factory: :branch
+    association :category, factory: :category
+   end
 end

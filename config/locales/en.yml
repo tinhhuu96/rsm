@@ -422,6 +422,25 @@ en:
       check_max_salary: "Max salary must greater than min salary"
     job:
       up_to: " - Up to "
+    filter_form:
+      tilte: "Use this form to perform another job search"
+      min_salary: "Min salary"
+      max_salary: "Max salary"
+      position_type: "Position type"
+      branch: "Branch"
+      category: "Category"
+      filter: "Search"
+      keywords: "Keywords"
+      text_search: "Enter job title, language, skills..."
+      all_branches: "All branches"
+      all_categories: "All categories"
+      all_position_types: "All position types"
+      position_types:
+        full_time_freshers: "Full time freshers"
+        full_time_careers: "Full time careers"
+        part_time: "Part time"
+        intern: "Intern"
+        freelance: "Freelance"
   experiences:
     another:
       exp_notfound: "Oop! This experience isn't exists"

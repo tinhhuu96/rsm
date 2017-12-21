@@ -14,8 +14,14 @@ class JobsController < ApplicationController
   before_action :create_reward_benefits,
     only: :index, if: :user_signed_in?
 
+  before_action :load_branches_for_select_box, only: :index
+  before_action :load_category_for_select_box, only: :index
+
+
   def index
-    @jobs = @company.jobs.sort_lastest.page(params[:page]).per(Settings.pagination.jobs_perpage)
+    @q = @company.jobs.ransack params[:q]
+    @jobs = @q.result(distinct: true).sort_lastest
+      .page(params[:page]).per(Settings.pagination.jobs_perpage)
   end
 
   def show
@@ -119,5 +125,13 @@ class JobsController < ApplicationController
 
   def create_reward_benefits
     @job.reward_benefits.build
+  end
+
+  def load_branches_for_select_box
+    @provinces ||= @company.branches.order_province_desc.pluck :province, :id
+  end
+
+  def load_category_for_select_box
+    @categories ||= @company.categories.order_name_desc.pluck :name, :id
   end
 end
