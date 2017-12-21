@@ -1963,3 +1963,27 @@ img.mfp-img {
 .padding_left_none{
   padding-left: 0px;
 }
+
+.img_activity{
+  width: 130px;
+  height: 25%;
+}
+
+.activity_btn_new{
+  float: right;
+  margin-right: 26px;
+  margin-top: 16px;
+  font-size: 1.1em;
+}
+
+.banner_img_load{
+  width: 10%;
+}
+
+.logo_img_load{
+  width: 10%;
+}
+
+.padding_left_none{
+  padding-left: 0px;
+}

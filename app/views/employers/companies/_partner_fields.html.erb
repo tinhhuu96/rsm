@@ -1,0 +1,15 @@
+<div class="nested-fields nested-reward-benefits">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-6 padding_left_none">
+        <%= f.text_field :name, placeholder: t("name"), class: "form-control" %>
+        <%= f.text_field :email, placeholder: t("email"), class: "form-control" %>
+        <%= f.text_field :description, placeholder: t("description"), class: "form-control" %>
+        <%= f.file_field :picture, class: "form-control" %>
+      </div>
+      <div class="col-md-3">
+        <%= link_to_remove_association t("remove"), f %>
+      </div>
+    </div>
+  </div>
+</div>

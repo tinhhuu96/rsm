@@ -7,9 +7,12 @@ class Company < ApplicationRecord
   has_many :passive_report, class_name: Report.name, as: :reported, dependent: :destroy
   has_many :passive_follow, class_name: Relationship.name, as: :followed, dependent: :destroy
   has_many :activities, dependent: :destroy
+  has_many :partners, dependent: :destroy
 
   accepts_nested_attributes_for :activities, allow_destroy: true,
     reject_if: ->(attrs){attrs["title"].blank?}
+  accepts_nested_attributes_for :partners, allow_destroy: true,
+    reject_if: ->(attrs){attrs["name"].blank?}
 
   mount_uploader :banner, ImageUploader
   mount_uploader :logo, LogoUploader

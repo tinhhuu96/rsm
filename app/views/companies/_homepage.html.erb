@@ -83,9 +83,7 @@
         <h3 class="title-3"><%= t "homepage.vn.client.title" %></h3>
         <div class="section-content">
           <div class="owl-carousel owl-client owl-theme">
-            <% 30.times do %>
-              <%= render "client" %>
-            <% end %>
+            <%= render partial: "client", collection: @partners, as: :partner  %>
           </div>
         </div>
         <div class="owl-controls clickable">
@@ -202,42 +200,7 @@
         <p class="title-3 white"><%= t "homepage.vn.activity.title" %></p>
         <h2 class="title-2"><%= t "homepage.vn.activity.title-2" %></h2>
         <div class="row">
-          <div class="col-md-4">
-            <div class="item">
-              <div class="image-wrapper">
-                <img src="http://recruit.framgia.vn/wp-content/uploads/2016/05/activity1.jpg" alt="">
-              </div>
-              <h3><%= t "homepage.vn.activity.h3-1" %></h3>
-              <p class="date">
-                <i class="material-icons"><%= t "homepage.vn.activity.query_builder" %></i>
-                <%= t "homepage.both.date-example" %>
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="item">
-              <div class="image-wrapper">
-                <img src="http://recruit.framgia.vn/wp-content/uploads/2016/05/activity2.jpg" alt="">
-              </div>
-              <h3><%= t "homepage.vn.activity.h3-2" %></h3>
-              <p class="date">
-                <i class="material-icons"><%= t "homepage.vn.activity.query_builder" %></i>
-                <%= t "homepage.both.date-example" %>
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="item">
-              <div class="image-wrapper">
-                <img src="http://recruit.framgia.vn/wp-content/uploads/2016/05/activity3.jpg" alt="">
-              </div>
-              <h3><%= t "homepage.vn.activity.h3-3" %></h3>
-              <p class="date">
-                <i class="material-icons"><%= t "homepage.vn.activity.query_builder" %></i>
-                <%= t "homepage.both.date-example" %>
-              </p>
-            </div>
-          </div>
+          <%= render partial: "activity", collection: @activities, as: :activity %>
         </div>
       </div>
     </section>
