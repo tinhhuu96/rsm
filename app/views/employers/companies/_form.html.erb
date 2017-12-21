@@ -57,14 +57,33 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :activities, t("activity"), class: "col-sm-3 control-label required" %>
-    <div class="col-sm-9">
+    <div class="col-sm-3 control-label">
+      <button type="button" class="btn btn-info"
+        data-toggle="collapse" data-target="#activity"><%= t "activity" %></button>
+    </div>
+    <div class="col-sm-9 collapse" id="activity">
       <%= f.simple_fields_for :activities, class: "form-control" do |activity| %>
         <%= render "activity_fields", f: activity %>
       <% end %>
       <div class="links add_benefit_links">
         <%= link_to_add_association t("add_activity"), f, :activities,
           partial: "activity_fields" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-3 control-label">
+      <button type="button" class="btn btn-info"
+        data-toggle="collapse" data-target="#partner"><%= t "partner" %></button>
+    </div>
+    <div class="col-sm-9 collapse" id="partner">
+      <%= f.simple_fields_for :partners, class: "form-control" do |partner| %>
+        <%= render "partner_fields", f: partner %>
+      <% end %>
+      <div class="links add_benefit_links">
+        <%= link_to_add_association t("add_partner"), f, :partners,
+          partial: "partner_fields" %>
       </div>
     </div>
   </div>
