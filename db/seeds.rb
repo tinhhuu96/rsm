@@ -41,7 +41,7 @@ end
       start_time: start_time, end_time: end_time, content: content, current: current)
   end
 end
-User.create!(name: "Nguyen Van A", email: "nguyenvana@gmail.com", password: "123456")
+User.create!(name: "Nguyen Van A", email: "nguyenvana@gmail.com", password: "123456", phone: "01698624222")
 
 Company.delete_all
 Company.create!(

@@ -2,33 +2,40 @@
 <div class="member-form">
   <% if @member.present? %>
     <%= simple_form_for @member, url: employers_company_member_path, remote: :true do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name, value: @member.user.name, class: "form-control", disabled: :true %>
+      <div class="form-group">
+        <strong class="error-message">*</strong><%= f.label :name, t(".name") %>
+        <%= f.text_field :name, value: @member.user.name, class: "form-control", disabled: :true %>
+      </div>
 
-      <%= f.input :position, label: t("position"), input_html: {class: "form-control"} %>
-      <span class="member-position-invalid error-message"></span>
+      <div class="form-group">
+        <strong class="error-message">*</strong><%= f.label :position, t(".position") %>
+        <%= f.text_field :position, class: "form-control" %>
+      </div>
 
-      <%= f.label :start_time %>
-      <% if @member.start_time.present? %>
+      <div class="form-group">
+        <strong class="error-message">*</strong><%= f.label :start_time, t(".start_time") %>
+        <% if @member.start_time.present? %>
         <%= f.text_field :start_time, data: {provide: "datepicker"},
-          class: "datepick form-control", value: (l @member.start_time, format: :long) %>
-      <% else %>
+        class: "datepick form-control", value: (l @member.start_time, format: :long) %>
+        <% else %>
         <%= f.text_field :start_time, data: {provide: "datepicker"}, class: "datepick form-control" %>
-      <% end %>
-      <%= f.error :start_time, class: "error-message" %>
-
-      <%= f.label :end_time %>
-      <% if @member.end_time.present? %>
-        <%= f.text_field :end_time, data: {provide: "datepicker"},
-          class: "datepick form-control", value: (l @member.end_time, format: :long) %>
-      <% else %>
-        <%= f.text_field :end_time, data: {provide: "datepicker"}, class: "datepick form-control" %>
-      <% end %>
-      <%= f.error :end_time, class: "error-message" %>
-
-      <div class=" centerize create-job-btn ">
-       <%= f.button :submit, t("save"), class: "btn btn-primary" %>
-    </div>
-    <% end %>
-  <% end %>
+        <% end %>
+        <%= f.error :start_time, class: "error-message" %>
+      </div>
+      <div class="form-group">
+        <strong class="error-message">*</strong><%= f.label :end_time, t(".end_time") %>
+        <% if @member.end_time.present? %>
+          <%= f.text_field :end_time, data: {provide: "datepicker"},
+            class: "datepick form-control", value: (l @member.end_time, format: :long) %>
+        <% else %>
+          <%= f.text_field :end_time, data: {provide: "datepicker"}, class: "datepick form-control" %>
+        <% end %>
+        <%= f.error :end_time, class: "error-message" %>
+      </div>
+      <div class="form-group">
+         <%= f.button :submit, t("save"), class: "btn btn-primary" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal"><%= t "close" %></button>
+     </div>
+   <% end %>
+ <% end %>
 </div>

@@ -1,6 +1,7 @@
 class Employers::MembersController < Employers::EmployersController
   before_action :current_ability
   before_action :load_company
+  before_action :get_values_checked, only: :index
   load_resource
 
   def index
@@ -39,6 +40,14 @@ class Employers::MembersController < Employers::EmployersController
   end
 
   private
+
+  def get_values_checked
+    @member_checkeds = if params[:checked_values].present?
+      params[:checked_values].strip.split(',')
+    else
+      []
+    end
+  end
 
   def member_params
     params.require(:member).permit :position, :start_time, :end_time

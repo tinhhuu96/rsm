@@ -17,14 +17,14 @@ class ApplicationController < ActionController::Base
 
   def load_company
     @company = Company.find_by subdomain: request.subdomain
-    return @company if @company.present?
+    return if @company.present?
     redirect_root_path
   end
 
   def redirect_root_path
     if request.subdomain != Settings.www
       flash[:danger] = t "can_not_find_company"
-      redirect_to root_url
+      redirect_to root_url(subdomain: false)
     end
   end
 
