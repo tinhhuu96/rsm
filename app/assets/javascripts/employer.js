@@ -26,4 +26,6 @@
 //= require load_image
 //= require hide_message
 //= require cocoon
+//= require employer/check-toggle
 //= require alertify/lib/alertify.min.js
+

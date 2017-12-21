@@ -57,37 +57,56 @@
   </div>
 
   <div class="form-group">
-    <div class="col-sm-3 control-label">
-      <button type="button" class="btn btn-info"
-        data-toggle="collapse" data-target="#activity"><%= t "activity" %></button>
-    </div>
-    <div class="col-sm-9 collapse" id="activity">
-      <%= f.simple_fields_for :activities, class: "form-control" do |activity| %>
-        <%= render "activity_fields", f: activity %>
-      <% end %>
-      <div class="links add_benefit_links">
-        <%= link_to_add_association t("add_activity"), f, :activities,
-          partial: "activity_fields" %>
+    <%= f.label  t("activity_and_partner"), class: "col-sm-3 control-label required" %>
+    <div class="col-sm-9">
+      <div class="block">
+        <div class="block-title">
+          <ul class="nav nav-tabs" data-toggle="tabs">
+            <li class="active"><a href="#activity-tab" id="a-toggle"><%= t "activity" %></a></li>
+            <li><a href="#partner-tab" id="b-toggle"><%= t "partner" %></a></li>
+            <label class="switch switch-primary open-tab">
+              <% if @company.errors.full_messages.length > 0 %>
+                <input type="checkbox" id="check-toggle" name="check-toggle" checked>
+              <% else %>
+                <input type="checkbox" id="check-toggle" name="check-toggle">
+              <% end %>
+              <span></span>
+            </label>
+          </ul>
+        </div>
+        <div class="tab-content collapse" id="open">
+          <div class="tab-pane active" id="activity-tab">
+            <div class="block-section clearfix">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <%= f.simple_fields_for :activities, class: "form-control" do |activity| %>
+                    <%= render "activity_fields", f: activity %>
+                  <% end %>
+                  <div class="links add_benefit_links">
+                    <%= link_to_add_association t("add_activity"), f, :activities,
+                      class: "btn btn-primary add-object", partial: "activity_fields" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="partner-tab">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <%= f.simple_fields_for :partners, class: "form-control" do |partner| %>
+                  <%= render "partner_fields", f: partner %>
+                <% end %>
+                <div class="links add_benefit_links">
+                  <%= link_to_add_association t("add_partner"), f, :partners,
+                    class: "btn btn-primary add-object", partial: "partner_fields" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="form-group">
-    <div class="col-sm-3 control-label">
-      <button type="button" class="btn btn-info"
-        data-toggle="collapse" data-target="#partner"><%= t "partner" %></button>
-    </div>
-    <div class="col-sm-9 collapse" id="partner">
-      <%= f.simple_fields_for :partners, class: "form-control" do |partner| %>
-        <%= render "partner_fields", f: partner %>
-      <% end %>
-      <div class="links add_benefit_links">
-        <%= link_to_add_association t("add_partner"), f, :partners,
-          partial: "partner_fields" %>
-      </div>
-    </div>
-  </div>
-
   <div class="form-group">
     <%= f.label :banner, class: "col-sm-3 control-label required" %>
     <div class="col-sm-3">
