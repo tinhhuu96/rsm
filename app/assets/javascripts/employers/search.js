@@ -32,6 +32,13 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $('.load-page').on('click',function(){
+    $('#img-loading').show();
+    $('.config').css('opacity', 0.8);
+  });
+});
+
 function remove_checked(values, member_id){
   var result = values.split(',').filter(function(elem){
       return elem !== member_id;
@@ -47,3 +54,5 @@ function get_value_checked(){
   });
   return values;
 }
+
+

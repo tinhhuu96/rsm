@@ -20,6 +20,10 @@ class CompanyMailer < ApplicationMailer
     mail(to: @apply.information[:email], subject: t("company_mailer.welcome_email.subject"))
   end
 
-  def send_member appointment
+  def send_member inforappointment
+    @inforappointment = inforappointment
+    @appointment = @inforappointment.appointment
+    @user = @inforappointment.user
+    mail(to: @user.email, subject: t("company_mailer.welcome_email.subject"))
   end
 end

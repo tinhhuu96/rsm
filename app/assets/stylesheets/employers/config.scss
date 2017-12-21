@@ -4,3 +4,16 @@
 .hg{
   width: 300px;
 }
+.img-load {
+  display:none;
+  position: fixed;
+  left: 43%;
+  top: 35%;
+  width: 240px;
+  z-index: 2100;
+}
+.help-block {
+  color: red !important;
+  font-style: italic;
+  font-weight: 400;
+}

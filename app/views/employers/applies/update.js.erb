@@ -1,3 +1,7 @@
 <% if params[:apply][:status] == t("approve") %>
-  $('#myModal').modal('show');
+  <% if @appointment.present? %>
+    alertify.success('<%= t("accepted")%>');
+  <% else %>
+    $('#myModal_<%= @apply.id %>').modal('show');
+  <% end %>
 <% end %>

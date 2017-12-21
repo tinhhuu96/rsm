@@ -66,3 +66,6 @@ company:
   text_area:
     cols: 30
     rows: 7
+inforappointment:
+  agree: 1
+  not_agree: 2

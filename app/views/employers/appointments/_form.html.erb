@@ -1,11 +1,11 @@
 <%= javascript_include_tag "format_datepicker", "data-turbolinks-track": "reload" %>
 <%= javascript_include_tag "employer/plugins", "data-turbolinks-track": "reload" %>
 <%= javascript_include_tag "employer/app", "data-turbolinks-track": "reload" %>
-
+<%= javascript_include_tag "employers/search", "data-turbolinks-track": "reload" %>
 <%= simple_form_for [:employers, @appointment], remote: true do |f| %>
   <%= f.hidden_field :apply_id, value: apply.id  %>
   <%= f.hidden_field :company_id %>
-  <div class="modal-content">
+  <div class="modal-content opacity-apply">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" id ="reset-appointment">&times;</button>
       <h4 class="modal-title"><%= t "jobs.apply.interviewe" %></h4>
@@ -13,9 +13,12 @@
     <div class="modal-body">
       <div class="form-group">
         <div class="input-group">
-          <%= f.input :address, label: t("jobs.apply.address"),
-            input_html: {class: "form-control"} %>
+          <span class="input-group-addon"><%= t "jobs.apply.address" %></span>
+          <%= f.text_field :address, class: "form-control" %>
         </div>
+        <span class="error-message">
+          <%= f.full_error :address %>
+        </span>
       </div>
       <div class="row">
         <div class="col-md-6">
@@ -24,7 +27,9 @@
               <span class="input-group-addon"><%= t "jobs.apply.start" %></span>
               <%= f.text_field :start_time, data: {provide: "datepicker"}, class: "datepick form-control edit-control" %>
             </div>
-            <%= f.error :start_time %>
+            <span class="error-message">
+              <%= f.full_error :start_time %>
+            </span>
           </div>
         </div>
         <div class="col-md-6">
@@ -33,7 +38,9 @@
               <span class="input-group-addon"><%= t "jobs.apply.end" %></span>
               <%= f.text_field :end_time, data: {provide: "datepicker"}, class: "datepick form-control edit-control" %>
             </div>
-            <%= f.error :end_time %>
+            <span class="error-message">
+              <%= f.full_error :start_time %>
+            </span>
           </div>
         </div>
       </div>

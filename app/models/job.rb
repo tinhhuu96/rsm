@@ -21,9 +21,8 @@ class Job < ApplicationRecord
   validates :min_salary, presence: true
   validates :max_salary, presence: true
   validate :max_salary_less_than_min_salary
-
   enum position_types: {full_time_freshers: 0, full_time_careers: 1, part_time: 2, intern: 3, freelance: 4}
-
+  enum status: [:opend, :closed]
   scope :sort_lastest, ->{order(created_at: :desc)}
 
   private
