@@ -12,5 +12,8 @@
  *= require font-awesome
  *= require bootstrap-datepicker
  *= require companies/companies_custom
+ *= require main
+ *= require plugins
+ *= require custom_login
  *= require_tree ../../../../vendor/assets/stylesheets/companies
  */

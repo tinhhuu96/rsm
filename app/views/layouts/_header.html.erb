@@ -5,53 +5,7 @@
       <strong><%= t "index.fram" %></strong><%= t "index.recruit" %>
     <% end %>
     <nav>
-      <a href="javascript:void(0)" class="btn btn-default site-menu-toggle visible-xs visible-sm">
-        <i class="fa fa-bars"></i>
-      </a>
-      <ul class="site-nav">
-        <% if user_signed_in? %>
-          <li class = "dropdown">
-            <%= link_to "javascript:void(0)", class: "setting_user" do %>
-              <%= image_tag "user_avatar_default.png", class: "avatar_user" %>
-              <i class="fa fa-angle-down"></i>
-            <% end %>
-            <ul>
-              <li>
-                <%= link_to applies_path do %>
-                  <%= t "my_job" %>
-                  <i class="fa fa-user fa-fw pull-right"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to user_path(current_user) do %>
-                  <%= t "users.new.profile" %>
-                  <i class="fa fa-user fa-fw pull-right"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to edit_user_registration_path current_user do %>
-                  <%= t "users.new.change_pass" %>
-                  <i class="fa fa-pencil-square-o pull-right"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to bookmark_likes_path do %>
-                  <%= t "layouts._header.bookmark"  %>
-                  <i class="fa fa-id-badge pull-right"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-ban fa-fw pull-right"></i>
-                  <%= t("layouts._header.logout") %>
-                <% end %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to t("users.new.login"), new_user_session_path %></li>
-        <% end %>
-        </ul>
+
     </nav>
   </div>
 </header>

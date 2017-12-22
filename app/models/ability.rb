@@ -36,7 +36,6 @@ class Ability
   end
 
   def user_permissions user
-    can :read, :all
     can :manage, User, id: user.id
     can :manage, Achievement, user_id: user.id
     can :manage, Certificate, user_id: user.id

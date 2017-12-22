@@ -544,6 +544,13 @@ en:
         employer: "Employer"
         dashboard: "Dashboard"
         member: "  Member  "
+        members:
+          name: "Name"
+          position: "Position"
+          start_time: "Start time"
+          end_time: "End time"
+          name: "Name"
+          name: "Name"
         header_Style: "Header Style"
         updates: "Updates"
         Messages: "Messages"

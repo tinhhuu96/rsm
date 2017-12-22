@@ -2,17 +2,19 @@
   <div class="block-title">
     <h2><strong><%= t ".add_member" %></strong></h2>
   </div>
-   <%= form_tag employers_company_members_path, method: "get", id: "verified_search" do %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag t("search"), name: :nil,remote: true %>
-   <% end %>
+    <%= form_tag employers_company_members_path, method: "get",
+      id: "verified_search", class: "form-inline" do %>
+      <%= text_field_tag :search, "", class: "form-control" %>
+      <%= hidden_field_tag :checked_values, @member_checkeds %>
+      <%= submit_tag t("search"), name: :nil, remote: true, class: "btn btn-primary" %>
+    <% end %>
 
-   <%= form_tag employers_company_members_path do %>
-     <div class="results">
-        <%= render "users" %>
-     </div>
+  <%= form_tag employers_company_members_path do %>
+    <div class="results">
+      <%= render "users" %>
+    </div>
     <%= submit_tag t("add_member"), class: "btn btn-primary" %>
-   <% end %>
+  <% end %>
 </div>
 <div class="block full">
   <div class="block-title">
@@ -35,6 +37,7 @@
       <%= render partial: "member", collection: @members, as: :member  %>
     </tbody>
   </table>
+
   <div class="modal fade" id="memberEdit">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -44,9 +47,6 @@
         </div>
         <div class="modal-body" id="form_edit_member">
           <%= render "form" %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal"><%= t "close" %></button>
         </div>
       </div>
     </div>
