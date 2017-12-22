@@ -2,7 +2,7 @@ class Apply < ApplicationRecord
   belongs_to :job
   belongs_to :user, optional: true
   has_one :company, through: :job
-  has_many :appointment
+  has_one :appointment
   validates :cv, presence: true
   validates :information, presence: true
   enum status: {waitting: 0, reviewing: 1, approve: 2, rejected: 3, hired: 4}

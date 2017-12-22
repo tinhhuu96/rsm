@@ -61,7 +61,8 @@ Rails.application.configure do
   config.action_controller.asset_host = "http://localhost:3000"
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
+  # config.active_job.queue_adapter = :delayed_job
+  config.active_job.queue_adapter = :sidekiq
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker

@@ -25,6 +25,7 @@
             <% end %>
           </div>
           <%= yield %>
+          <%= image_tag "loading.gif", id: "img-loading", class: "img-load" %>
         </div>
         <%= render "layouts/employers/footer_employer" %>
       </div>

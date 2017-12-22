@@ -3,12 +3,12 @@ class Employers::AppointmentsController < ApplicationController
 
   def create
     respond_to do |format|
+      @apply = @appointment.apply
       if @appointment.save
-        CompanyMailer.approved_user(@appointment).deliver_now
+        SendEmailUserJob.perform_later(@appointment)
         create_inforappointments if params[:states].present?
         format.js{@message = t "appointment.create_success"}
       else
-        @apply = @appointment.apply
         @members = @appointment.company.members
         format.js
       end
@@ -26,9 +26,13 @@ class Employers::AppointmentsController < ApplicationController
     inforappointments = []
     @item.each do |user_id|
       next if user_id.blank?
-      inforappointments << Inforappointment.new(user_id: user_id, appointment_id: @appointment.id)
+      info_appointment = Inforappointment.new(user_id: user_id, appointment_id: @appointment.id)
+      info_appointment.create_activation_digest
+      inforappointments << info_appointment
     end
     Inforappointment.import inforappointments
-    CompanyMailer.send_member(@appointment).deliver_now
+    @appointment.inforappointments.each do |member|
+      SendEmailJob.perform_later(member)
+    end
   end
 end

@@ -1,6 +1,9 @@
 <% if @appointment.errors.any? %>
-  $('.modal-dialog').html('<%= j (render partial: "employers/appointments/appointmentform" ,locals: {apply: @apply, members: @members}) %>');
+  $("#appointment_apply_<%= @apply.id %>").html('<%= j (render partial: "employers/appointments/form" ,locals: {apply: @apply, members: @members}) %>');
 <% else %>
-  $('#myModal').modal('hide');
+  $('#new_appointment')[0].reset();
+  $('#myModal_<%= @apply.id %>').modal('hide');
   alertify.success('<%= @message %>');
 <% end %>
+$('#img-loading').hide();
+$('.config').css('opacity', 1);

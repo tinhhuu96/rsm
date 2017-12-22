@@ -28,14 +28,26 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
+  accountactivations:
+    success: "Agree success!"
+    fail: "Agree fail!"
   company_mailer:
     welcome_email:
+      agree: "Agree"
+    success: "Update success!!"
+    fail: "Error in access access, please try again, or you can not access permissions!"
+    info: "You not agree!"
+    info_not: "Update fail"
+  company_mailer:
+    welcome_email:
+      agree: "Agree"
+      not_agree: "Not agree"
       subject: "WELCOME TO FRAMGIA VIET NAM"
       see_more: "See more "
       dear: "Dear"
       framgia: " FRAMGIA RECRUIT"
       company: "Hello company "
-      user: "Hello "
+      user: "Hello you"
       infor: "We send this email to inform you that you have been approved on"
       of_company: "of company "
       pleas: " please go to"
@@ -48,6 +60,8 @@ en:
       addres: "255-257 Hung vuong, Hai Chau, Da Nang"
       email: "Email "
       phone: "Phone "
+      have_interview: "You have an interview with you"
+      arrange: "Please arrange time for the interview to take place well"
       send_cv: "Your profile has been sent to "
       received: "Your application has been received "
       user_content: "Recruiters will consider and contact you in the shortest time if your profile meets recruitment requirements."
@@ -62,6 +76,8 @@ en:
   please: " Please"
   login: " Login"
   or: " or"
+  not_agree: "2"
+  accepted: "You have accepted this tag"
   approve: "approve"
   edit: "Edit User"
   register: " Register"
