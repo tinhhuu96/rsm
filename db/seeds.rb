@@ -144,3 +144,16 @@ Job.delete_all
     category_id: 1
   )}
 end
+1.upto(10) do |x|
+  Partner.create!(
+    name: Faker::Name.name,
+    email: "partner#{x}@gmail.com",
+    description: "partner",
+    company_id: 1
+  )
+  Activity.create!(
+    title: "Hour of code: Children – Make friend with computers",
+    description: "Hour of code: Children – Make friend with computers",
+    company_id: 1
+  )
+end

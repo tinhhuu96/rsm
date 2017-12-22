@@ -1987,3 +1987,22 @@ img.mfp-img {
 .padding_left_none{
   padding-left: 0px;
 }
+
+.open-tab {
+  float: right;
+  margin-right: 3px !important;
+}
+
+.add-object {
+  margin-top: 10px !important;
+}
+
+.space-object{
+  height: 1px;
+  background-color: gray;
+  margin-top: 2px;
+}
+
+abbr {
+  color: red;
+}
