@@ -41,7 +41,7 @@
     <div class="col-sm-4">
       <div class="form-group">
         <%= f.label :end_time, class: "profile_label" do %>
-          <strong class="text-red">*</strong><%= t("clubs._form.from") %>
+          <strong class="text-red">*</strong><%= t("clubs._form.to") %>
         <% end %>
         <% if @club.end_time.present? %>
           <%= f.text_field :end_time, data: {provide: "datepicker"},

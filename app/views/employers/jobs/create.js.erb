@@ -1,0 +1,8 @@
+<% if @job.errors.any? %>
+  $(".form-group").removeClass("has-error");
+  $('#manage-job-form').html('<%= j render "form" %>');
+<% else %>
+  $('#manageJob').modal('hide');
+  $('#jobs').append('<%= j render @job %>');
+  alertify.success('<%= @message %>');
+<% end %>
