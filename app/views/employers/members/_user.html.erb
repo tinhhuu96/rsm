@@ -6,8 +6,8 @@
       </strong>
     </td>
     <td class="text-center"><strong><%= image_tag user.object.picture.url, class: "img_tag_member" %></strong></td>
-    <td class="text-center"><strong><%= user.label %></strong></td>
-    <td class="text-center"><strong><%= user.object.email %></strong></td>
-    <td class="text-center"><strong><%= user.object.sex %></strong></td>
+    <td><strong><%= link_to user.object.name, user_path(user.object) %></strong></td>
+    <td><strong><%= user.object.email %></strong></td>
+    <td><strong><%= user.object.sex %></strong></td>
   </tr>
 <% end %>

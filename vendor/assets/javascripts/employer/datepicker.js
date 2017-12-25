@@ -11,8 +11,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('.datepicker').datepicker( {
-    format: 'dd-mm-yyyy',
-    startView: 'months'
-  });
+function runningFormatter(value, row, index) {
+    return index;
+  };
 });

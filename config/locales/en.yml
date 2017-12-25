@@ -125,6 +125,12 @@ en:
   name: "Name"
   email: "email"
   activity_and_partner: "Activity And Partner"
+  add-job: "Add Job"
+  job_created: "Created Job"
+  deleted_job: "Deleted Job"
+  job_updated: "Updated Job"
+  pls_select: "--- Please Select ---"
+  first_show_company: "All Activity and Partner this company"
   errors:
     not_found_achievement: "Couldn't find Achievement"
     not_found_certificate: "Couldn't find Certificate"
@@ -141,6 +147,7 @@ en:
   can_not_find_achievement: "Can not find achievement"
   add_member: "Add New Member"
   action: "Action"
+  stt: "STT"
   date:
     formats:
       default: "%Y-%m-%d"

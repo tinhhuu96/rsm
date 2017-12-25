@@ -1,0 +1,6 @@
+<% if @message.present? %>
+  $('.employer-job-<%= @job.id %>').remove();
+  alertify.success('<%= @message %>');
+<% else %>
+  alertify.error('<%= @job.error.full_messages %>');
+<% end %>
