@@ -1,21 +1,68 @@
 <div class="container">
   <div class="main_content">
-    <div class="row">
-      <div class="col-md-offset-1 col-md-10">
-        <div class="well well-sm">
-          <div class="row">
-            <%= render @user %>
-          </div>
-        </div>
+    <div class="col-md-12">
+      <div class="profile clearfix">
+        <%= render @user %>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-offset-1 col-md-10">
-        <%= render "achievements/index" %>
-        <%= render "certificates/index" %>
-        <%= render "clubs/index" %>
-        <%= render "experiences/index" %>
+    <div class="col-md-12 user-bot">
+      <div class="section-detail section-employment">
+        <div class="box border-info">
+          <fieldset>
+            <legend class="box-md">
+              <div class="set-default">
+                <h4><i class="fa fa-info-circle"></i><%= t "clubs._index.information" %></h4>
+              </div>
+            </legend>
+            <div class="row">
+              <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked ">
+                  <li class="active">
+                    <a href="#tab_a" data-toggle="pill">
+                      <i class="fa fa-fw fa-trophy"></i>
+                      <%= t "clubs._index.profile" %>
+                    </a>
+                  </li>
+                  <li><a href="#tab_b" data-toggle="pill">
+                    <i class="fa fa-fw fa-bars"></i><%= t "clubs._index.clubs" %></a>
+                  </li>
+                  <li><a href="#tab_c" data-toggle="pill">
+                    <i class="fa fa-fw fa-certificate"></i>
+                    <%= t "clubs._index.certificates" %></a></li>
+                  <li><a href="#tab_d" data-toggle="pill">
+                    <i class="fa fa-fw fa-bank"></i>
+                    <%= t "clubs._index.experiences" %></a>
+                  </li>
+                  <li><a href="#tab_e" data-toggle="pill">
+                    <i class="fa fa-fw fa-user"></i>
+                    <%= t "clubs._index.achievements" %></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-9" id="contents">
+                <div class="tab-content col-md-12">
+                  <div class="tab-pane active" id="tab_a">
+                    <%= render "users/index" %>
+                  </div>
+                  <div class="tab-pane" id="tab_b">
+                    <%= render "clubs/index" %>
+                  </div>
+                  <div class="tab-pane" id="tab_c">
+                    <%= render "certificates/index" %>
+                  </div>
+                  <div class="tab-pane" id="tab_d">
+                    <%= render "experiences/index" %>
+                  </div>
+                  <div class="tab-pane" id="tab_e">
+                    <%= render "achievements/index" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<a href="#" id="to-top" class="to-top"><i class="fa fa-angle-up"></i></a>

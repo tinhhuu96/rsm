@@ -28,6 +28,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
+  dow_load: "Dowload profiles"
   accountactivations:
     success: "Agree success!"
     fail: "Agree fail!"
@@ -281,6 +282,18 @@ en:
       update_success: "User update success"
       update_fail: "User update fail"
       change_pass: "Change password"
+    user:
+      hello: "Hello"
+      im: "I'm "
+      dob: "D.O.B"
+      phone: "Phone"
+      date: "Date of birth"
+      address: "Address"
+      email: "Email"
+      achievements: "Achievements"
+      certificates: "Certificates"
+      clubs: "Clubs"
+      experiences: "Experiences"
   companies:
     edit:
       company_info: "My Company Profile"
@@ -362,6 +375,7 @@ en:
       club_title: "Clubs"
       describle: "Describing the clubs that you have participated in as detailed as possible in your employability"
       add: "Add"
+      information: " Information"
     _club:
       confirm: "Are you sure you want to delete this club?"
       pos: "Position: "

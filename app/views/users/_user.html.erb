@@ -1,42 +1,29 @@
- <div id= "show-user">
-  <div class="col-sm-2 col-md-2">
-    <% if @user.picture.present? %>
-      <%= show_avatar @user %>
-    <% else %>
-      <%= image_tag "avatar_2x.png", class: "img-responsive avatar" %>
-    <% end%>
+<div>
+  <div class="image">
+    <%= image_tag "user_default.jpeg", class: "img-cover" %>
   </div>
-  <div class="col-sm-10 col-md-10">
-    <h4><%= @user.name %></h4>
-    <p class = "profile_user">
-      <i class="glyphicon glyphicon-map-marker"></i>
-      <cite title=""><%= @user.address %></cite>
-    </p>
-    <p class = "profile_user">
-      <i class="glyphicon glyphicon-envelope"></i>
-      <cite title=""><%= @user.email %></cite>
-    </p>
-    <p class = "profile_user">
-      <i class="glyphicon glyphicon-gift"></i>
-      <cite title=""><%= @user.birthday %></cite>
-    </p>
-    <div class="btn-group">
-      <% if can? :update, @user %>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="view-field m-b download-resume">
-              <%= link_to t("downloads.download"), download_path(current_user.id, format: "pdf"),
-                class: "btn btn-sm btn-default btn-outline", target: :_blank %>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <%= link_to edit_user_path(current_user), remote:true do %>
-              <span class= "span-left"></span>
-              <i class="fa fa-pencil-square-o fa-2x"></i>
-            <% end %>
-          </div>
-        </div>
+  <div class="user clearfix">
+    <div class="avatar" id="avatar_user">
+      <% if @user.picture.present? %>
+        <%= show_avatar @user %>
+      <% else %>
+        <%= image_tag "avatar_2x.png", class: "img-thumbnail img-profile" %>
       <% end %>
     </div>
   </div>
+  <div class="name-user" id= "new-action">
+    <h4><%= @user.name %></h4>
+    <h5>(<%= @user.email %>)</h5>
+  </div>
+  <div class="cv-user">
+     <% if can? :update, @user %>
+      <div class="view-field m-b download-resume">
+        <%= link_to download_path(current_user.id, format: "pdf"),
+          class: "btn btn-sm btn-primary", target: :_blank, title: t("dow_load") do %>
+          <i class="fa fa-download fa-2x" aria-hidden="true"></i>
+        <% end %>
+      </div>
+     <% end %>
+  </div>
 </div>
+
