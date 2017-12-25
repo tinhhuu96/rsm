@@ -29,7 +29,7 @@
         <p><%= job.description.first(Settings.jobs.description.limit_show) + t("gap") %></p>
       </div>
       <div class="col-xs-12 col-sm-2 cp_job_view_detail">
-        <%= link_to t("view"), job %>
+        <%= link_to t("view"), job, class: "border-none-and-radius btn-info text-color-white" %>
       </div>
     </div>
   </div>
