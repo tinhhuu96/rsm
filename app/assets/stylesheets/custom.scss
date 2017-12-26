@@ -591,3 +591,11 @@
 .items-profile {
   border-right: 1px solid $gray-light-3 !important;
 }
+
+.item-profile {
+  color: $blue-light-1 !important;
+}
+
+.nav-pills > li.active > a {
+  color: $white-color !important;
+}
