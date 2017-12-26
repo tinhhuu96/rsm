@@ -1,29 +1,58 @@
-@import 'color';
+.search-widget {
+  position: absolute !important;
+    top: 135px;
+    left: 8.3%;
+    border-radius: 2px;
+    box-shadow: none;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    padding: 5px;
+    text-align: center;
 
-.cp_herro_banner {
-  position: relative;
-}
-
-.search_jobs {
-  top: -200px;
-  background: $grey-light;
-  .row {
-    margin: 10px;
-  }
-}
-
-@media (max-width: 1084px) {
-  .search_jobs {
-    top: -150px;
-  }
 }
 
 @media (max-width: 991px) {
-  .search_jobs {
-    top: -290px;
-  }
-
   .banner_show {
-    height: 400px;
+    height: 450px !important;
   }
+}
+
+// Jobs
+.cp_our_jobs_listing , .jobs-listing{
+  padding: 0 !important;
+}
+.cp_our_jobs_section {
+  border: none;
+}
+.border-none-and-radius {
+  border-radius: 4px !important;
+    border: none !important;
+}
+
+// commons
+.common-margin-top-15 {
+  margin-top: 15px;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.margin-0-auto {
+  margin: 0 auto;
+}
+.text-aline-center {
+  text-align: center;
+}
+.btn-max-width {
+  max-width: 150px;
+}
+.text-color-white {
+  color: white !important;
 }
