@@ -1,29 +1,10 @@
-<div id="info_club_<%= club.id %>" class="sortable content-section">
-  <div class="profile_top_view">
-    <div class="view-field">
-      <h4 class="view-control"><%= club.name %></h4>
-    </div>
-    <div class="view-field date_profile">
-      <span class="view-control" data-control="from-date">
-        <%= t "profile.club.from" %>
-        <%= l club.start_time, format: :long %>
-        <%= t "profile.club.to" %>
-        <%= show_endtime club %>
-      </span>
-    </div>
-  </div>
-  <table class="table table_profile">
-    <tr>
-      <td class="view-field">
-        <strong class="view-control"><%= t "profile.club.position" %></strong>
-      </td>
-      <td class="profile_content"><%= club.position %></td>
-    </tr>
-    <tr>
-      <td class="view-field">
-        <strong class="view-control"><%= t "profile.club.organization" %></strong>
-      </td>
-      <td class="profile_content"><%= club.content %></td>
-    </tr>
-  </table>
+<div class="sectionContent">
+  <article>
+    <h3><%= club.name %></h3>
+    <p class="subDetails"><%= l club.start_time, format: :long %>
+      <%= t "experiences._index.to" %>:<%= show_endtime club %>
+    </p>
+    <p class="subDetails"><%= club.position %></p>
+    <p><%= club.content %>.</p>
+  </article>
 </div>

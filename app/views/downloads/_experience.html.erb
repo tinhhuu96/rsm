@@ -1,29 +1,10 @@
-<div id="info_experience_<%= experience.id %>" class="sortable content-section">
-  <div class="profile_top_view">
-    <div class="view-field">
-      <h4 class="view-control"><%= experience.name %></h4>
-    </div>
-    <div class="view-field date_profile">
-      <span class="view-control" data-control="from-date">
-        <%= t "profile.experience.from" %>
-        <%= l experience.start_time, format: :long %>
-        <%= t "profile.experience.to" %>
-        <%= l experience.end_time, format: :long %>
-      </span>
-    </div>
-  </div>
-  <table class="table table_profile">
-    <tr>
-      <td class="view-field">
-        <strong class="view-control"><%= t "profile.experience.company" %></strong>
-      </td>
-      <td class="profile_content"><%= experience.company %></td>
-    </tr>
-    <tr>
-      <td class="view-field">
-        <strong class="view-control"><%= t "profile.experience.project_detail" %></strong>
-      </td>
-      <td class="profile_content"><%= experience.project_detail %></td>
-    </tr>
-  </table>
+<div class="sectionContent">
+  <article>
+    <h3><%= experience.name %></h3>
+    <p class="subDetails"><%= l experience.start_time, format: :long %>
+      <%= t "experiences._index.to" %>:<%= l experience.end_time, format: :long %>
+    </p>
+    <p class="subDetails"><%= experience.company %></p>
+    <p><%= experience.project_detail %>.</p>
+  </article>
 </div>

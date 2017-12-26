@@ -492,6 +492,7 @@ en:
     helpers:
       present: "Present"
     _index:
+      to: "to "
       experience_title: "Experiences"
       describle: "Writing the project that you had participated in. Describing
         the projects as detailed as possible in your employability"

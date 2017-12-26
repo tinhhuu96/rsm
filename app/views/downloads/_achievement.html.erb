@@ -1,26 +1,8 @@
-<div id="info_achievement_<%= achievement.id %>" class="sortable content-section">
-  <div class="profile_top_view">
-    <div class="view-field">
-      <h4 class="view-control"><%= achievement.name %></h4>
-    </div>
-    <div class="view-field date_profile">
-      <span class="view-control" data-control="from-date">
-        <%= l achievement.received_time, format: :long %>
-      </span>
-    </div>
-  </div>
-  <table class= "table table_profile">
-    <tr>
-      <td class="view-field">
-        <strong class="view-control"><%= t "profile.achievement.majors" %></strong>
-      </td>
-      <td class="profile_content"><%= achievement.majors %></td>
-    </tr>
-    <tr>
-      <td class="view-field">
-        <strong class="view-control"><%= t "profile.achievement.organization" %></strong>
-      </td>
-      <td class="profile_content"><%= achievement.organization %></td>
-    </tr>
-  </table>
+<div class="sectionContent">
+  <article>
+    <h3><%= achievement.name %></h3>
+    <p class="subDetails"><%= l achievement.received_time, format: :long %></p>
+    <p class="subDetails"><%= achievement.majors %></p>
+    <p><%= achievement.organization %>.</p>
+  </article>
 </div>
