@@ -1,5 +1,6 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'color';
 
 .anchor {
   font-size: 28px !important;
@@ -22,4 +23,26 @@
 .img-static-36x31 {
   height: 31px;
   width: 36px;
+}
+.footer-branchs {
+  border-bottom: 1px solid $white-drak;
+}
+
+.cus_color_branch {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+.footer-bottom {
+  padding: 10px 0 !important;
+  text-align: center !important;
+    margin: 0 auto !important;
+    color: white !important;
+}
+.custom_footer {
+  padding: 20px 0 0 !important;
+}
+.font-size-12-bold {
+  font-size: 12px !important;
+  font-weight:bold;
 }

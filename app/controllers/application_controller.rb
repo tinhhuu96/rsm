@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
     redirect_root_path
   end
 
+  def load_branches
+    @branches = @company.branches
+  end
+
   def redirect_root_path
     if request.subdomain != Settings.www
       flash[:danger] = t "can_not_find_company"

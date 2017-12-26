@@ -3,6 +3,7 @@ class JobsController < ApplicationController
 
   before_action :authenticate_user!, except: %i(index show)
   before_action :load_company
+  before_action :load_branches
   before_action :load_job, except: %i(index new create)
   before_action :load_employer, only: :show
   before_action :load_jobs, only: :show

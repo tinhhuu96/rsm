@@ -8,6 +8,10 @@ module ApplicationHelper
     end
   end
 
+  def branches_footer branches
+    render branches
+  end
+
   def header_title title = ""
     title
   end
