@@ -7,9 +7,9 @@
             <div id= "show-user">
               <div class="col-sm-2 col-md-2">
                 <% if @user.picture.present? %>
-                  <%= show_avatar @user %>
+                  <%= show_avatar @user  %>
                 <% else %>
-                  <%= image_tag "avatar_2x.png", class: "img-responsive" %>
+                  <%= image_tag "avatar_2x.png", class: "img-responsive avatar_users" %>
                 <% end %>
               </div>
               <div class="col-sm-10 col-md-10">

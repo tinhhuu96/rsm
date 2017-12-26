@@ -14,4 +14,8 @@ module ClubsHelper
       "cancel_club_new"
     end
   end
+
+  def check_club user
+    current_user.is_user?(user) ? t("clubs.describle") : t("placeholder.blank")
+  end
 end

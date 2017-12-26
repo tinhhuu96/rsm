@@ -38,7 +38,14 @@
 }
 .new-section{
   position: relative;
-  padding: 25px 30px;
+  padding: 25px 70px;
+  padding-bottom: 0;
+  z-index: 2;
+  overflow: auto;
+}
+.new-sectionuser{
+  position: relative;
+  padding: 25px 229px 25px 63px;
   padding-bottom: 0;
   z-index: 2;
   overflow: auto;
@@ -535,11 +542,11 @@
   padding-left: 20px;
 }
 .avatar_users {
-  width: 135px;
-  height: 135px;
-  border: 2px solid #fff;
+  width: 150px;
+  height: 150px;
   border-radius: 20px;
   vertical-align: top;
+  margin-left: 100px;
 }
 .files_your .btn-file input[type='file'] {
   display: none;
@@ -569,4 +576,14 @@
   top: 35%;
   width: 240px;
   z-index: 2100;
+}
+.btn-group{
+  padding-top: 10px;
+}
+.col-white{
+  color: white;
+}
+.to-top{
+  display: inline;
+  background-color: $light-blue !important;
 }

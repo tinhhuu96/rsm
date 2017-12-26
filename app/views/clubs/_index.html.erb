@@ -1,25 +1,30 @@
-<div class="section-detail section-employment">
-  <div class="box border-info">
-    <fieldset>
-      <legend class="box-md">
-        <i class="fa fa-fw fa-bars"></i><%= t "clubs._index.club_title" %>
-      </legend>
-      <div class="placeholder-club box-md <%= define_style_placeholder @clubs %>">
-        <p class="placeholder">
-          <%= current_user.is_user?(@user) ? t("clubs.describle") : t("placeholder.blank") %>
-        </p>
-      </div>
-      <div id="form-club">
-        <%= render partial: "clubs/club", collection: @clubs, as: :club %>
-      </div>
-      <% if  current_user.is_user? @user %>
-        <% if can? :update, @user %>
-          <%= link_to t("clubs._index.add"), new_club_path, id: "btn-add-club",
-            class: "btn btn-default btn-block no-border add-one-more-section", remote: true %>
+<div id="clubs">
+  <div class="section-detail section-employment">
+    <div class="style-in">
+      <fieldset>
+        <div class="placeholder-club box-md <%= define_style_placeholder @clubs %>">
+          <p class="placeholder">
+            <%= check_club @user %>
+          </p>
+        </div>
+        <div id="form-club">
+          <%= render partial: "clubs/club", collection: @clubs, as: :club %>
+        </div>
+        <% if  current_user.is_user? @user %>
+          <% if can? :update, @user %>
+            <div class="row">
+              <div class="col-md-5 offset-md-4"></div>
+              <div class="col-md-2 offset-md-6">
+                <%= link_to t("clubs._index.add"), new_club_path, id: "btn-add-club",
+                  class: "btn btn-primary btn-block no-border add-one-more-section", remote: true %>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-      <div id = "area_form_club">
-      </div>
-    </fieldset>
+        <div id = "area_form_club">
+        </div>
+      </fieldset>
+    </div>
   </div>
+  <div class="bot-form"></div>
 </div>

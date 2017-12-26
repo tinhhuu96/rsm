@@ -6,4 +6,8 @@ module ExperiencesHelper
       Settings.experiences.cancel_new
     end
   end
+
+  def check_experience user
+    current_user.is_user?(user) ? t("experiences.describle") : t("placeholder.blank")
+  end
 end

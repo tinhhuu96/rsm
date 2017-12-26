@@ -6,4 +6,8 @@ module CertificatesHelper
       Settings.certificate_cancel.new
     end
   end
+
+  def check_certificate user
+    current_user.is_user?(user) ? t("certificate.describle") : t("placeholder.blank")
+  end
 end

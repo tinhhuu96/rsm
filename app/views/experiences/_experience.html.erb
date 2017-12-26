@@ -1,19 +1,22 @@
 <div id="info_experience_<%= experience.id %>" class="sortable content-section">
-  <% if can? :modify, experience %>
-    <span class="form-btn-edit">
-      <%= link_to experience, method: :delete, data: {confirm: t("experiences._experience.confirm")},
-        class: "btn btn-sm btn-default", remote: true do %>
-        <i class="glyphicon glyphicon-trash"></i>
-      <% end %>
-      <%= link_to edit_experience_path(experience), class: "btn btn-sm btn-default", remote: true do %>
-        <i class="glyphicon glyphicon-pencil"></i>
-      <% end %>
-    </span>
-  <% end %>
-
   <div class="profile_top_view">
-    <div class="view-field">
-      <h4 class="view-control"><%= experience.name %></h4>
+    <div class="row">
+      <div class="col-md-5">
+        <h4 class="view-control"><%= experience.name %></h4>
+      </div>
+      <div class="col-md-7">
+        <% if can? :modify, experience %>
+          <span class="form-btn-edit">
+            <%= link_to experience, method: :delete, data: {confirm: t("experiences._experience.confirm")},
+              class: "btn btn-sm btn-danger", remote: true do %>
+              <i class="glyphicon glyphicon-trash"></i>
+            <% end %>
+            <%= link_to edit_experience_path(experience), class: "btn btn-sm btn-warning", remote: true do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+          </span>
+        <% end %>
+      </div>
     </div>
     <div class="view-field date_profile">
       <span class="view-control" data-control="from-date">

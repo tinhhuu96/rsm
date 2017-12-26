@@ -1,0 +1,38 @@
+<div id="show-user">
+  <div class="user clearfix">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="avatar">
+          <% if @user.picture.present? %>
+            <%= show_avatar @user %>
+          <% else %>
+            <%= image_tag "avatar_2x.png", class: "img-thumbnail img-profile" %>
+          <% end %>
+        </div>
+      </div>
+      <% if can? :update, @user %>
+        <div class="col-md-1">
+            <%= link_to edit_user_path(current_user),class: "btn btn-sm btn-warning" ,remote:true do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+        </div>
+        <div class="col-md-1">
+          <div class="view-field m-b download-resume">
+            <%= link_to download_path(current_user.id, format: "pdf"),
+              class: "btn btn-sm btn-primary", target: :_blank do %>
+              <i class="fa fa-download" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <h3><%= @user.name %></h3>
+  </div>
+  <div class="info">
+    <p><span class="glyphicon glyphicon-globe"></span> <span class="title"><%= t "users.user.address" %>:</span><%= @user.address %>
+    </p>
+    <p><span class="glyphicon glyphicon-phone"></span> <span class="title"><%= t "users.user.phone" %>:</span>
+      <%= @user.phone %>
+    </p>
+  </div>
+</div>
