@@ -1,8 +1,5 @@
 class Employers::MembersController < Employers::EmployersController
-  before_action :current_ability
-  before_action :load_company
   before_action :get_values_checked, only: :index
-  load_resource
 
   def index
     @members = @company.members.page(params[:page]).per Settings.apply.page

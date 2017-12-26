@@ -1,6 +1,4 @@
 class Employers::AppliesController < Employers::EmployersController
-  before_action :current_ability
-  load_resource
 
   def update
     respond_to do |format|
