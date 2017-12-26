@@ -15,7 +15,6 @@
   <div class="form-group">
     <%= f.label :address, class: "col-sm-3 control-label required" do %>
       <%= t ".company_address" %><br>
-      <small><%= t "optional" %></small>
     <% end %>
     <div class="col-sm-9">
       <%= f.text_field :address, class: "form-control" %>
@@ -36,7 +35,6 @@
   <div class="form-group">
     <%= f.label :contact_person, class: "col-sm-3 control-label required" do %>
       <%= t ".contact_name" %><br>
-      <small><%= t "optional" %></small>
     <% end %>
     <div class="col-sm-9">
       <%= f.text_field :contact_person, class: "form-control" %>
@@ -57,7 +55,6 @@
   <div class="form-group">
     <%= f.label :company_info, class: "col-sm-3 control-label required" do %>
       <%= t ".company_profile" %><br>
-      <small><%= t "optional" %></small>
     <% end %>
     <div class="col-sm-9">
       <%= f.text_area :company_info, cols: Settings.company.text_area.cols,

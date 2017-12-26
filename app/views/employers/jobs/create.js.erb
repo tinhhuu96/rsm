@@ -3,6 +3,6 @@
   $('#manage-job-form').html('<%= j render "form" %>');
 <% else %>
   $('#manageJob').modal('hide');
-  $('#jobs').append('<%= j render @job %>');
+  $('#jobs').html('<%= j render @jobs %>');
   alertify.success('<%= @message %>');
 <% end %>

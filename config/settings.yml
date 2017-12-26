@@ -75,3 +75,7 @@ rspec:
     salary: 1500
     max_salary: 1000
     min_salary: 1200
+counter:
+  page_one: 1
+  add_page: 1
+  rm_page: 1

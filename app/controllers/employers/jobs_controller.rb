@@ -1,5 +1,6 @@
 class Employers::JobsController < Employers::EmployersController
   before_action :create_job, only: %i(index new)
+  before_action :load_jobs, only: :index
 
   def show
     @members = @company.members
@@ -15,10 +16,11 @@ class Employers::JobsController < Employers::EmployersController
         format.js
       end
     end
+    load_jobs
   end
 
   def index
-    @jobs = @company.jobs.page(params[:page]).per Settings.job.page
+    @page = params[:page]
   end
 
   def destroy
@@ -41,6 +43,7 @@ class Employers::JobsController < Employers::EmployersController
         format.js
       end
     end
+    load_jobs
   end
 
   private
@@ -54,5 +57,9 @@ class Employers::JobsController < Employers::EmployersController
       :skill, :position, :company_id, :description, :min_salary, :max_salary,
       :branch_id, :category_id, reward_benefits_attributes: %i(id content job_id _destroy))
       .merge!(user_id: current_user.id)
+  end
+
+  def load_jobs
+    @jobs = @company.jobs.sort_lastest.page(params[:page]).per Settings.job.page
   end
 end

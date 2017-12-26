@@ -11,8 +11,12 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('.datepicker').datepicker( {
-    format: 'dd-mm-yyyy',
-    startView: 'months'
+  function runningFormatter(value, row, index) {
+    return index;
+  };
+  document.getElementById("style-2").addEventListener("scroll",function(){
+    var scroll = this.scrollTop - 20;
+    var translate = "translate(0,"+scroll+"px)";
+    this.querySelector("thead").style.transform = translate;
   });
 });
