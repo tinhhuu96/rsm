@@ -2,35 +2,65 @@
   <div class="user clearfix">
     <div class="row">
       <div class="col-md-10">
-        <div class="avatar">
+        <div class="avatar col-md-3">
           <% if @user.picture.present? %>
             <%= show_avatar @user %>
           <% else %>
             <%= image_tag "avatar_2x.png", class: "img-thumbnail img-profile" %>
           <% end %>
         </div>
+
+        <div class="info col-md-9">
+          <table class= "table table_profile">
+            <tr>
+              <td class="view-field">
+                <strong class="view-control">
+                  <span class="glyphicon glyphicon-envelope"></span> <span class="title"><%= t "users.update.email" %>:</span>
+                </strong>
+              </td>
+              <td class="profile_content"><%= @user.email %></td>
+            </tr>
+
+            <tr>
+              <td class="view-field">
+                <strong class="view-control">
+                  <span class="glyphicon glyphicon-globe"></span> <span class="title"><%= t "users.update.address" %>:</span>
+                </strong>
+              </td>
+              <td class="profile_content"><%= @user.address %></td>
+            </tr>
+            <tr>
+              <td class="view-field">
+                <strong class="view-control">
+                  <span class="glyphicon glyphicon-phone"></span> <span class="title"><%= t "users.update.phone" %>:</span>
+                </strong>
+              </td>
+              <td class="profile_content"><%= @user.phone %></td>
+            </tr>
+             <tr>
+              <td class="view-field">
+                <strong class="view-control">
+                  <span class="fa fa-birthday-cake"></span> <span class="title"><%= t "users.update.birthday" %>:</span>
+                </strong>
+              </td>
+              <td class="profile_content"><%= @user.birthday %></td>
+            </tr>
+          </table>
+        </div>
       </div>
       <% if can? :update, @user %>
         <div class="col-md-2">
           <div class="view-field m-b download-resume pull-right">
             <%= link_to edit_user_path(current_user),class: "btn btn-sm btn-warning" ,remote:true do %>
-              <i class="glyphicon glyphicon-pencil"></i>
+            <i class="glyphicon glyphicon-pencil"></i>
             <% end %>
             <%= link_to download_path(current_user.id, format: "pdf"),
-              class: "btn btn-sm btn-primary", target: :_blank do %>
-              <i class="fa fa-download" aria-hidden="true"></i>
+            class: "btn btn-sm btn-primary", target: :_blank do %>
+            <i class="fa fa-download" aria-hidden="true"></i>
             <% end %>
           </div>
         </div>
       <% end %>
     </div>
-    <h3><%= @user.name %></h3>
-  </div>
-  <div class="info">
-    <p><span class="glyphicon glyphicon-globe"></span> <span class="title"><%= t "users.user.address" %>:</span><%= @user.address %>
-    </p>
-    <p><span class="glyphicon glyphicon-phone"></span> <span class="title"><%= t "users.user.phone" %>:</span>
-      <%= @user.phone %>
-    </p>
   </div>
 </div>

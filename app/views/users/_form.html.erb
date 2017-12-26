@@ -79,7 +79,7 @@
   <div class="row">
     <div class="name col-xs-12">
       <div class="edit-field m-b">
-        <strong class="text-red">*</strong><%= t "downloads.curriculum" %>
+        <strong class="text-red">*</strong><%= f.label :cv, t("downloads.curriculum"), class: "profile_label" %>
         <span class="btn btn-default btn-file">
           <%= t "downloads.browse" %><%= f.file_field :cv, class: "transparent absolute" %>
         </span>

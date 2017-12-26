@@ -275,6 +275,12 @@ en:
       update_success: "User update success"
       update_fail: "User update fail"
       change_pass: "Change password"
+    update:
+      email: "Email"
+      address: "Address"
+      phone: "Phone"
+      birthday: "Birthday"
+
   companies:
     edit:
       company_info: "My Company Profile"
