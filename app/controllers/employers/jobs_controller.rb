@@ -1,6 +1,4 @@
 class Employers::JobsController < Employers::EmployersController
-  load_resource
-  before_action :current_ability
   before_action :create_job, only: %i(index new)
 
   def show

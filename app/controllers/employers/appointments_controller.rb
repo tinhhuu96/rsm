@@ -1,5 +1,5 @@
 class Employers::AppointmentsController < ApplicationController
-  load_and_authorize_resource param_method: :user_params
+  load_and_authorize_resource param_method: :appointment_params
 
   def create
     respond_to do |format|
