@@ -1,0 +1,11 @@
+<% if @job.errors.any? %>
+  $(".form-group").removeClass("has-error");
+  $('#manage-job-form').html('<%= j render "form" %>');
+<% else %>
+  $('.employer-job-<%= @job.id %>').replaceWith('<%= j render @job %>');
+  alertify.success('<%= @message %>');
+  $('#manageJob').on('hidden.bs.modal', function () {
+    $('.modal-body').find('textarea,input,select').val('');
+  });
+  $('#manageJob').modal('hide');
+<% end %>
