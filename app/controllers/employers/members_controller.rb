@@ -1,8 +1,10 @@
 class Employers::MembersController < Employers::EmployersController
   before_action :get_values_checked, only: :index
+  before_action :load_members, only: :index
+  load_resource
 
   def index
-    @members = @company.members.page(params[:page]).per Settings.apply.page
+    @page = params[:page]
     @users = User.not_role(User.roles[:admin]).not_member.search_name_or_mail(params[:search])
     respond_to do |format|
       format.html
@@ -34,6 +36,7 @@ class Employers::MembersController < Employers::EmployersController
         format.js{@message = t "update_error"}
       end
     end
+    load_members
   end
 
   private
@@ -48,5 +51,9 @@ class Employers::MembersController < Employers::EmployersController
 
   def member_params
     params.require(:member).permit :position, :start_time, :end_time
+  end
+
+  def load_members
+    @members = @company.members.sort_by_updated.page(params[:page]).per Settings.apply.page
   end
 end

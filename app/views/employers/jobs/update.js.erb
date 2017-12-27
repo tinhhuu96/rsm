@@ -2,7 +2,7 @@
   $(".form-group").removeClass("has-error");
   $('#manage-job-form').html('<%= j render "form" %>');
 <% else %>
-  $('.employer-job-<%= @job.id %>').replaceWith('<%= j render @job %>');
+  $('#jobs').html('<%= j render @jobs %>');
   alertify.success('<%= @message %>');
   $('#manageJob').on('hidden.bs.modal', function () {
     $('.modal-body').find('textarea,input,select').val('');

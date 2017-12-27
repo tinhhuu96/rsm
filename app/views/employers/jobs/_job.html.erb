@@ -1,5 +1,5 @@
 <tr class="employer-job-<%= job.id %>">
-  <td class="text-center"><strong><%= job.id %></strong></a></td>
+  <td class="text-center"><%= job_counter + CouterIndex.couter(@page, Settings.job.page) %></td>
   <td class="visible-lg"><%= link_to job.name, employers_job_path(job) %></td>
   <td class="text-center"><strong>$<%= job.min_salary %> - $<%= job.max_salary %></strong></td>
   <td class="text-center"><strong><%= job.position %></strong></td>

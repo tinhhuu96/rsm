@@ -7,6 +7,7 @@ class Member < ApplicationRecord
   validate :date_less_than_today
   validate :end_date_after_start_date
 
+  scope :sort_by_updated, ->{order(updated_at: :desc)}
   private
 
   def end_date_after_start_date

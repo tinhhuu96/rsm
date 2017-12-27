@@ -1,7 +1,7 @@
 <% if @member.errors.any? %>
   $('#form_edit_member').html('<%= j render "form" %>');
 <% else %>
-  $('#member-<%= params[:id] %>').replaceWith('<%= j render(@member) %>').show();
+  $('#members').html('<%= j render @members %>');
   alertify.success('<%= @message %>');
   $('#memberEdit').modal('hide');
 <% end %>
