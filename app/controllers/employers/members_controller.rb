@@ -1,7 +1,6 @@
 class Employers::MembersController < Employers::EmployersController
   before_action :get_values_checked, only: :index
   before_action :load_members, only: :index
-  load_resource
 
   def index
     @page = params[:page]
@@ -25,7 +24,7 @@ class Employers::MembersController < Employers::EmployersController
     else
       flash[:danger] = t "can_not_add_member"
     end
-    redirect_to employers_company_members_path
+    redirect_to employers_members_path
   end
 
   def update

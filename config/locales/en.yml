@@ -28,6 +28,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
+
   accountactivations:
     success: "Agree success!"
     fail: "Agree fail!"
@@ -131,8 +132,8 @@ en:
   member_date2: "can't be a date in future"
   update_completed: "Update completed"
   new_activity: "New Activity"
-  activity: "Activity"
-  partner: "partner"
+  activity: "Activities"
+  partner: "Partners"
   update_fail: "Update Fail"
   add_activity: "Add activity"
   add_partner: "Add partner"
@@ -140,13 +141,13 @@ en:
   description: "Description"
   name: "Name"
   email: "Email"
-  activity_and_partner: "Activity And Partner"
+  activity_and_partner: "Activities And Partners"
   add-job: "Add Job"
   job_created: "Created Job"
   deleted_job: "Deleted Job"
   job_updated: "Updated Job"
   pls_select: "--- Please Select ---"
-  first_show_company: "All Activity and Partner this company"
+  first_show_company: "All Activities and Partners this company"
   not_found_apply: "This job do not have applies"
   position: "Position"
   status: "Status"

@@ -30,7 +30,8 @@ RSpec.describe UsersController, type: :controller do
 
   describe "PATCH #update" do
     it "update achievement success" do
-      patch :update, params: {id: subject.id, user: {name: "pho"}},
+      @file = fixture_file_upload('123.jpg', 'image/jpg')
+      patch :update, params: {id: subject.id, user: {name: "pho", picture: @file}},
           xhr: true, format: "js"
       expect(flash[:success]).to match(I18n.t("users.new.update_success"))
     end

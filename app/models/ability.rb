@@ -14,7 +14,6 @@ class Ability
         end
         permission_user user
       end
-      user_permissions user
     else
       undefine_user
     end
@@ -53,12 +52,24 @@ class Ability
 
   def manage_company user
     can :update, Company do |company|
-      user.is_employer? company
+      user.is_employer? company.id
     end
-    can :manage, Member
-    can :manage, Apply
-    can :manage, Job
-    can :manage, Appointment
+
+    can :manage, Member do |member|
+      user.is_employer? member.company_id
+    end
+
+    can :manage, Job do |job|
+      user.is_employer? job.company_id
+    end
+
+    can :manage, Appointment do |appointment|
+      user.is_employer? appointment.company_id
+    end
+
+    can :manage, Apply do |apply|
+      user.is_employer? apply.job.company_id
+    end
   end
 
   def permission_admin

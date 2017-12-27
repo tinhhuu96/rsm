@@ -16,4 +16,5 @@
  *= require plugins
  *= require custom_login
  *= require_tree ../../../../vendor/assets/stylesheets/companies
+ *= require_tree ../../../../node_modules/alertify/themes
  */
