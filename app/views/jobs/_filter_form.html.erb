@@ -36,7 +36,10 @@
 
       <div class="col-md-2">
         <div class="form-group">
-          <%= f.submit t(".filter"), class: "btn btn-info btn-lg col-md-12" %>
+          <%= f.button :submit, class: "btn btn-info btn-lg col-md-12" do %>
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <%= t ".filter" %>
+          <% end %>
         </div>
       </div>
     </div>
