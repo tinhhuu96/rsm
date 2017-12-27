@@ -151,7 +151,7 @@ en:
   position: "Position"
   status: "Status"
   checkbox: "Checkbox"
-  picture: "Picture"
+  picture: "Avatar"
   sex: "Sex"
   avatar: "Avatar"
   errors:
@@ -418,7 +418,7 @@ en:
       level: "Required Level"
       save_job: "Save Job"
       benefit: "Benefit: "
-      remove: "Remove this"
+      remove: "X"
       add_benefit: "Add more benefit"
     update:
       job_updated: "Job has been updated."

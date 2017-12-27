@@ -21,7 +21,7 @@
       <% end %>
       <div class="links add_benefit_links">
         <%= link_to_add_association t(".add_benefit"), f, :reward_benefits,
-          partial: "reward_benefit_fields" %>
+          class: "btn btn-primary", partial: "reward_benefit_fields" %>
       </div>
     </div>
     <%= f.input :language, label: t(".language"),
