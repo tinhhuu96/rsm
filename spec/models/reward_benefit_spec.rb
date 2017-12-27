@@ -26,7 +26,7 @@ RSpec.describe RewardBenefit, type: :model do
     before {subject.content = Settings.rspec.blank}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:content].should include I18n.t "activerecord.errors.models.reward_benefit.attributes.content.blank"
+      subject.errors[:content].should include I18n.t("activerecord.errors.models.reward_benefit.attributes.content.blank")
     end
   end
 end
