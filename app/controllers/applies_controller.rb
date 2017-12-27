@@ -23,8 +23,8 @@ class AppliesController < ApplicationController
   def format_respond
     respond_to do |format|
       if @apply.save
-        CompanyMailer.welcome_email(@apply).deliver_now
-        CompanyMailer.user_mail(@apply).deliver_now
+        AppliesUserJob.perform_later @apply
+        AppliesEmployerJob.perform_later @apply
         format.js{flash.now[:success] = t "apply.applied"}
       else
         format.js

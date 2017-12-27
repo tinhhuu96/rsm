@@ -104,18 +104,18 @@
       <ul class="nav nav-tabs three-tabs" role="tablist">
         <li role="presentation" class="active animated fadeIn">
           <a href="#job-info" data-toggle="tab">
-          <span class="hidden-sm hidden-xs"><%= t ".job_info" %></span>
+          <span class="hidden-sm hidden-xs col-info"><%= t ".job_info" %></span>
           <span class="visible-sm visible-xs"> <%= t ".info" %></span>
           </a></li>
         <li class="animated fadeIn" role="presentation ">
           <a href="#company-info" class="track-event" data-evt-type="view-tab-cominfo" role="tab" data-toggle="tab">
-          <span class="hidden-sm hidden-xs"><%= t ".company_info" %></span>
+          <span class="hidden-sm hidden-xs col-info"><%= t ".company_info" %></span>
           <span class="visible-sm visible-xs"><%= t ".company" %></span>
           </a>
         </li>
         <li class="animated fadeIn" role="presentation">
           <a href="#company-job" role="tab" data-toggle="tab">
-           <span class="hidden-sm hidden-xs"><%= t ".company_jobs" %></span>
+           <span class="hidden-sm hidden-xs col-info"><%= t ".company_jobs" %></span>
           <span class="visible-sm visible-xs"><%= t ".jobs" %></span>
           </a>
         </li>
@@ -132,7 +132,7 @@
                       <i class="fa fa-calendar-minus-o" aria-hidden="true"></i>
                     </div>
                     <div class="col-xs-10 summary-content">
-                      <span class="content-label"><%= t ".posted_day" %></span>
+                      <span class="content-label font-right"><%= t ".posted_day" %></span>
                       <span class="content"><%= l @job.created_at, format: :long %></span>
                     </div>
                   </div>
@@ -141,7 +141,7 @@
                       <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                     </div>
                     <div class="col-xs-10 summary-content">
-                      <span class="content-label"><%= t ".level_requirement" %></span>
+                      <span class="content-label font-right"><%= t ".level_requirement" %></span>
                       <span class="content"><%= @job.level %></span>
                     </div>
                   </div>
@@ -150,7 +150,7 @@
                       <i class="fa fa-tags" aria-hidden="true"></i>
                     </div>
                     <div class="col-xs-10 summary-content">
-                      <span class="content-label"><%= t ".job_category" %></span>
+                      <span class="content-label font-right"><%= t ".job_category" %></span>
                       <span class="content">
                         <%= @company.majors %>
                       </span>
@@ -161,7 +161,7 @@
                       <i class="fa fa-star" aria-hidden="true"></i>
                     </div>
                     <div class="col-xs-10 summary-content">
-                      <span class="content-label"><%= t ".skills" %></span>
+                      <span class="content-label font-right"><%= t ".skills" %></span>
                       <span class="content">
                         <%= @job.skill %>
                       </span>
@@ -172,7 +172,7 @@
                       <i class="fa fa-language" aria-hidden="true"></i>
                     </div>
                     <div class="col-xs-10 summary-content">
-                      <span class="content-label"><%= t ".language" %></span>
+                      <span class="content-label font-right"><%= t ".language" %></span>
                       <span class="content"><%= @job.language %></span>
                     </div>
                   </div>
@@ -239,7 +239,7 @@
                       <h3><%= t ".jobs" %></h3>
                       <div class="no_jobs"><%= t"no_jobs" %></div>
                     <% end %>
-                    <div id = "pag" class = "row text-center">
+                    <div id = "pag" class = "row text-center pag">
                       <%= paginate @jobs %>
                     </div>
                   </div>

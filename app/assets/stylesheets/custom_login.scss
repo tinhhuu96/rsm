@@ -1,3 +1,5 @@
+@import 'color';
+
 .remember_me {
   padding-top: 0 !important;
 }
@@ -6,7 +8,7 @@
   .avatar_user {
     width: 35px;
     height: 35px;
-    border: 2px solid #fff;
+    border: 2px solid $white;
     border-radius: 20px;
     vertical-align: top;
   }
@@ -17,5 +19,24 @@
 }
 
 .cp_our_jobs_section {
-  border-top: 1px solid #00b9f2;
+  border-top: 1px solid $green-blue;
+}
+.box-md {
+  padding: 7px !important;
+}
+.col-info{
+  color: $dark-blue;
+}
+.nav>li.active a{
+  border-bottom: 2px solid $light-blue-5 !important;
+  background-color: $blue-lavender !important;
+  font-weight: 600 !important;
+}
+.font-right{
+  color: $dark-blue !important;
+  font: 15px italic !important;
+}
+.count-in{
+  background-color: $light-green-6 !important;
+  color: $white !important;
 }
