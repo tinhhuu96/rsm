@@ -3,6 +3,7 @@ class CompaniesController < ApplicationController
 
   before_action :authenticate_user!, only: %i(update edit destroy)
   before_action :load_company, only: %i(edit update show)
+  before_action :load_branches, only: %i(edit update show)
   before_action :load_partners, only: :show
   before_action :load_activities, only: :show
 

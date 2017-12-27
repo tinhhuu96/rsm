@@ -2,6 +2,8 @@ class CreateBranches < ActiveRecord::Migration[5.1]
   def change
     create_table :branches do |t|
       t.boolean :is_primary, default: 0, null: false
+      t.string :name, null: false
+      t.string :phone
       t.string :street, null: false
       t.string :ward
       t.string :district

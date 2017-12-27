@@ -468,7 +468,7 @@ en:
       position_type: "Position type"
       branch: "Branch"
       category: "Category"
-      filter: "Search"
+      filter: "Find Jobs"
       keywords: "Keywords"
       text_search: "Enter job title, language, skills..."
       all_branches: "All branches"
@@ -599,6 +599,15 @@ en:
             content:
               blank: "Content can not be blank"
   layouts:
+    companies:
+      footer:
+        author: "By Framgia - Human Development Division - Education Section"
+        copyright: " - All rights reserved."
+        year: "2017"
+    footer:
+      author: "By Framgia - Human Development Division - Education Section"
+      copyright: " - All rights reserved."
+      year: "2017"
     employers:
       employer:
         all_member: "All Members"

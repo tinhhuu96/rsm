@@ -16,4 +16,13 @@ module JobsHelper
     value_selected = param_q.present? ? param_q[field_search] : ""
     options_for_select options, value_selected
   end
+
+  def address_of_branch branch
+    address = branch.street
+    address.concat(", #{branch.ward}") if branch.ward.present?
+    address.concat(", #{branch.district}") if branch.district.present?
+    address.concat(", #{branch.province}") if branch.province.present?
+    address.concat(", #{branch.country}") if branch.country.present?
+    address.squish
+  end
 end

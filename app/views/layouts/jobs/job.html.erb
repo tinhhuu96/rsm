@@ -14,9 +14,10 @@
       <section class="site-content">
         <%= yield %>
       </section>
-      <footer class="site-footer site-section">
+      <div class="site-footer padding-10-0">
+        <%= branches_footer "layouts/jobs/branches" %>
         <%= render "layouts/footer" %>
-      </footer>
+      </div>
     </div>
     <%= image_tag "loading.gif", id: "img-loading", class: "img-load" %>
   </body>

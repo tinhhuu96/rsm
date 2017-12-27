@@ -1,3 +1,5 @@
+@import 'color';
+
 .search-widget {
   position: absolute !important;
     top: 135px;
@@ -47,12 +49,19 @@
 .margin-0-auto {
   margin: 0 auto;
 }
-.text-aline-center {
-  text-align: center;
-}
 .btn-max-width {
   max-width: 150px;
 }
-.text-color-white {
-  color: white !important;
+.footer-branchs i {
+  font-size: 12px;
+  float: left;
+  margin-top: 6px;
+  margin-right: 10px;
+}
+.footer-branchs p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #fff;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
