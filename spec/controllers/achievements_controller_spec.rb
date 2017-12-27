@@ -22,13 +22,13 @@ RSpec.describe AchievementsController, type: :controller do
         organization: "Da Nang city", received_time: "01/02/2017", user_id: user.id}},
           xhr: true, format: "js"
       expect(response).to be_success
-      expect(assigns[:message]).to match I18n. t("achievements.create_success")
+      expect(assigns[:message]).to match I18n.t("achievements.create_success")
     end
 
     it "create achievement fail" do
       post :create, params: {id: subject.id, achievement:{name: "", majors: "CNTT"}},
         xhr: true, format: "js"
-      expect(assigns[:message]).not_to match I18n. t("achievements.create_success")
+      expect(assigns[:message]).not_to match I18n.t("achievements.create_success")
     end
   end
 end

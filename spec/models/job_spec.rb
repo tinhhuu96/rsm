@@ -57,7 +57,7 @@ RSpec.describe Job, type: :model do
     before {subject.name = Settings.rspec.blank}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:name].should include I18n.t "activerecord.errors.models.job.attributes.name.blank"
+      subject.errors[:name].should include I18n.t("activerecord.errors.models.job.attributes.name.blank")
     end
   end
 
@@ -65,7 +65,7 @@ RSpec.describe Job, type: :model do
     before {subject.content = Settings.rspec.blank}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:content].should include I18n.t "activerecord.errors.models.job.attributes.content.blank"
+      subject.errors[:content].should include I18n.t("activerecord.errors.models.job.attributes.content.blank")
     end
   end
 
@@ -73,7 +73,7 @@ RSpec.describe Job, type: :model do
     before {subject.level = Settings.rspec.blank}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:level].should include I18n.t "activerecord.errors.models.job.attributes.level.blank"
+      subject.errors[:level].should include I18n.t("activerecord.errors.models.job.attributes.level.blank")
     end
   end
 
@@ -81,7 +81,7 @@ RSpec.describe Job, type: :model do
     before {subject.description = Settings.rspec.blank}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:description].should include I18n.t "activerecord.errors.models.job.attributes.description.blank"
+      subject.errors[:description].should include I18n.t("activerecord.errors.models.job.attributes.description.blank")
     end
   end
 
@@ -89,7 +89,7 @@ RSpec.describe Job, type: :model do
     before {subject.language = Settings.rspec.blank}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:language].should include I18n.t "activerecord.errors.models.job.attributes.language.blank"
+      subject.errors[:language].should include I18n.t("activerecord.errors.models.job.attributes.language.blank")
     end
   end
 
@@ -97,7 +97,7 @@ RSpec.describe Job, type: :model do
     before {subject.position = Settings.rspec.blank}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:position].should include  I18n.t "activerecord.errors.models.job.attributes.position.blank"
+      subject.errors[:position].should include  I18n.t("activerecord.errors.models.job.attributes.position.blank")
     end
   end
 
@@ -105,7 +105,7 @@ RSpec.describe Job, type: :model do
     before {subject.skill = Settings.rspec.blank}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:skill].should include I18n.t "activerecord.errors.models.job.attributes.skill.blank"
+      subject.errors[:skill].should include I18n.t("activerecord.errors.models.job.attributes.skill.blank")
     end
   end
 
@@ -113,7 +113,7 @@ RSpec.describe Job, type: :model do
     before {subject.min_salary = Settings.rspec.blank}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:min_salary].should include I18n.t "activerecord.errors.models.job.attributes.min_salary.blank"
+      subject.errors[:min_salary].should include I18n.t("activerecord.errors.models.job.attributes.min_salary.blank")
     end
   end
 
@@ -121,7 +121,7 @@ RSpec.describe Job, type: :model do
     before {subject.max_salary = Settings.rspec.blank}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:max_salary].should include I18n.t "activerecord.errors.models.job.attributes.max_salary.blank"
+      subject.errors[:max_salary].should include I18n.t("activerecord.errors.models.job.attributes.max_salary.blank")
     end
   end
 

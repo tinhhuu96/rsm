@@ -32,7 +32,7 @@ RSpec.describe Certificate, type: :model do
     before {subject.name = ""}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:name].should include I18n.t "activerecord.errors.models.certificate.attributes.name.blank"
+      subject.errors[:name].should include I18n.t("activerecord.errors.models.certificate.attributes.name.blank")
     end
   end
 
@@ -40,7 +40,7 @@ RSpec.describe Certificate, type: :model do
     before {subject.majors = ""}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:majors].should include I18n.t "activerecord.errors.models.certificate.attributes.majors.blank"
+      subject.errors[:majors].should include I18n.t("activerecord.errors.models.certificate.attributes.majors.blank")
     end
   end
 
@@ -48,7 +48,7 @@ RSpec.describe Certificate, type: :model do
     before {subject.organization = ""}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:organization].should include I18n.t "activerecord.errors.models.certificate.attributes.organization.blank"
+      subject.errors[:organization].should include I18n.t("activerecord.errors.models.certificate.attributes.organization.blank")
     end
   end
 
@@ -56,7 +56,7 @@ RSpec.describe Certificate, type: :model do
     before {subject.received_time = ""}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:received_time].should include I18n.t "activerecord.errors.models.certificate.attributes.received_time.blank"
+      subject.errors[:received_time].should include I18n.t("activerecord.errors.models.certificate.attributes.received_time.blank")
     end
   end
 
@@ -64,7 +64,7 @@ RSpec.describe Certificate, type: :model do
     before {subject.name = Faker::Lorem.characters(260)}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:name].should include I18n.t "activerecord.errors.models.certificate.attributes.name.too_long"
+      subject.errors[:name].should include I18n.t("activerecord.errors.models.certificate.attributes.name.too_long")
     end
   end
 
@@ -72,7 +72,7 @@ RSpec.describe Certificate, type: :model do
     before {subject.majors = Faker::Lorem.characters(260)}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:majors].should include I18n.t "activerecord.errors.models.certificate.attributes.majors.too_long"
+      subject.errors[:majors].should include I18n.t("activerecord.errors.models.certificate.attributes.majors.too_long")
     end
   end
 
@@ -80,7 +80,7 @@ RSpec.describe Certificate, type: :model do
     before {subject.organization = Faker::Lorem.characters(260)}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:organization].should include I18n.t "activerecord.errors.models.certificate.attributes.organization.too_long"
+      subject.errors[:organization].should include I18n.t("activerecord.errors.models.certificate.attributes.organization.too_long")
     end
   end
 
@@ -88,7 +88,7 @@ RSpec.describe Certificate, type: :model do
     before {subject.classification = Faker::Lorem.characters(260)}
     it "matches the error message" do
       subject.valid?
-      subject.errors[:classification].should include I18n.t "activerecord.errors.models.certificate.attributes.classification.too_long"
+      subject.errors[:classification].should include I18n.t("activerecord.errors.models.certificate.attributes.classification.too_long")
     end
   end
 end
