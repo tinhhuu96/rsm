@@ -1,4 +1,4 @@
-<header id="header" class="">
+<header id="header">
   <div class="wrapper">
     <div class="logo">
       <a href="#" class="custom-logo-link" rel="home" itemprop="url">
@@ -27,12 +27,11 @@
         </div>
       </section>
       <% if user_signed_in? %>
-        <section class="widget widget_icl_lang_sel_widget">
+        <section class="widget widget_icl_lang_sel_widget user-ic">
           <a href="javascript:void(0)" class="site-menu-toggle visible-xs visible-sm">
-            <i class="fa fa-bars"></i>
           </a>
           <ul class="site-nav">
-            <li class = "dropdown">
+            <li class = "dropdown" style="display: block;">
               <%= link_to "javascript:void(0)", class: "setting_user" do %>
               <%= image_tag current_user.picture.url, class: "avatar_user" %>
               <i class="fa fa-angle-down"></i>

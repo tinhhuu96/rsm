@@ -1570,10 +1570,117 @@ form input {
     height: 100%;
   }
   .widget_icl_lang_sel_widget {
-    margin-right: 90px;
+    margin-right: 67px !important;
+  }
+  .user-ic{
+    margin-right: 10px !important;
+  }
+  .site-nav {
+        position: static;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        overflow-y: visible;
+        width: auto;
+        background: transparent;
+        z-index: auto;
+        -webkit-transition: none;
+        transition: none;
+    }
+
+    .site-nav li {
+        float: left;
+        padding: 0;
+        margin-left: 10px;
+        position: relative;
+    }
+
+    .site-nav a {
+        margin: 0;
+    }
+
+    .site-nav li:hover > ul {
+        display: block;
+    }
+
+    .site-nav li.active > a {
+        border-radius: 3px;
+    }
+
+    .site-nav a.site-nav-sub,
+    .site-nav li.active:hover > a.site-nav-sub {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .site-nav > li:hover > a,
+    .site-nav > li.active:hover > a {
+        color: #333333;
+        background: #ffffff;
+        text-decoration: none;
+    }
+
+    .site-nav a.site-nav-sub {
+        padding-right: 30px;
+    }
+
+    .site-nav i.site-nav-arrow {
+        margin: 0 -20px 0 0;
+    }
+
+    /* Submenu */
+    .site-nav ul {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 34px;
+        padding: 2px 0;
+        width: 160px;
+        background-color: #ffffff;
+        border-radius: 3px;
+        border-top-left-radius: 0;
+        -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .site-nav li:last-child ul {
+        left: auto;
+        right: 0;
+        border-radius: 3px;
+        border-top-right-radius: 0;
+    }
+
+    .site-nav ul li {
+        float: none;
+        margin: 0;
+        padding: 1px 3px;
+    }
+
+    .site-nav ul a {
+        color: #333333;
+    }
+
+    .site-nav ul a:hover {
+        background-color: #eeeeee;
+    }
+
+    .site-nav ul a.active,
+    .site-nav ul a.active:hover {
+        background-color: #454545;
+    }
+}
+@media (min-width: 1286px) and (max-width: 1320px) {
+  .menu-open {
+    display: none;
+  }
+  .header-right .menu {
+    display: block;
+    height: 100%;
+  }
+  .widget_icl_lang_sel_widget {
+    margin-right: 30px;
   }
 }
-
 @media screen and (max-width: 799px) {
   #header.mobile {
     background-color: #191d22;
@@ -1716,6 +1823,9 @@ form input {
   }
   #footer .footer-middle ul li {
     margin-bottom: 10px;
+  }
+  .widget_icl_lang_sel_widget {
+    margin-right: 15px !important;
   }
 }
 

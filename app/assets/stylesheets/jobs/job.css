@@ -23,6 +23,7 @@
  *= require apply
  *= require themes
  *= require form_tab
+ *= require jobs/job-custom
  *= require_tree ../../../../node_modules/alertify/themes
  *= require_self
  *= require jobs/search_header

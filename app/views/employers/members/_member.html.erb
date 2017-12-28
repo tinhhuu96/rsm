@@ -17,8 +17,12 @@
   </td>
   <td class="text-center">
     <div class="btn-group">
-      <%= link_to edit_employers_member_path(@company, member),
-        class: "btn btn-xs btn-default", remote: :true do %>
+      <%= link_to edit_employers_company_member_path(@company, member),
+        class: "btn btn-danger btn-xs", remote: :true do %>
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to edit_employers_company_member_path(@company, member),
+        class: "btn btn-warning btn-xs", remote: :true do %>
         <i class="fa fa-pencil"></i>
       <% end %>
     </div>
