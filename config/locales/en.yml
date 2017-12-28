@@ -792,7 +792,7 @@ en:
         query_builder: "query_builder"
       career:
         h2: "GIA NHẬP ĐỘI NGŨ SÁNG TẠO"
-        p: "cƠ HỘI NGHỀ NGHIỆP"
+        content_1: "cƠ HỘI NGHỀ NGHIỆP"
     en:
       language: "English"
     header:

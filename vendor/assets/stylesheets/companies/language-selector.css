@@ -98,10 +98,6 @@
   padding-left: 10px;
   line-height: 24px;
 }
-#lang_sel a.lang_sel_sel {
-  background: url(../img/nav-arrow-down.png) #fff right no-repeat;
-  color: #444;
-}
 #lang_sel a.lang_sel_sel:hover {
   text-decoration: none;
   color: #000;
