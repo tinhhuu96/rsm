@@ -29,15 +29,15 @@
 }
 
 .cus_color_branch {
-  color: white;
+  color: $white;
   font-size: 12px;
   text-align: center;
 }
 .footer-bottom {
   padding: 10px 0 !important;
   text-align: center !important;
-    margin: 0 auto !important;
-    color: white !important;
+  margin: 0 auto !important;
+  color: $white !important;
 }
 .custom_footer {
   padding: 20px 0 0 !important;
@@ -45,4 +45,36 @@
 .font-size-12-bold {
   font-size: 12px !important;
   font-weight:bold;
+}
+.section-vision .title-2 {
+  color: $white;
+  margin-bottom: 70px;
+  font-size: 36px;
+  line-height: 54px;
+  margin-top: 0;
+}
+.section-vision .title-3 {
+  margin-bottom: 60px;
+}
+.section-vision .desc {
+  font-size: 24px;
+  line-height: 1.6;
+  font-weight: normal;
+  width: 70%;
+}
+.section-service p{
+  text-align: justify;
+}
+.section-activity .item {
+  margin: 15px;
+}
+@media screen and (max-width: 767px) {
+  .section-vision .title-2 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .section-vision .desc {
+    font-size: 16px;
+    width: 100%;
+  }
 }

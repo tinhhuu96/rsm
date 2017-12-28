@@ -82,24 +82,8 @@
       <div class="wrapper">
         <h3 class="title-3"><%= t "homepage.vn.client.title" %></h3>
         <div class="section-content">
-          <div class="owl-carousel owl-client owl-theme">
+          <div class="owl-carousel owl-client">
             <%= render partial: "client", collection: @partners, as: :partner  %>
-          </div>
-        </div>
-        <div class="owl-controls clickable">
-          <div class="owl-pagination">
-            <div class="owl-page active">
-              <span class=""></span>
-            </div>
-            <div class="owl-page">
-              <span class=""></span>
-            </div>
-            <div class="owl-page">
-              <span class=""></span>
-            </div>
-            <div class="owl-page">
-              <span class=""></span>
-            </div>
           </div>
         </div>
       </div>
@@ -199,17 +183,15 @@
       <div class="wrapper">
         <p class="title-3 white"><%= t "homepage.vn.activity.title" %></p>
         <h2 class="title-2"><%= t "homepage.vn.activity.title-2" %></h2>
-        <div class="row">
+        <div class="hot-news owl-carousel owl-theme">
           <%= render partial: "activity", collection: @activities, as: :activity %>
         </div>
       </div>
     </section>
     <section class="section-check-career alt-bg">
       <h2><%= t "homepage.vn.career.h2" %></h2>
-      <p>
-        <a class="fvn-btn btn-1" href="https://careers-framgia.icims.com/jobs/search?ss=1">
-          <%= t "homepage.vn.career.p" %></a>
-      </p>
+      <p><a class="fvn-btn btn-1" href="https://careers-framgia.icims.com/jobs/search?ss=1">
+        <%= t "homepage.vn.career.content_1" %></a></p>
     </section>
   </div>
 </article>
