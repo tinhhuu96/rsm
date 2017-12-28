@@ -163,3 +163,9 @@ end
     company_id: 1
   )
 end
+1.upto(10) do |x|
+  RewardBenefit.create!(
+    content: Faker::Name.name,
+    job_id: 1
+  )
+end

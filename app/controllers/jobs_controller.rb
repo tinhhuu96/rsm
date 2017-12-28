@@ -10,6 +10,7 @@ class JobsController < ApplicationController
   before_action :create_bookmark, only: :show
   before_action :create_like, only: :show
   before_action :load_reward_benefits, only: :show
+  before_action :load_activities_for_company, only: :show
   before_action :build_apply, only: :show
   before_action :create_job, only: :index, if: :user_signed_in?
   before_action :create_reward_benefits,
@@ -17,7 +18,6 @@ class JobsController < ApplicationController
 
   before_action :load_branches_for_select_box, only: :index
   before_action :load_category_for_select_box, only: :index
-
 
   def index
     @q = @company.jobs.ransack params[:q]
@@ -130,6 +130,10 @@ class JobsController < ApplicationController
 
   def load_branches_for_select_box
     @provinces ||= @company.branches.order_province_desc.pluck :province, :id
+  end
+
+  def load_activities_for_company
+    @activities = @company.activities
   end
 
   def load_category_for_select_box

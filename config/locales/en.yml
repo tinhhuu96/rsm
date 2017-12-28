@@ -402,7 +402,6 @@ en:
       start: "Starttime"
       end: "Endtime"
       interview: "Interviewer"
-
     show:
       post_job: "Post Job"
       jobs: "Jobs"
@@ -415,6 +414,7 @@ en:
       position: "Position"
       skill: "Required Skills"
       content: "Job Detail"
+      form: "Form"
       level: "Required Level"
       save_job: "Save Job"
       benefit: "Benefit: "
@@ -436,6 +436,7 @@ en:
       language: "Preferred Language"
       position: "Position"
       skills: "Skills"
+      form: "Form"
       posted_day: "Posted day"
       at: "at"
       apply_now: "Apply Now"
@@ -447,8 +448,10 @@ en:
       company: "Company"
       jobs: "Jobs"
       ago: "ago"
+      branch_in: "BRANCH IN"
       test_salary: "$500 - $700"
       reward_benefits: "Rewards and Benefits"
+      activity: "TYPICAL ACTIVITIES"
     method:
       cant_find_job: "Job can not be found"
       cant_find_bookmark: "Can not find user bookmared"
@@ -678,15 +681,15 @@ en:
       jobname: "Name"
       position: "Position"
   bookmark_like:
-    save: "Bookmarked"
-    insert: "Bookmark"
+    save: " Saved"
+    insert: "Save"
     create: "Bookmark has been created"
     error: "Bookmark fail"
     cannot_save: "Bookmark can not be saved"
     btn_like: "Like"
     like: "like"
     liked: "Liked"
-    dislike: "Dislike"
+    dislike: " Dislike"
   placeholder:
     blank: "No information"
   apply:

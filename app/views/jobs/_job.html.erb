@@ -28,12 +28,12 @@
           </div>
         </div>
         <ul>
-          <li><i class="fa fa-building"></i><%= job.position %></li>
-          <li><i class="fa fa-map-marker"></i><%= job.branch.name %></li>
-          <li><i class="fa fa-list-ul"></i><%= job.category.name %></li>
-          <li><i class="fa fa-calendar-times-o"></i><%= t ".#{job.position_types}" %></li>
-          <li><i class="fa fa-briefcase"></i><%= job.level %></li>
-          <li><i class="fa fa-calendar-o"></i><%= l job.created_at, format: :long %></li>
+          <li><i class="fa fa-building col-info"></i><%= job.position %></li>
+          <li><i class="fa fa-map-marker col-info"></i><%= job.branch.name %></li>
+          <li><i class="fa fa-list-ul col-info"></i><%= job.category.name %></li>
+          <li><i class="fa fa-calendar-times-o col-info"></i><%= t ".#{job.position_types}" %></li>
+          <li><i class="fa fa-briefcase col-info"></i><%= job.level %></li>
+          <li><i class="fa fa-calendar-o col-info"></i><%= l job.created_at, format: :long %></li>
         </ul>
         <p><%= job.description.first(Settings.jobs.description.limit_show) + t("gap") %></p>
       </div>

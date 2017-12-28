@@ -32,11 +32,13 @@
                     <%= @job.name %>
                   </h1>
                   <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 lount">
                       <span class="company-name">
                         <%= link_to @company.name, @company %>
                       </span>
-                      <span class="company-location">- <%= @company.address %></span>
+                      <span class="company-location log-line">-
+                        <%= @job.branch.country.upcase %>(<%= t ".branch_in"%> <%= @job.branch.name %>)
+                      </span>
                     </div>
                   </div>
                   <div class="row">
@@ -69,19 +71,24 @@
                         <%= render "applies/undefind_form" %>
                     <% end%>
                   </div>
-                  <div class="col-xs-6 col-xs-push-6 col-md-12 col-md-push-0 job-like-btn">
+                  <div class="col-xs-6 col-xs-push-6 col-md-12 col-md-push-0">
                     <% if user_signed_in? %>
                       <div class="col-md-6 form-like">
                         <% if @liked.present? %>
-                          <%= link_to t("bookmark_like.dislike"), @liked, method: :delete, class: "btn btn-dislike", remote: true %>
+                          <%= link_to  @liked, method: :delete, class: "form-control btn-change6 border change-ed", remote: true  do %>
+                            <i class="fa fa-thumbs-up text-primary" aria-hidden="true"></i>
+                            <%= t "bookmark_like.dislike" %>
+                          <% end %>
                         <% else %>
                           <%= render "bookmark_likes/form_like_job" %>
                         <% end %>
                       </div>
                       <div class="col-md-6 form-bookmark">
                         <% if @bookmarked.present? %>
-                          <%= link_to t("bookmark_like.mark"), @bookmarked, method: :delete,
-                            class: "btn btn-disbookmark", remote: true %>
+                          <%= link_to  @bookmarked, method: :delete, class: "form-control btn-change6 border change-ed", remote: true  do %>
+                            <i class="fa fa-bookmark text-primary"></i>
+                            <%= t "bookmark_like.save" %>
+                          <% end %>
                         <% else %>
                           <%= render "bookmark_likes/form_bookmark_job" %>
                         <% end %>
@@ -129,11 +136,31 @@
                 <div class="box-summary link-list">
                   <div class="row summary-item">
                     <div class="col-xs-2 summary-icon">
-                      <i class="fa fa-calendar-minus-o" aria-hidden="true"></i>
+                      <i class="fa fa-tags" aria-hidden="true"></i>
                     </div>
                     <div class="col-xs-10 summary-content">
-                      <span class="content-label font-right"><%= t ".posted_day" %></span>
-                      <span class="content"><%= l @job.created_at, format: :long %></span>
+                      <span class="content-label font-right"><%= t ".job_category" %></span>
+                      <span class="content">
+                        <%= @job.category.name  %>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="row summary-item">
+                    <div class="col-xs-2 summary-icon">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-xs-10 summary-content">
+                      <span class="content-label font-right"><%= t ".position" %></span>
+                      <span class="content"><%= @job.position %></span>
+                    </div>
+                  </div>
+                  <div class="row summary-item">
+                    <div class="col-xs-2 summary-icon">
+                      <i class="fa fa-calendar-times-o "></i>
+                    </div>
+                    <div class="col-xs-10 summary-content">
+                      <span class="content-label font-right"><%= t ".form" %></span>
+                      <span class="content"><%= t ".#{@job.position_types}" %></span>
                     </div>
                   </div>
                   <div class="row summary-item">
@@ -143,17 +170,6 @@
                     <div class="col-xs-10 summary-content">
                       <span class="content-label font-right"><%= t ".level_requirement" %></span>
                       <span class="content"><%= @job.level %></span>
-                    </div>
-                  </div>
-                  <div class="row summary-item">
-                    <div class="col-xs-2 summary-icon">
-                      <i class="fa fa-tags" aria-hidden="true"></i>
-                    </div>
-                    <div class="col-xs-10 summary-content">
-                      <span class="content-label font-right"><%= t ".job_category" %></span>
-                      <span class="content">
-                        <%= @company.majors %>
-                      </span>
                     </div>
                   </div>
                   <div class="row summary-item">
@@ -174,6 +190,15 @@
                     <div class="col-xs-10 summary-content">
                       <span class="content-label font-right"><%= t ".language" %></span>
                       <span class="content"><%= @job.language %></span>
+                    </div>
+                  </div>
+                  <div class="row summary-item">
+                    <div class="col-xs-2 summary-icon">
+                      <i class="fa fa-calendar-minus-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-xs-10 summary-content">
+                      <span class="content-label font-right"><%= t ".posted_day" %></span>
+                      <span class="content"><%= l @job.created_at, format: :long %></span>
                     </div>
                   </div>
                 </div>
@@ -206,15 +231,15 @@
         <div role="tabpanel" class="tab-pane tab-pane-company-info box box-md animated fadeIn"
           id="company-info">
           <div class="row">
-            <div class="col-md-8 col-sm-12 tab-main-content">
+            <div class="col-md-12 ">
               <div class="mobile-box">
                 <div class="company-info">
-                  <h2><%= @company.name %></h2>
-                  <div>
-                    <p><i class="fa fa-address-book-o fa-fw"></i><span><%= @company.address %></span></p>
-                    <p><i class="fa fa-mobile-phone fa-fw"><span></i><%= @company.phone %></span></p>
-                    <p><i class="fa fa-book fa-fw"><span></i><%= @company.majors %></span></p>
-                  </div>
+                  <h2>
+                    <span class="activity-size">
+                      <%= t "jobs.show.activity" %>
+                    </span>
+                  </h2>
+                  <%= render partial: "activity", collection: @activities, as: :activity %>
                 </div>
               </div>
             </div>
