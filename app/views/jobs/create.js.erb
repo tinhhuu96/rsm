@@ -1,8 +1,8 @@
-<% if @job.errors.any? || flash[:danger].present? %>
+<% if @job.errors.any? %>
   $(".form-group").removeClass("has-error");
   $('#job-create-form').html('<%= j render "jobs/form" %>');
 <% else %>
-  $('#JobModal').modal('hide');
+  $('#job-manage').modal('hide');
   $('#jobs').prepend('<%= j render(@job) %>');
   $('.no_jobs').hide();
   alertify.success('<%= flash[:success] %>');

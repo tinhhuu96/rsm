@@ -62,9 +62,9 @@ var App = function() {
     var header = $('header');
     $(window).scroll(function() {
       if ($(this).scrollTop() > header.outerHeight()) {
-        header.addClass('header-scroll');
+        header.addClass('white')
       } else {
-        header.removeClass('header-scroll');
+        header.removeClass('white');
       }
     });
   };
@@ -105,3 +105,17 @@ var App = function() {
   };
 }();
 $(function(){ App.init(); });
+$( document ).ready( function() {
+  $('body').on('click', '.menu-open', function () {
+    $('.header-right .menu').fadeIn().addClass('is-mobile-menu');
+    $(this).fadeOut();
+    $('.menu-close').fadeIn();
+    $('#header').toggleClass('mobile');
+  });
+  $('body').on('click', '.menu-close', function () {
+    $('.header-right .menu').css('display','none').removeClass('is-mobile-menu');
+    $(this).fadeOut();
+    $('.menu-open').fadeIn();
+    $('#header').toggleClass('mobile');
+  });
+});

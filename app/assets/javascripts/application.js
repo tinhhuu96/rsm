@@ -33,3 +33,7 @@
 //= require ckeditor/init
 //= require config_ckeditor
 //= require ckeditor/config
+//= require companies/jquery.counterup
+//= require companies/owl.carousel.min
+//= require companies/select2.min
+//= require companies/waypoints.min

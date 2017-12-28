@@ -36,7 +36,7 @@ class JobsController < ApplicationController
   end
 
   def new
-    @job = Job.new
+    @job = @company.jobs.new
   end
 
   def create
@@ -75,9 +75,10 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit :content, :name, :level, :language,
+    params.require(:job).permit(:content, :name, :level, :language,
       :skill, :position, :company_id, :description, :min_salary, :max_salary,
-      reward_benefits_attributes: %i(id content job_id _destroy)
+      :branch_id, :category_id, reward_benefits_attributes: %i(id content job_id _destroy))
+      .merge!(user_id: current_user.id)
   end
 
   def load_job
