@@ -40,3 +40,47 @@
   background-color: $light-green-6 !important;
   color: $white !important;
 }
+.icon-col{
+  color: $light-green-6;
+}
+.log-line{
+  color: $blue-light;
+}
+.branch-name{
+  padding-bottom: 7px;
+  text-transform: uppercase;
+  font-size: 19px;
+}
+.image-fosck{
+  width: 100% !important;
+}
+.bor-der{
+  margin: 25px;
+}
+.lount{
+  font-size: 13px !important;
+}
+.time_ago{
+  font-size: 13px !important;
+  font: italic 13px/30px Georgia, serif !important;
+}
+.activity-size{
+  font-size: 15px;
+}
+.btn-change6{
+  text-align: center;
+}
+.change-ed{
+  color: $blue-light !important;
+}
+.btn-change6:hover{
+  -webkit-transform: scale(1.1);
+}
+.border{
+  border: 1px solid $green-blue !important;
+  border-radius: 3px !important;
+}
+.col-logo{
+  padding-left: 46px !important;
+  padding-top: 19px !important;
+}
