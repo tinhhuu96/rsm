@@ -1,7 +1,7 @@
 <%= javascript_include_tag "format_datepicker", "data-turbolinks-track": "reload" %>
 <div class="member-form">
   <% if @member.present? %>
-    <%= simple_form_for @member, url: employers_company_member_path, remote: :true do |f| %>
+    <%= simple_form_for @member, url: employers_member_path, remote: :true do |f| %>
       <div class="form-group">
         <strong class="error-message">*</strong><%= f.label :name, t(".name") %>
         <%= f.text_field :name, value: @member.user.name, class: "form-control", disabled: :true %>

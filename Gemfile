@@ -40,7 +40,8 @@ gem "ckeditor"
 gem "figaro"
 gem "activerecord-import"
 gem "ransack"
-gem 'sidekiq'
+gem "sidekiq"
+gem "gon"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"

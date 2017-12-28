@@ -33,12 +33,11 @@ Rails.application.routes.draw do
     resources :applies
     resources :jobs
     resources :users
-    resources :companies do
-      resources :members
-      resources :activities
-    end
+    resources :companies
+    resources :members
+    resources :activities
     resources :appointments
-    resources :confirm_appointments, only: [:edit]
+    resources :confirm_appointments, only: :edit
   end
   resources :bookmark_likes
   resources :experiences

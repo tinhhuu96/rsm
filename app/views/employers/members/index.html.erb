@@ -2,14 +2,14 @@
   <div class="block-title">
     <h2><strong><%= t ".add_member" %></strong></h2>
   </div>
-    <%= form_tag employers_company_members_path, method: "get",
+    <%= form_tag employers_members_path, method: "get",
       id: "verified_search", class: "form-inline" do %>
       <%= text_field_tag :search, "", class: "form-control" %>
       <%= hidden_field_tag :checked_values, @member_checkeds %>
       <%= submit_tag t("search"), name: :nil, remote: true, class: "btn btn-primary" %>
     <% end %>
 
-  <%= form_tag employers_company_members_path do %>
+  <%= form_tag employers_members_path do %>
     <div class="results">
       <%= render "users" %>
     </div>
