@@ -1,41 +1,55 @@
+<%= javascript_include_tag "selectboxit/src/javascripts/jquery.selectBoxIt", "data-turbolinks-track": true %>
+<%= javascript_include_tag "selectboxit/custom_selectboxit", "data-turbolinks-track": true %>
+
 <div class="search_jobs collapse in search-widget col-xs-10">
   <%= search_form_for @q, url: jobs_path,
     html: {class: "search-form"} do |f| %>
     <div class="search-group">
-      <div class="col-md-4">
-        <div class="form-group">
-          <%= f.search_field :name_or_language_or_skill_cont,
-            class: "form-control",
-            placeholder: t(".text_search") %>
+      <div class="col-md-4 padding-left-right-5">
+        <div class="form-group margin-bottom-5">
+          <div class="icon-addon addon-lg">
+            <%= f.search_field :name_or_language_or_skill_cont,
+              class: "form-control", placeholder: t(".text_search") %>
+            <label for="name_or_language_or_skill_cont" class="fa fa-search" rel="tooltip"></label>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-2">
-        <div class="form-group">
-          <%= f.select :branch_id_eq,
-            options_of_selectbox(@provinces, params[:q], :branch_id_eq),
-            {include_blank: t(".all_branches")}, {class: "form-control"} %>
+      <div class="col-md-2 padding-left-right-5">
+        <div class="form-group margin-bottom-5">
+          <div class="icon-addon addon-lg">
+            <%= f.select :branch_id_eq,
+              options_of_selectbox(@provinces, params[:q], :branch_id_eq),
+              {include_blank: t(".all_branches")}, {class: "form-control"} %>
+            <label for="branch_id_eq" class="fa fa-map-marker" rel="tooltip"></label>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-2">
-        <div class="form-group">
-          <%= f.select :position_types_eq,
-            options_of_selectbox(options_position_types, params[:q], :position_types_eq),
-            {include_blank: t(".all_position_types")}, {class: "form-control"} %>
+      <div class="col-md-2 padding-left-right-5">
+        <div class="form-group margin-bottom-5">
+          <div class="icon-addon addon-lg">
+            <%= f.select :position_types_eq,
+              options_of_selectbox(options_position_types, params[:q], :position_types_eq),
+              {include_blank: t(".all_position_types")}, {class: "form-control"} %>
+            <label for="position_types_eq" class="fa fa-calendar-times-o" rel="tooltip"></label>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-2">
-        <div class="form-group">
-          <%= f.select :category_id_eq,
-            options_of_selectbox(@categories, params[:q], :category_id_eq),
-            {include_blank: t(".all_categories")}, {class: "form-control"} %>
+      <div class="col-md-2 padding-left-right-5">
+        <div class="form-group margin-bottom-5">
+          <div class="icon-addon addon-lg">
+            <%= f.select :category_id_eq,
+              options_of_selectbox(@categories, params[:q], :category_id_eq),
+              {include_blank: t(".all_categories")}, {class: "form-control"} %>
+            <label for="category_id_eq" class="fa fa-list-ul" rel="tooltip"></label>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-2">
-        <div class="form-group">
+      <div class="col-md-2 padding-left-right-5">
+        <div class="form-group margin-bottom-5">
           <%= f.button :submit, class: "btn btn-info btn-lg col-md-12" do %>
             <i class="fa fa-search" aria-hidden="true"></i>
             <%= t ".filter" %>

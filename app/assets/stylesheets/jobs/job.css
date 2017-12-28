@@ -24,6 +24,8 @@
  *= require themes
  *= require form_tab
  *= require_tree ../../../../node_modules/alertify/themes
- *= require_self
  *= require jobs/search_header
+ *= require selectboxit/src/stylesheets/jquery.selectBoxIt
+ *= require selectboxit/custom_selectboxit
+ *= require_self
  */

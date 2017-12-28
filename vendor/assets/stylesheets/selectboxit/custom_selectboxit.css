@@ -1,0 +1,21 @@
+.selectboxit-container .selectboxit, .selectboxit-container .selectboxit-options {
+  border-radius:0;
+  max-height:350px;
+  width: 100% !important;
+}
+.selectboxit-options .selectboxit-option .selectboxit-option-anchor {
+  white-space: normal;
+  min-height: 30px;
+  height: auto;
+}
+.selectboxit-container {
+  display: block;
+}
+.selectboxit-arrow-container {
+  width: 20px;
+}
+.selectboxit-text {
+  overflow: hidden;
+  max-width: 80% !important;
+  text-indent: 0px;
+}

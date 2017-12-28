@@ -2,7 +2,7 @@
   <div class="footer-branchs col-md-10 col-md-offset-1">
     <h5><b><%= @company.name %></b></h5>
     <div class="row">
-      <%= render @branches %>
+      <%= render @branches if @branches.present? %>
     </div>
   </div>
 </div>
