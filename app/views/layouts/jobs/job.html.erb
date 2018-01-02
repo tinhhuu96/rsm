@@ -8,16 +8,13 @@
     <%= stylesheet_link_tag "jobs/job", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "job", "data-turbolinks-track": "reload" %>
   </head>
-  <body>
+  <body class="home page">
     <div id="page-container">
       <%= render "layouts/header" %>
       <section class="site-content">
         <%= yield %>
       </section>
-      <div class="site-footer padding-10-0">
-        <%= branches_footer "layouts/jobs/branches" %>
-        <%= render "layouts/footer" %>
-      </div>
+      <%= render "layouts/footer" %>
     </div>
     <%= image_tag "loading.gif", id: "img-loading", class: "img-load" %>
   </body>

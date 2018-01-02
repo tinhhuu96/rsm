@@ -1,3 +1,71 @@
 .banner_show {
-  height: 500px;
+  height: 100%;
+}
+.menu-icon {
+  display: none;
+  position: fixed;
+  top: 25px;
+  right: 40px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+.text-center{
+  text-align: center;
+ }
+
+.header-job {
+  padding: 10px 0 !important;
+}
+
+.menu-close{
+  display: none;
+}
+
+abbr {
+    color: red;
+}
+
+@media (min-width: 1286px) {
+  .menu-open {
+    display: none !important;
+  }
+  .header-right .menu {
+    display: block !important;
+    height: 100%;
+  }
+  .widget_icl_lang_sel_widget {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .widget_icl_lang_sel_widget {
+    margin-right: 15px !important;
+  }
+}
+
+@media screen and (max-width: 1399px) {
+  .widget_icl_lang_sel_widget {
+    margin-right: 67px !important;
+  }
+  .user-ic{
+    margin-right: 10px !important;
+  }
 }

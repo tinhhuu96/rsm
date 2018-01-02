@@ -23,9 +23,14 @@
  *= require apply
  *= require themes
  *= require form_tab
+ *= require jobs/job-custom
  *= require_tree ../../../../node_modules/alertify/themes
  *= require jobs/search_header
  *= require selectboxit/src/stylesheets/jquery.selectBoxIt
  *= require selectboxit/custom_selectboxit
  *= require_self
+ *= require companies/language-selector
+ *= require companies/icon
+ *= require companies/f-style
+ *= require jobs/a-style
  */

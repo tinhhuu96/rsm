@@ -151,6 +151,7 @@ en:
   picture: "Avatar"
   sex: "Sex"
   avatar: "Avatar"
+  cancel: "Cancel"
   errors:
     not_found_achievement: "Couldn't find Achievement"
     not_found_certificate: "Couldn't find Certificate"

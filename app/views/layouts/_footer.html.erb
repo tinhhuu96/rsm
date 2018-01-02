@@ -1,11 +1,17 @@
-<div class="row">
-  <%= yield :footer_custom %>
-</div>
-
-<div class="row footer-bottom font-size-12">
-  <div class="col-md-10 col-md-offset-1">
-    <div class="padding-top-10 text-aline-center text-color-white">
-      &copy; <%= t ".year" %> <span class="font-size-12-bold"><%= t ".author" %></span><%= t ".copyright" %>
+<footer id="footer" class="custom_footer">
+  <div class="wrapper">
+    <div class="text-color-white">
+      <div class="footer-branchs">
+        <h5><%= @company.name %></h5>
+        <div class="row">
+          <%= render @branches if @branches.present? %>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom clearfix">
+      <div class="padding-top-10 cus_color_branch text-center">
+        &copy; <%= t ".year" %> <span class="font-size-12-bold"><%= t ".author" %></span><%= t ".copyright" %>
+      </div>
     </div>
   </div>
-</div>
+</footer>

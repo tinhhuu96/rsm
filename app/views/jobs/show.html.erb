@@ -1,8 +1,4 @@
-<section class="site-section site-section-light
-  site-section-top themed-background-dark job-site-section-top">
-  <div class="container">
-  </div>
-</section>
+<%= javascript_include_tag "app" %>
 <div class="page-job-detail page-job-detail_no-background">
   <div class="page-background">
     <div class="background-overlay">
@@ -109,21 +105,21 @@
     </section>
     <section class="page-job-detail__detail">
       <ul class="nav nav-tabs three-tabs" role="tablist">
-        <li role="presentation" class="active animated fadeIn">
+        <li role="presentation" class="active fadeIn">
           <a href="#job-info" data-toggle="tab">
-          <span class="hidden-sm hidden-xs col-info"><%= t ".job_info" %></span>
-          <span class="visible-sm visible-xs"> <%= t ".info" %></span>
+            <span class="hidden-sm hidden-xs col-info"><%= t ".job_info" %></span>
+            <span class="visible-sm visible-xs"> <%= t ".info" %></span>
           </a></li>
-        <li class="animated fadeIn" role="presentation ">
+        <li class="fadeIn" role="presentation ">
           <a href="#company-info" class="track-event" data-evt-type="view-tab-cominfo" role="tab" data-toggle="tab">
-          <span class="hidden-sm hidden-xs col-info"><%= t ".company_info" %></span>
-          <span class="visible-sm visible-xs"><%= t ".company" %></span>
+            <span class="hidden-sm hidden-xs col-info"><%= t ".company_info" %></span>
+            <span class="visible-sm visible-xs"><%= t ".company" %></span>
           </a>
         </li>
-        <li class="animated fadeIn" role="presentation">
+        <li class="fadeIn" role="presentation">
           <a href="#company-job" role="tab" data-toggle="tab">
-           <span class="hidden-sm hidden-xs col-info"><%= t ".company_jobs" %></span>
-          <span class="visible-sm visible-xs"><%= t ".jobs" %></span>
+            <span class="hidden-sm hidden-xs col-info"><%= t ".company_jobs" %></span>
+            <span class="visible-sm visible-xs"><%= t ".jobs" %></span>
           </a>
         </li>
       </ul>

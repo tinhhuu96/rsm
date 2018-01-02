@@ -1,11 +1,11 @@
 <% if can? :update, @company %>
   <div class="create-job-modal">
-    <button type="button" class=" btn btn-lg btn-info col-md-12 btn-max-width float-right" id="post-job-btn"
-      data-toggle="modal" data-target="#JobModal">
+    <%= link_to new_job_path, class: "btn btn-lg btn-info col-md-12 btn-max-width float-right",
+      remote: true, methob: :get do %>
       <i class="fa fa-plus" aria-hidden="true"></i>
       <%= t "post_job" %>
-    </button>
-    <div class="modal fade" id="JobModal" role="dialog">
+    <% end %>
+    <div class="modal fade" id="job-manage" role="dialog">
       <div class="modal-dialog job-modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -17,7 +17,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">
-              <%= t ".close" %>
+              <%= t ".cancel" %>
             </button>
           </div>
         </div>
