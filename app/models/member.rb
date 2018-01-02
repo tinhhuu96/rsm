@@ -7,7 +7,11 @@ class Member < ApplicationRecord
   validate :date_less_than_today
   validate :end_date_after_start_date
 
+  enum role: %i(user employer)
+
   scope :sort_by_updated, ->{order(updated_at: :desc)}
+  scope :get_by_role, ->(role){where role: role}
+
   private
 
   def end_date_after_start_date

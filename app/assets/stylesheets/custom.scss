@@ -593,11 +593,12 @@
 }
 
 .item-profile {
-  color: $blue-light-1 !important;
+  color: $dark-blue !important;
+  font-weight: normal !important;
 }
 
 .nav-pills > li.active > a {
-  color: $white-color !important;
+  color: $dark-blue !important;
 }
 
 // commons

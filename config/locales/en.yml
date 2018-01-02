@@ -28,18 +28,14 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
-
   accountactivations:
     success: "Agree success!"
     fail: "Agree fail!"
   company_mailer:
-    welcome_email:
-      agree: "Agree"
     success: "Update success!!"
     fail: "Error in access access, please try again, or you can not access permissions!"
     info: "You not agree!"
     info_not: "Update fail"
-  company_mailer:
     welcome_email:
       agree: "Agree"
       not_agree: "Not agree"
