@@ -5,3 +5,7 @@
 alertify@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/alertify/-/alertify-0.3.0.tgz#32ada3298ff4d91ace71f2746d70910a7bd08135"
+
+selectboxit@^3.8.2:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/selectboxit/-/selectboxit-3.8.2.tgz#40ca2b11b97cea928cdf21542e9c57a142c71fae"

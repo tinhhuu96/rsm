@@ -4,7 +4,7 @@
       <div class="footer-branchs">
         <h5><%= @company.name %></h5>
         <div class="row">
-          <%= render @branches %>
+          <%= render @branches if @branches.present? %>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@
   "name": "rsm",
   "private": true,
   "dependencies": {
-    "alertify": "^0.3.0"
+    "alertify": "^0.3.0",
+    "selectboxit": "^3.8.2"
   }
 }
