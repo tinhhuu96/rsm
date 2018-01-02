@@ -1,6 +1,9 @@
-.banner_show {
-  height: 100%;
+@import 'color';
+
+.home #header {
+  background-color: $dark-gray;
 }
+
 .menu-icon {
   display: none;
   position: fixed;
@@ -39,7 +42,7 @@
 }
 
 abbr {
-    color: red;
+    color: $red;
 }
 
 @media (min-width: 1286px) {
