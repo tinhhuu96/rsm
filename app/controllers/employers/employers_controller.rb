@@ -12,6 +12,6 @@ class Employers::EmployersController < ApplicationController
   def check_permissions_employer
     return if current_user.is_employer_of? @company.id
     flash[:danger] = t "company_mailer.fail"
-    redirect_to root_url(subdomain: false)
+    redirect_to root_url
   end
 end
