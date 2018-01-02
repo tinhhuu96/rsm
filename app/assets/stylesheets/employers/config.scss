@@ -1,3 +1,5 @@
+@import 'color';
+
 .none-button{
   display: none;
 }
@@ -16,4 +18,41 @@
   color: red !important;
   font-style: italic;
   font-weight: 400;
+}
+.img-company{
+  width: 15px;
+  height: 15px;
+}
+.col-em{
+  color: $dark-blue !important;
+}
+.col-do:hover{
+  background: $black-light !important  ;
+  color: $blue-light-8 !important;
+}
+.page-anta{
+  background-color: $blue-light-7 !important;
+}
+.sloiad{
+  background-color: $blue-light-7 !important;
+}
+.lion{
+  color: $white-light !important;
+  font: italic bold 14px/30px Georgia, serif;
+  margin-left: 20px !important;
+}
+.gli{
+  color: $black-light-2 !important;
+}
+.hasmi{
+  color: $white-light !important;
+}
+.loulight{
+  font-size: 12px !important;
+}
+.sidebar-nav a{
+  color: $blue-light-9 !important;
+}
+.hight{
+  color: $blue-light-9 !important;
 }
