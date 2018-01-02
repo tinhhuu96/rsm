@@ -34,7 +34,14 @@ class User < ApplicationRecord
     user == self
   end
 
-  def is_employer? company_id
-    self.companies.last.id == company_id && self.members.last.present? && self.members.last.end_time.nil?
+  def is_employer_of? company_id
+    return false if self.companies.last.blank?
+    self.companies.last.id == company_id &&
+      self.members.last.end_time.nil? && self.members.last.employer?
+  end
+
+  def is_employer?
+    return false if self.companies.last.blank?
+    self.members.last.end_time.nil? && self.members.last.employer?
   end
 end

@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
+User.create!(name: "Nguyen Van A", email: "nguyenvana@gmail.com", password: "123456", phone: "01698624222")
 1.upto(5) do |x|
   name = Faker::Name.name
   email = "employer#{x}@gmail.com"
@@ -41,7 +42,6 @@ end
       start_time: start_time, end_time: end_time, content: content, current: current)
   end
 end
-User.create!(name: "Nguyen Van A", email: "nguyenvana@gmail.com", password: "123456", phone: "01698624222")
 
 Company.delete_all
 Company.create!(

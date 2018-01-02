@@ -2,10 +2,12 @@ class CompaniesController < ApplicationController
   layout "companies/company"
 
   before_action :authenticate_user!, only: %i(update edit destroy)
+  before_action :current_ability
+  load_and_authorize_resource
   before_action :load_company, only: %i(edit update show)
   before_action :load_branches, only: %i(edit update show)
-  before_action :load_partners, only: :show
-  before_action :load_activities, only: :show
+  before_action :load_partners, only: %i(edit update show)
+  before_action :load_activities, only: %i(edit update show)
 
   def show; end
 

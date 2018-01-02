@@ -2,74 +2,36 @@ class Ability
   include CanCan::Ability
 
   def initialize user, controller_namespace = nil
-    if user.present?
-      case controller_namespace
-      when "Employers"
-        permission_employer user
-      else
-        if user.employer?
-          permission_employer user
-        elsif user.admin?
-          permission_admin
-        end
-        permission_user user
-      end
+    return undefine_user if user.blank?
+    case controller_namespace
+    when "Employers"
+      permission_employer user
     else
-      undefine_user
+      if user.is_employer?
+        permission_employer user
+      end
+
+      if user.admin?
+        permission_admin
+      end
+      permission_user user
     end
-  end
-
-  def employer_permissions_dashboard user
-    return unless user.employer?
-    manage_company user
-  end
-
-  def employer_permissions user
-    manage_company user
-    can :manage, Job, id: user.id
-  end
-
-  def admin_permissions user
-    return unless user.admin?
-    can :manage, :all
-  end
-
-  def user_permissions user
-    can :manage, User, id: user.id
-    can :manage, Achievement, user_id: user.id
-    can :manage, Certificate, user_id: user.id
-    can :manage, Club, user_id: user.id
   end
 
   private
 
   def permission_employer user
-    return unless user.employer?
-    if user.members.present?
-      manage_company user
-    end
+    return unless user.is_employer? || user.members.present?
+    company = user.members.get_by_role(:employer).last.company
+    manage_company user, company
   end
 
-  def manage_company user
-    can :update, Company do |company|
-      user.is_employer? company.id
-    end
-
-    can :manage, Member do |member|
-      user.is_employer? member.company_id
-    end
-
-    can :manage, Job do |job|
-      user.is_employer? job.company_id
-    end
-
-    can :manage, Appointment do |appointment|
-      user.is_employer? appointment.company_id
-    end
-
-    can :manage, Apply do |apply|
-      user.is_employer? apply.job.company_id
-    end
+  def manage_company user, company
+    can :update, Company, id: company.id
+    can :manage, Member, company_id: company.id
+    can :manage, Job, company_id: company.id
+    can :manage, Appointment, company_id: company.id
+    can :manage, Apply, job_id: company.jobs.pluck(:id)
   end
 
   def permission_admin
