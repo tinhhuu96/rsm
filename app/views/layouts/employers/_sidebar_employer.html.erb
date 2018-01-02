@@ -1,4 +1,4 @@
-<div id="sidebar">
+<div id="sidebar" class= "sloiad">
   <div id="sidebar-scroll">
     <div class="sidebar-content">
       <%= link_to employers_company_path(@company), class: "sidebar-brand" do %>
@@ -7,62 +7,43 @@
       <% end %>
       <div class="sidebar-section sidebar-user clearfix sidebar-nav-mini-hide">
         <div class="sidebar-user-avatar">
-          <%= image_tag current_user.picture.url  %>
+          <%= image_tag @company.logo.url %>
         </div>
-        <div class="sidebar-user-name"><%= current_user.name %></div>
-        <div class="sidebar-user-links">
-          <%= link_to "#" do %>
-            <i class="fa fa-user" aria-hidden="true"></i>
-          <% end %>
-
-          <%= link_to "#" do %>
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-          <% end %>
-
-          <%= link_to "#" do %>
-            <i class="fa fa-cog" aria-hidden="true"></i>
-          <% end %>
-
-          <%= link_to "#" do %>
-            <i class="fa fa-sign-out" aria-hidden="true"></i>
-          <% end %>
-        </div>
+        <div class="sidebar-user-name"><%= @company.name %></div>
       </div>
       <ul class="sidebar-nav">
         <li>
           <%= link_to employers_company_path @company do %>
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="sidebar-nav-mini-hide"><%= t ".dashboard" %></span>
+            <i class="fa fa-tachometer" aria-hidden="true"></i>
+            <span class="sidebar-nav-mini-hide lion"><%= t ".dashboard" %></span>
           <% end %>
         </li>
         <li>
-          <a class="sidebar-nav-menu"><i class="fa fa-user" aria-hidden="true"></i>
-            <span class="sidebar-nav-mini-hide"><%= t ".member" %></span></a>
+          <a href="#" class="sidebar-nav-menu hasmi"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-user"></i> <span class="sidebar-nav-mini-hide lion"><%= t ".member" %></span></a>
           <ul>
             <li>
               <%= link_to employers_members_path do %>
-                <i class="fa fa-globe" aria-hidden="true"></i>
-                <%= t ".all_member" %>
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <span class="sidebar-nav-mini-hide lion lion loulight"><%= t ".all_member" %></span>
               <% end %>
             </li>
           </ul>
         </li>
         <li>
-          <a class="sidebar-nav-menu"><i class="fa fa-user" aria-hidden="true"></i>
-            <span class="sidebar-nav-mini-hide"><%= t "sidebar_jobs" %></span></a>
+          <a href="#" class="sidebar-nav-menu hasmi"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-minus"></i> <span class="sidebar-nav-mini-hide lion"><%= t "sidebar_jobs" %></span></a>
           <ul>
             <li>
               <%= link_to employers_jobs_path do %>
-                <i class="fa fa-globe" aria-hidden="true"></i>
-                <%= t "sidebar_all_job" %>
+                <i class="fa fa-tasks" aria-hidden="true"></i>
+                <span class="sidebar-nav-mini-hide lion loulight"><%= t ".all_job" %></span>
               <% end %>
             </li>
           </ul>
         </li>
         <li>
           <%= link_to edit_employers_company_path @company do %>
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="sidebar-nav-mini-hide"><%= t ".company" %></span>
+            <i class="fa fa-building-o gli hight"></i>
+            <span class="sidebar-nav-mini-hide lion"><%= t ".company" %></span>
           <% end %>
         </li>
       </ul>

@@ -14,7 +14,7 @@
   <ul class="nav navbar-nav-custom pull-right">
     <li>
       <%= link_to "javascript:void(0)", onclick: "App.sidebar('toggle-sidebar-alt', 'toggle-other');" do %>
-        <i class="gi gi-share_alt"></i>
+        <i class="fa fa-bell-o"></i>
         <span class="label label-primary label-indicator animation-floating">4</span>
       <% end %>
     </li>
@@ -26,44 +26,32 @@
       <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
         <li class="dropdown-header text-center"><%= t "account" %></li>
         <li>
-          <%= link_to do %>
-            <i class="fa fa-clock-o fa-fw pull-right"></i>
-            <span class="badge pull-right">10</span>
-            <%= t ".updates" %>
-          <% end %>
-
-          <%= link_to do %>
+          <%= link_to "javascript:void(0)", class: "col-do" do %>
             <i class="fa fa-envelope-o fa-fw pull-right"></i>
             <span class="badge pull-right">5</span>
             <%= t ".messages" %>
           <% end %>
-
-          <%= link_to do %>
-            <i class="fa fa-magnet fa-fw pull-right"></i>
-            <span class="badge pull-right">3</span>
-            <%= t ".subscriptions" %>
-          <% end %>
         </li>
         <li class="divider"></li>
         <li>
-          <%= link_to do %>
+          <%= link_to user_url(current_user) do %>
             <i class="fa fa-user fa-fw pull-right"></i>
             <%= t ".profile" %>
           <% end %>
 
-          <%= link_to do %>
+          <%= link_to "javascript:void(0)", class: "col-do" do %>
             <i class="fa fa-cog fa-fw pull-right"></i>
             <%= t ".settings" %>
           <% end %>
         </li>
         <li class="divider"></li>
         <li>
-          <%= link_to do %>
+          <%= link_to "javascript:void(0)", class: "col-do" do %>
             <i class="fa fa-lock fa-fw pull-right"></i>
             <%= t ".lock_Account" %>
           <% end %>
 
-          <%= link_to do %>
+          <%= link_to destroy_user_session_path, method: :delete, class: "col-do" do %>
             <i class="fa fa-ban fa-fw pull-right"></i>
             <%= t ".logout" %>
           <% end %>

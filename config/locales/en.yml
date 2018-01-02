@@ -614,6 +614,12 @@ en:
       copyright: " - All rights reserved."
       year: "2017"
     employers:
+      header_employer:
+        messages: "Messasges"
+        profile: "Profile"
+        settings: "Settings"
+        lock_Account: "Lock Account"
+        logout: " Logout"
       employer:
         all_member: "All Members"
         add_member: "Add Member"
