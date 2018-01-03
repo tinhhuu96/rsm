@@ -85,64 +85,10 @@
                 </div>
               </div>
             </div>
-            </div>
-          <%= simple_form_for @apply , remote: :true, class: "form-horizontal form-bordered" do |f| %>
-            <%= f.hidden_field :job_id %>
-            <%= f.hidden_field :user_id %>
-            <div class="row">
-              <table class="col-md-12 table table-condensed table-responsive table-user-information">
-                <%= f.simple_fields_for :information do |p| %>
-                  <%= p.hidden_field :name, value: current_user.name %>
-                  <%= p.hidden_field :email, value: current_user.email %>
-                  <%= p.hidden_field :phone, value: current_user.phone %>
-                  <tr>
-                    <td>
-                      <strong>
-                        <span class="glyphicon glyphicon-asterisk text-primary"></span>
-                        <%= t "apply.introducing" %>
-                      </strong>
-                      <%= p.text_area :introducing, class: "form-control ckeditor", cols: Settings.text_area.cols,
-                        rows: Settings.text_area.rows %>
-                    </td>
-                  </tr>
-                <% end %>
-              </table>
-            </div>
-            <div class="row">
-              <table class="col-md-12 table table-condensed table-responsive">
-              <tr>
-                <td>
-                  <i class="fa fa-book fa-fw"></i><span><%= t "apply.news_cv" %></span>
-                  <label class="switch switch-primary">
-                    <input type="checkbox" id="checkcv" name="checkcv" value="1">
-                    <span></span>
-                  </label>
-                </td>
-              </tr>
-              <tr class="files_field">
-                <td>
-                  <strong class="col-md-3">
-                    <span class="glyphicon glyphicon-tag text-primary"></span>
-                    <%= t "apply.new_cv" %>
-                  </strong>
-                  <span class="btn btn-default btn-file col-md-2">
-                    <%= t "downloads.browse" %><%= f.file_field :cv, id: "file_cv", class: "transparent absolute" %>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <button type="button" class="btn btn-sm btn-default pull-right btn-close-apply" data-dismiss="modal" id ="reset-job">
-                    <%= t ".close" %>
-                  </button>
-                  <button type="submit" class="btn btn-sm btn-warning pull-right load-page">
-                    <i class="fa fa-plus" aria-hidden="true"></i><%= t "apply.apply" %>
-                  </button>
-                </td>
-              </tr>
-              </table>
-            </div>
-          <% end %>
+          </div>
+          <div id="content-apply">
+            <%= render "applies/content",locals: {apply: @apply} %>
+          </div>
         </div>
       </div>
     </div>

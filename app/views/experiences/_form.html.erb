@@ -1,27 +1,29 @@
 <%= javascript_include_tag "format_datepicker", "data-turbolinks-track": "reload" %>
-<%= form_for @experience, html: {class: "new-section"}, remote: true do |f| %>
+<%= simple_form_for @experience, html: {class: "new-section"}, remote: true do |f| %>
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
-        <%= f.label :start_time, class: "profile_label" do %>
+        <%= f.label :name, class: "profile_label" do %>
           <strong class="text-red">*</strong>
           <%= t "experiences._form.name" %>
         <% end %>
         <%= f.text_field :name, autofocus: true, class: "form-control edit-control" %>
-        <span class="exp-name-invalid error-message"></span>
       </div>
-      <span class="error-message"><%= show_errors @experience, :name, t("profile.experience.name") %></span>
+      <span class="error-message">
+        <%= f.error :name %>
+      </span>
     </div>
     <div class="col-sm-6">
       <div class="form-group">
-        <%= f.label :start_time, class: "profile_label" do %>
+        <%= f.label :company, class: "profile_label" do %>
           <strong class="text-red">*</strong>
           <%= t "experiences._form.company" %>
         <% end %>
         <%= f.text_field :company, class: "form-control edit-control" %>
-        <span class="exp-company-invalid error-message"></span>
       </div>
-      <span class="error-message"><%= show_errors @experience, :company, t("profile.experience.company") %></span>
+      <span class="error-message">
+        <%= f.error :company %>
+      </span>
     </div>
   </div>
   <div class="row">
@@ -38,9 +40,10 @@
           <%= f.text_field :start_time, data: {provide: "datepicker"},
             class: "datepick form-control" %>
         <% end %>
-        <span class="exp-start_time-invalid error-message"></span>
       </div>
-      <span class="error-message"><%= show_errors @experience, :start_time, t("profile.experience.start_time") %></span>
+      <span class="error-message">
+        <%= f.error :start_time %>
+      </span>
     </div>
     <div class="col-sm-6">
       <div class="form-group">
@@ -55,9 +58,10 @@
           <%= f.text_field :end_time, data: {provide: "datepicker"},
             class: "datepick form-control" %>
         <% end %>
-        <span class="exp-end_time-invalid error-message"></span>
       </div>
-      <span class="error-message"><%= show_errors @experience, :end_time, t("profile.experience.end_time") %></span>
+      <span class="error-message">
+        <%= f.error :end_time %>
+      </span>
     </div>
   </div>
   <div class="row">
@@ -68,10 +72,9 @@
           <%= t "experiences._form.project_detail" %>
         <% end %>
         <%= f.text_area :project_detail, class: "form-control" %>
-        <span class="exp-project_detail-invalid error-message"></span>
       </div>
       <span class="error-message">
-        <%= show_errors @experience, :project_detail , t("profile.experience.project_detail")%>
+        <%= f.error :project_detail %>
       </span>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <%= javascript_include_tag "format_datepicker", "data-turbolinks-track": "reload" %>
 <div id= "new-certificate">
-  <%= form_for @certificate, html: {class: "new-section"}, remote: true do |f| %>
+  <%= simple_form_for @certificate, html: {class: "new-section"}, remote: true do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <div class="row">
       <div class="col-sm-6">
@@ -13,7 +13,7 @@
           <span class="certificate-name-invalid error-message"></span>
         </div>
         <span class="error-message">
-          <%= show_errors @certificate, :name, t("profile.certificate.name") %>
+          <%= f.error :name %>
         </span>
       </div>
       <div class="col-sm-6">
@@ -26,7 +26,7 @@
           <span class="certificate-majors-invalid error-message"></span>
         </div>
         <span class="error-message">
-          <%= show_errors @certificate, :majors, t("profile.certificate.majors") %>
+          <%= f.error :majors %>
         </span>
       </div>
     </div>
@@ -41,7 +41,7 @@
           <span class="certificate-organization-invalid error-message"></span>
         </div>
         <span class="error-message">
-          <%= show_errors @certificate, :organization, t("profile.certificate.organization") %>
+          <%= f.error :organization %>
         </span>
       </div>
       <div class="col-sm-6">
@@ -54,7 +54,7 @@
           <span class="certificate-classification-invalid error-message"></span>
         </div>
         <span class="error-message">
-          <%= show_errors @certificate, :classification, t("profile.certificate.classification") %>
+          <%= f.error :classification %>
         </span>
       </div>
       <div class="col-sm-6">
@@ -66,7 +66,7 @@
           <span class="certificate-received_time-invalid error-message"></span>
         </div>
         <span class="error-message">
-          <%= show_errors @certificate, :received_time, t("profile.certificate.received_time") %>
+          <%= f.error :received_time %>
         </span>
       </div>
     </div>

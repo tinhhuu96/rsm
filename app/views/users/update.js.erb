@@ -1,5 +1,5 @@
 <% if @user.errors.any? %>
-  alertify.error('<%= j (render partial: "shared/error_messages", locals: {object: @user}) %>');
+  $('#profile-user').html('<%= j render "users/form" %>')
 <% else %>
   $('#edit_user_<%=@user.id%>').hide(1000);
   $('#show-user').replaceWith('<%= j (render partial: "users/index", locals: {object: @user}) %>').show();
