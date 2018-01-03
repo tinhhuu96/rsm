@@ -13,24 +13,11 @@
   <body>
     <div id="page-container">
       <%= render "layouts/user_header" %>
-      <%= render "layouts/backward-header" %>
       <div class="row">
-        <div class="col-md-3" id="message-flash">
-          <% flash.each do |message_type, message| %>
-          <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-              <i class="fa fa-window-close" aria-hidden="true"></i>
-            </button>
-            <hr class="message-inner-separator">
-            <p><%= message %></p>
-          </div>
-          <% end %>
-        </div>
-      </div>
       <section class="site-content">
         <%= yield %>
       </section>
-      <footer class="site-footer padding-10-0">
+      <footer class="site-footer padding-10-0 footer-custom">
         <%= render "layouts/footer" %>
       </footer>
     </div>
