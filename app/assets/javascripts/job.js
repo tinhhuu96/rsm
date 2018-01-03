@@ -12,15 +12,15 @@
 //
 
 //= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
 //= require jquery-1.11.1.min
-//= require rails-ujs
 //= require modernizr-2.7.1-respond-1.4.2.min
 //= require plugins.min
 //= require bootstrap
-//= require app
 //= require login
 //= require bootstrap-datepicker
-//= require turbolinks
+//= require app
 //= require format_datepicker
 //= require load_image
 //= require profile

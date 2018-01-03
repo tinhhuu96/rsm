@@ -12,7 +12,8 @@
 //
 
 //= require jquery
-//= require rails-ujs
+//= require jquery.turbolinks
+//= require jquery_ujs
 //= require modernizr-2.7.1-respond-1.4.2.min
 //= require jquery-1.11.1.min
 //= require bootstrap
