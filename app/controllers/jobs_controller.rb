@@ -43,7 +43,7 @@ class JobsController < ApplicationController
     @job = current_user.jobs.build job_params
     respond_to do |format|
       if @job.save
-        format.js{ @message = t ".job_created"}
+        format.js{ @messages = t ".job_created"}
       else
         format.js
       end

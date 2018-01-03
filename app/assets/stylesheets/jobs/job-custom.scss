@@ -72,3 +72,11 @@ abbr {
 abbr {
   color: $red;
 }
+
+.banner_show {
+  height: 100%;
+}
+
+.page #header ul li.inactive a, .home #header.white ul li.inactive a{
+  color: $gray-strong !important;
+}

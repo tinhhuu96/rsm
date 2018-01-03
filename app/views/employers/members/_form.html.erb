@@ -3,39 +3,46 @@
   <% if @member.present? %>
     <%= simple_form_for @member, url: employers_member_path, remote: :true do |f| %>
       <div class="form-group">
-        <strong class="error-message">*</strong><%= f.label :name, t(".name") %>
+        <abbr title="required">*</abbr><%= f.label :name, t(".name") %>
         <%= f.text_field :name, value: @member.user.name, class: "form-control", disabled: :true %>
       </div>
 
       <div class="form-group">
-        <strong class="error-message">*</strong><%= f.label :position, t(".position") %>
+        <abbr title="required">*</abbr><%= f.label :position, t(".position") %>
         <%= f.text_field :position, class: "form-control" %>
+        <span class="error-message">
+          <%= f.full_error :position %>
+        </span>
       </div>
 
       <div class="form-group">
-        <strong class="error-message">*</strong><%= f.label :start_time, t(".start_time") %>
+        <abbr title="required">*</abbr><%= f.label :start_time, t(".start_time") %>
         <% if @member.start_time.present? %>
-        <%= f.text_field :start_time, data: {provide: "datepicker"},
-        class: "datepick form-control", value: (l @member.start_time, format: :long) %>
+          <%= f.text_field :start_time, data: {provide: "datepicker"},
+            class: "datepick form-control", value: (l @member.start_time, format: :long) %>
         <% else %>
-        <%= f.text_field :start_time, data: {provide: "datepicker"}, class: "datepick form-control" %>
+          <%= f.text_field :start_time, data: {provide: "datepicker"}, class: "datepick form-control" %>
         <% end %>
-        <%= f.error :start_time, class: "error-message" %>
+        <span class="error-message">
+          <%= f.full_error :start_time %>
+        </span>
       </div>
       <div class="form-group">
-        <strong class="error-message">*</strong><%= f.label :end_time, t(".end_time") %>
+        <%= f.label :end_time, t(".end_time") %>
         <% if @member.end_time.present? %>
           <%= f.text_field :end_time, data: {provide: "datepicker"},
             class: "datepick form-control", value: (l @member.end_time, format: :long) %>
         <% else %>
           <%= f.text_field :end_time, data: {provide: "datepicker"}, class: "datepick form-control" %>
         <% end %>
-        <%= f.error :end_time, class: "error-message" %>
+        <span class="error-message">
+          <%= f.full_error :end_time %>
+        </span>
       </div>
       <div class="form-group">
          <%= f.button :submit, t("save"), class: "btn btn-primary" %>
           <button type="button" class="btn btn-default" data-dismiss="modal"><%= t "close" %></button>
-     </div>
-   <% end %>
- <% end %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

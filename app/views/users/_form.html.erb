@@ -1,6 +1,6 @@
 <%= javascript_include_tag "format_datepicker", "data-turbolinks-track": "reload" %>
 <%= javascript_include_tag "load_image", "data-turbolinks-track": "reload" %>
-<%= form_for @user, html: {class: "new-section"}, remote: true, method: :put do |f| %>
+<%= simple_form_for @user, html: {class: "new-section"}, remote: true, method: :put do |f| %>
   <div class="row">
     <div class="name col-xs-6">
       <div class="edit-field m-b">
@@ -9,6 +9,9 @@
         <% end %>
         <%= f.text_field :name, autofocus: true, class: "form-control edit-control input-sm",
           placeholder: t("profile.user.name") %>
+        <span class="error-message">
+          <%= f.full_error :name %>
+        </span>
       </div>
     </div>
     <div class="name col-xs-6">
@@ -18,6 +21,9 @@
         <% end %>
         <%= f.text_field :email, autofocus: true, class: "form-control edit-control input-sm",
           placeholder: t("profile.user.email") %>
+        <span class="error-message">
+          <%= f.full_error :email %>
+        </span>
       </div>
     </div>
   </div>
@@ -25,7 +31,7 @@
     <div class="name col-xs-6">
       <div class="edit-field m-b">
         <%= f.label :address, class: "profile_label" do %>
-          <strong class="text-red">*</strong><%= t "profile.user.address" %>
+          <%= t "profile.user.address" %>
         <% end %>
         <%= f.text_field :address, autofocus: true, class: "form-control edit-control input-sm",
           placeholder: t("profile.user.address") %>
@@ -34,7 +40,7 @@
     <div class="name col-xs-6">
       <div class="edit-field m-b">
         <%= f.label :phone, class: "profile_label" do %>
-          <strong class="text-red">*</strong><%= t "profile.user.phone" %>
+          <%= t "profile.user.phone" %>
         <% end %>
         <%= f.text_field :phone, autofocus: true, class: "form-control edit-control input-sm",
           placeholder: t("profile.user.phone") %>
@@ -45,7 +51,7 @@
     <div class="name col-xs-12">
       <div class="edit-field m-b">
         <%= f.label :birthday, class: "profile_label" do %>
-          <strong class="text-red">*</strong><%= t "profile.user.birthday" %>
+          <%= t "profile.user.birthday" %>
         <% end %>
         <% if @user.birthday.present? %>
           <%= f.text_field :birthday, data: {provide: "datepicker"},
@@ -61,7 +67,7 @@
   <div class="row">
     <div class="name col-xs-12">
       <div class="edit-field m-b">
-        <strong class="text-red">*</strong><%= f.label :picture, class: "profile_label" %>
+        <%= f.label :picture, class: "profile_label" %>
         <span class="btn btn-default btn-file">
           <%= t "downloads.browse" %>
           <%= f.file_field :picture, id: "bannerSelect", class: "logo_img_load" %>
@@ -79,7 +85,7 @@
   <div class="row">
     <div class="name col-xs-12">
       <div class="edit-field m-b">
-        <strong class="text-red">*</strong><%= f.label :cv, t("downloads.curriculum"), class: "profile_label" %>
+        <%= f.label :cv, t("downloads.curriculum"), class: "profile_label" %>
         <span class="btn btn-default btn-file">
           <%= t "downloads.browse" %><%= f.file_field :cv, class: "transparent absolute" %>
         </span>

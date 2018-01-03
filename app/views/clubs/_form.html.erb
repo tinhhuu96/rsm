@@ -1,5 +1,5 @@
 <%= javascript_include_tag "format_datepicker", "data-turbolinks-track": "reload" %>
-<%= form_for @club, html: {class: "new-section"}, remote: true do |f| %>
+<%= simple_form_for @club, html: {class: "new-section"}, remote: true do |f| %>
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
@@ -7,7 +7,9 @@
           <strong class="text-red">*</strong><%= t "clubs._form.name" %>
         <% end %>
         <%= f.text_field :name, autofocus: true, class: "form-control edit-control" %>
-        <span class="club-name-invalid error-message"><%= show_errors @club, :name, t("profile.club.name") %></span>
+        <span class="error-message">
+          <%= f.error :name %>
+        </span>
       </div>
     </div>
     <div class="col-sm-6">
@@ -16,7 +18,9 @@
           <strong class="text-red">*</strong><%= t "clubs._form.pos" %>
         <% end %>
         <%= f.text_field :position, class: "form-control edit-control" %>
-        <span class="club-position-invalid error-message"><%= show_errors @club, :position, t("profile.club.position") %></span>
+        <span class="error-message">
+          <%= f.error :position %>
+        </span>
       </div>
     </div>
   </div>
@@ -33,8 +37,8 @@
           <%= f.text_field :start_time, data: {provide: "datepicker"},
             class: "datepick form-control" %>
         <% end %>
-        <span class="club-position-invalid error-message">
-          <%= show_errors @club, :start_time, t("profile.club.start_time") %>
+        <span class="error-message">
+          <%= f.error :start_time %>
         </span>
       </div>
     </div>
@@ -50,8 +54,8 @@
           <%= f.text_field :end_time, data: {provide: "datepicker"},
             class: "datepick form-control" %>
         <% end %>
-        <span class="club-position-invalid error-message">
-          <%= show_errors @club, :end_time, t("profile.club.end_time") %>
+        <span class="error-message">
+          <%= f.error :end_time %>
         </span>
       </div>
     </div>

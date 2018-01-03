@@ -1,5 +1,5 @@
 <%= javascript_include_tag "format_datepicker", "data-turbolinks-track": "reload" %>
-<%= form_for @achievement, html: {class: "new-section"}, remote: true do |f| %>
+<%= simple_form_for @achievement, html: {class: "new-section"}, remote: true do |f| %>
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
@@ -10,7 +10,7 @@
         placeholder: t("passwords.new.name") %>
       </div>
       <span class="error-message">
-        <%= show_errors @achievement, :name, t("profile.achievement.name") %>
+        <%= f.error :name %>
       </span>
     </div>
     <div class="col-sm-6">
@@ -22,8 +22,8 @@
         placeholder: t("achievements.example") %>
       </div>
       <span class="error-message">
-        <%= show_errors @achievement, :majors, t("profile.achievement.majors") %>
-      </span>
+          <%= f.error :majors %>
+        </span>
     </div>
   </div>
   <div class="row">
@@ -36,8 +36,8 @@
         placeholder: t("achievements.organization") %>
       </div>
       <span class="error-message">
-        <%= show_errors @achievement, :organization, t("profile.achievement.organization") %>
-      </span>
+          <%= f.error :organization %>
+        </span>
     </div>
     <div class="col-sm-6">
       <div class="form-group">
@@ -52,8 +52,8 @@
         <% end %>
       </div>
       <span class="error-message">
-        <%= show_errors @achievement, :received_time, t("profile.achievement.received_time") %>
-      </span>
+          <%= f.error :received_time %>
+        </span>
     </div>
   </div>
   <div class="form-group push-top-md edit-field">
