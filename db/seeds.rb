@@ -121,12 +121,14 @@ Member.delete_all
 Member.create!(
   company_id: 1,
   user_id: 1,
+  role: 1,
   position: "employer",
   start_time: Date.current - 1.years
 )
 Member.create!(
   company_id: 2,
   user_id: 2,
+  role: 1,
   position: "employer",
   start_time: Date.current - 1.years
 )

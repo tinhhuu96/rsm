@@ -1,47 +1,56 @@
-<% if user_signed_in? %>
-  <section class="widget widget_icl_lang_sel_widget">
-    <a href="javascript:void(0)" class="site-menu-toggle visible-xs visible-sm">
-      <i class="fa fa-bars"></i>
-    </a>
-    <ul class="site-nav">
-      <li class = "dropdown">
-        <%= link_to "javascript:void(0)", class: "setting_user" do %>
-        <%= image_tag current_user.picture.url, class: "avatar_user" %>
-        <i class="fa fa-angle-down"></i>
-        <% end %>
-        <ul>
-          <li>
-            <%= link_to applies_url(subdomain: false) do %>
-            <%= t "my_job" %>
-            <i class="fa fa-user fa-fw pull-right"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to user_url(current_user, subdomain: false) do %>
-            <%= t "users.new.profile" %>
-            <i class="fa fa-user fa-fw pull-right"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to edit_user_registration_url(current_user, subdomain: false) do %>
-            <%= t "users.new.change_pass" %>
-            <i class="fa fa-pencil-square-o pull-right"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to bookmark_likes_url(subdomain: false) do %>
-            <%= t "layouts._header.bookmark"  %>
-            <i class="fa fa-id-badge pull-right"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_url, method: :delete do %>
-            <i class="fa fa-ban fa-fw pull-right"></i>
-            <%= t("layouts._header.logout") %>
-            <% end %>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </section>
-<% end %>
+<header class="user-header">
+  <div class="container">
+    <%= link_to root_path, class: "site-logo" do %>
+      <i class="fa fa-gg" aria-hidden="true"></i>
+      <strong><%= t "index.fram" %></strong><%= t "index.recruit" %>
+    <% end %>
+    <nav>
+      <% if user_signed_in? %>
+        <section class="widget_icl_lang_sel_widget user-ic">
+          <a href="javascript:void(0)" class="site-menu-toggle visible-xs visible-sm">
+          </a>
+          <ul class="site-nav">
+            <li class = "dropdown">
+              <%= link_to "javascript:void(0)", class: "setting_user" do %>
+                <%= image_tag current_user.picture.url, class: "avatar_user" %>
+                <i class="fa fa-angle-down"></i>
+              <% end %>
+              <ul>
+                <li>
+                  <%= link_to applies_url(subdomain: false) do %>
+                    <%= t "my_job" %>
+                    <i class="fa fa-user fa-fw pull-right"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to user_url(current_user, subdomain: false) do %>
+                    <%= t "users.new.profile" %>
+                    <i class="fa fa-user fa-fw pull-right"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to edit_user_registration_url(current_user, subdomain: false) do %>
+                    <%= t "users.new.change_pass" %>
+                    <i class="fa fa-pencil-square-o pull-right"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to bookmark_likes_url(subdomain: false) do %>
+                    <%= t "layouts._header.bookmark"  %>
+                    <i class="fa fa-id-badge pull-right"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_url, method: :delete do %>
+                    <i class="fa fa-ban fa-fw pull-right"></i>
+                    <%= t "layouts._header.logout" %>
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      <% end %>
+    </nav>
+  </div>
+</header>

@@ -2,10 +2,12 @@
   <div class="wrapper">
     <div class="text-color-white">
       <div class="footer-branchs">
-        <h5><%= @company.name %></h5>
-        <div class="row">
-          <%= render @branches if @branches.present? %>
-        </div>
+        <% if @company.present? %>
+          <h5><%= @company.name %></h5>
+          <div class="row">
+            <%= render @branches if @branches.present? %>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="footer-bottom clearfix">

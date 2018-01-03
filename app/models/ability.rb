@@ -50,5 +50,6 @@ class Ability
 
   def undefine_user
     can :create, Apply
+    can :read, :all
   end
 end

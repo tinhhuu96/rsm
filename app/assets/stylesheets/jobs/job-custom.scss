@@ -2,6 +2,7 @@
 
 .home #header {
   background-color: $dark-gray;
+  padding: 15px 0;
 }
 
 .menu-icon {
@@ -9,7 +10,7 @@
   position: fixed;
   top: 25px;
   right: 40px;
-  color: #fff;
+  color: $white;
   cursor: pointer;
   z-index: 5;
 }
@@ -32,10 +33,6 @@
 .text-center{
   text-align: center;
  }
-
-.header-job {
-  padding: 10px 0 !important;
-}
 
 .menu-close{
   display: none;
@@ -71,4 +68,11 @@ abbr {
   .user-ic{
     margin-right: 10px !important;
   }
+}
+abbr {
+  color: $red;
+}
+
+.banner_show {
+  height: 100%;
 }
