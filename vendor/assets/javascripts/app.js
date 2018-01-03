@@ -62,9 +62,9 @@ var App = function() {
     var header = $('header');
     $(window).scroll(function() {
       if ($(this).scrollTop() > header.outerHeight()) {
-        header.addClass('white')
+        header.removeClass('header-job').addClass('white')
       } else {
-        header.removeClass('white');
+        header.removeClass('white').addClass('header-job');
       }
     });
   };
