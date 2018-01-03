@@ -1,0 +1,50 @@
+@import 'color';
+
+/* nav _ branch */
+.nav_custom ul {
+  margin: 0;
+  padding: 0;
+}
+.nav-tabs>li>a {
+  margin-right: 0px;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.block-title .nav-tabs > li.active > a,
+.block-title .nav-tabs > li.active > a:hover,
+.block-title .nav-tabs > li.active > a:focus
+{
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 2px solid $blue-light !important;
+}
+.nav-tabs>li>a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border:none !important;
+}
+.nav-tabs > li > a {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 0px;
+}
+
+/* icon branch */
+.first_show_branch i {
+  font-size: 12px;
+  float: left;
+  margin-top: 6px;
+  margin-right: 10px;
+}
+.form-horizontal .form-group {
+  margin-left: -15px;
+  margin-right: 15px;
+}
+.custom_hr {
+  margin-top: 10px;
+  width: 70%;
+  margin-bottom: 10px;
+  border: 0;
+  border-top: 1px dotted $blue-light;
+}

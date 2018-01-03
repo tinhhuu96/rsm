@@ -71,7 +71,7 @@ Company.create!(
 
 Branch.delete_all
 Branch.create!(
-  is_primary: 1,
+  is_head_office: 1,
   name: "Hanoi Office",
   phone: Faker::Number.number(10),
   street: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road",
@@ -79,11 +79,12 @@ Branch.create!(
   district: "Nam Tu Liem",
   province: "Ha Noi",
   country: "Vietnam",
+  status: 0,
   company_id: 1
 )
 
 Branch.create!(
-  is_primary: 1,
+  is_head_office: 1,
   name: "FPT Complex",
   phone: Faker::Number.number(10),
   street: "FPT Complex Building",
@@ -91,19 +92,21 @@ Branch.create!(
   district: "Ngu Hanh Son",
   province: "Da Nang",
   country: "Vietnam",
+  status: 0,
   company_id: 2
 )
 
 company = Company.all
 2.times do |n|
   company.each { |company| company.branches.create!(
-    is_primary: 0,
+    is_head_office: 0,
     name: Faker::Address.street_name,
     phone: Faker::Number.number(10),
     street: Faker::Address.street_address,
     ward: Faker::Address.city_prefix,
     district: Faker::Address.city_prefix,
     province: Faker::Address.city,
+    status: 0,
     country: "Vietnam",
 
   )}

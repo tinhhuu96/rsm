@@ -1,3 +1,5 @@
+<%=  stylesheet_link_tag "employers/edit_companies.css" %>
+
 <%= simple_form_for @company, url: employers_company_path,
   html: {class: "select-remove-width form-horizontal"} do |f| %>
 
@@ -49,6 +51,65 @@
     <div class="col-sm-9">
       <%= f.text_field :phone, class: "form-control", required: :true %>
       <%= f.full_error :phone, class: "error-message" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label  t("address_and_branches"), class: "col-sm-3 control-label required" %>
+    <div class="col-sm-9">
+      <div class="block margin-bottom-0">
+        <div class="block-title">
+          <ul class="nav nav-tabs nav_custom" data-toggle="tabs">
+            <li class="active"><a href="#head_office-tab" id="a-toggle"><%= t "head_office" %></a></li>
+            <li><a href="#branches-tab" id="b-toggle"><%= t "bracnhes" %></a></li>
+          </ul>
+        </div>
+
+        <div class="onoffswitch">
+          <% if @company.errors.full_messages.length > 0 %>
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
+              id="myonoffswitch_branch" checked>
+          <% else %>
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
+              id="myonoffswitch_branch">
+          <% end %>
+          <label class="onoffswitch-label" for="myonoffswitch_branch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+          </label>
+        </div>
+
+        <div class="tab-content collapse" id="open_branch">
+          <div class="tab-pane active" id="head_office-tab">
+            <div class="clearfix">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <%= f.simple_fields_for :branches, class: "form-control" do |branch| %>
+                    <%= render "head_office_fields", f: branch if branch.object.head_office? %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="branches-tab">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <%= f.simple_fields_for :branches, class: "form-control" do |branch| %>
+                  <%= render "branch_fields", f: branch if branch.object.branch? %>
+                <% end %>
+                <div class="links add_benefit_links">
+                  <%= link_to_add_association t("add_branch"), f, :branches,
+                    class: "btn btn-primary add-object", partial: "branch_fields" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="first_show_branches"><i><%= t "first_show_address_and_branches" %></i></p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -115,9 +176,9 @@
             </div>
           </div>
         </div>
-          <div>
-            <p class="first_show"><i><%= t "first_show_company" %></i></p>
-          </div>
+        <div>
+          <p class="first_show"><i><%= t "first_show_company" %></i></p>
+        </div>
       </div>
     </div>
   </div>

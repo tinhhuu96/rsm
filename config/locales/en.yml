@@ -138,6 +138,12 @@ en:
   name: "Name"
   email: "Email"
   activity_and_partner: "Activities And Partners"
+  address_and_branches: "Head office and Bracnhes"
+  head_office: "Head office"
+  bracnhes: "Branches"
+  first_show_address_and_branches: "Trụ sở chính và các chi nhánh của công ty"
+  add_branch: "Add branch"
+  add_head_office: "Add head office"
   add-job: "Add Job"
   job_created: "Created Job"
   deleted_job: "Deleted Job"
@@ -845,3 +851,23 @@ en:
     errror: "Create interviewer error"
   rspec:
     mgs_not_blank: "%{item} can not be blank"
+  employers:
+    companies:
+      branch_fields:
+        name: "Name branch"
+        phone: "Phone"
+        street: "Street"
+        ward: "Ward"
+        district: "District"
+        province: "Province"
+        country: "Country"
+        statuses: "Statuses"
+      head_office_fields:
+        name: "Name head office"
+        phone: "Phone"
+        street: "Street"
+        ward: "Ward"
+        district: "District"
+        province: "Province"
+        country: "Country"
+        statuses: "Statuses"
