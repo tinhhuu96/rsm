@@ -130,7 +130,7 @@ class JobsController < ApplicationController
   end
 
   def load_branches_for_select_box
-    @provinces ||= @company.branches.order_province_desc.pluck :province, :id
+    @provinces ||= @company.branches.by_status(Branch.statuses[:active]).order_is_head_office_and_province_desc.pluck :province, :id
   end
 
   def load_activities_for_company
@@ -138,6 +138,6 @@ class JobsController < ApplicationController
   end
 
   def load_category_for_select_box
-    @categories ||= @company.categories.order_name_desc.pluck :name, :id
+    @categories ||= @company.categories.by_status(Category.statuses[:active]).order_name_desc.pluck :name, :id
   end
 end

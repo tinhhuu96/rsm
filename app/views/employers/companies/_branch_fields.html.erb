@@ -1,12 +1,15 @@
-<div class="nested-fields branch_nessted margin-bottom-5">
+<div class="nested-fields margin-bottom-5">
   <div class="row">
     <div class="col-md-12">
-      <div class="col-md-11 padding_left_none branch_fields">
+      <div class="col-md-11 padding_left_none">
         <div class="col-sm-12">
           <%= f.hidden_field :is_head_office, value: Branch.is_head_offices.key(0) %>
           <div class="row">
             <div class="col-sm-8 form-group">
-              <%= f.label t ".name", class: "control-label" %>
+              <%= f.label :name, class: "control-label required" do %>
+                <abbr title="required">*</abbr>
+                <%= t ".name" %>
+              <% end %>
               <div class="controls">
                 <%= f.text_field :name, placeholder: t(".name"), class: "form-control" %>
                 <%= f.error :name, class: "error-message" %>
@@ -14,7 +17,10 @@
             </div>
 
             <div class="col-sm-4 form-group">
-              <%= f.label t ".phone", class: "control-label" %>
+              <%= f.label :phone, class: "control-label required" do %>
+                <abbr title="required">*</abbr>
+                <%= t ".phone" %>
+              <% end %>
               <div class="controls">
                 <%= f.text_field :phone, placeholder: t(".phone"), class: "form-control" %>
                 <%= f.error :phone, class: "error-message" %>
@@ -24,7 +30,7 @@
 
           <div class="row">
             <div class="col-sm-12 form-group">
-              <%= f.label t ".statuses", class: "control-label" %>
+              <%= f.label t ".status", class: "control-label" %>
               <div class="controls">
                 <% Branch.statuses.keys.each do |status| %>
                   <%= f.radio_button :status, status %>
@@ -36,9 +42,14 @@
 
           <div class="row">
             <div class="col-sm-12 form-group">
-              <%= f.label t ".street", class: "control-label" %>
+              <%= f.label :street, class: "control-label required" do %>
+                <abbr title="required">*</abbr>
+                <%= t ".street" %>
+              <% end %>
               <div class="controls">
-                <%= f.text_area :street, cols: 2, rows: 2, placeholder: t(".street"), class: "form-control" %>
+                <%= f.text_area :street, cols: Settings.employers.company.text_area_cols,
+                  rows: Settings.employers.company.text_area_rows,
+                  placeholder: t(".street"), class: "form-control" %>
                 <%= f.error :street, class: "error-message" %>
               </div>
             </div>
@@ -61,14 +72,20 @@
             </div>
 
             <div class="col-sm-3 form-group">
-              <%= f.label t ".province", class: "control-label" %>
+              <%= f.label :province, class: "control-label required" do %>
+                <abbr title="required">*</abbr>
+                <%= t ".province" %>
+              <% end %>
               <div class="controls">
                 <%= f.text_field :province, placeholder: t(".province"), class: "form-control" %>
                 <%= f.error :province, class: "error-message" %>
               </div>
             </div>
             <div class="col-sm-3 form-group">
-              <%= f.label t ".country", class: "control-label" %>
+              <%= f.label :country, class: "control-label required" do %>
+                <abbr title="required">*</abbr>
+                <%= t ".country" %>
+              <% end %>
               <div class="controls">
                 <%= f.text_field :country, placeholder: t(".country"), class: "form-control" %>
                 <%= f.error :country, class: "error-message" %>
@@ -80,7 +97,7 @@
       </div>
 
       <div class="col-md-1">
-        <% if has_owner_job f.object.id %>
+        <% if has_owner_job(@branch_id_owner_jobs, f.object.id) %>
           <a href="#" class="btn btn-danger btn-sm not-active" disabled="disabled" >
             <i class="fa fa-trash-o" aria-hidden="true"></i>
           </a>

@@ -1,17 +1,39 @@
 <div class="nested-fields nested-reward-benefits">
   <div class="row">
     <div class="col-md-12">
-      <div class="col-md-10 padding_left_none">
-        <%= f.label :title %>
-        <%= f.text_field :title, placeholder: t("title"), class: "form-control" %>
-        <%= f.full_error :title, class: "error-message" %>
-        <br>
-        <%= f.label :description %>
-        <%= f.text_area :description, placeholder: t("description"), class: "form-control" %>
-        <br>
-        <%= f.file_field :picture, class: "form-control" %>
+      <div class="col-md-11 padding_left_none">
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <%= f.label t(".title"), class: "control-label" %>
+              <div class="controls">
+                <%= f.text_field :title, placeholder: t(".title"), class: "form-control" %>
+                <%= f.error :title, class: "error-message" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <%= f.label t(".description"), class: "control-label" %>
+              <div class="controls">
+                <%= f.text_area :description, cols: Settings.employers.company.text_area_cols,
+                  rows: Settings.employers.company.text_area_rows,
+                  placeholder: t(".description"), class: "form-control" %>
+                <%= f.error :description, class: "error-message" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <div class="controls">
+                <%= f.file_field t(".picture"), class: "form-control" %>
+              </div>
+            </div>
+          </div>
+          <hr class="custom_hr" />
+        </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-1">
         <%= link_to_remove_association  f, class: "btn btn-danger btn-sm" do %>
           <i class="fa fa-trash-o" aria-hidden="true"></i>
         <% end %>
@@ -19,5 +41,3 @@
     </div>
   </div>
 </div>
-<br>
-<br>

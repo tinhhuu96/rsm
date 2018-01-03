@@ -12,5 +12,6 @@ class Branch < ApplicationRecord
   enum is_head_office: {branch: 0, head_office: 1}
   enum status: {active: 0, not_active: 1}
 
-  scope :order_province_desc, ->{order(province: :desc)}
+  scope :order_is_head_office_and_province_desc, ->{order is_head_office: :desc, province: :desc}
+  scope :by_status, ->status {where status: status}
 end

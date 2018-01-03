@@ -79,3 +79,7 @@ counter:
   page_one: 1
   add_page: 1
   rm_page: 1
+employers:
+  company:
+    text_area_cols: 2
+    text_area_rows: 2

@@ -116,7 +116,8 @@ Category.delete_all
 2.times do |n|
   company.each { |company| company.categories.create!(
     name: Faker::Job.title,
-    description: Faker::Lorem.sentences(1)
+    description: Faker::Lorem.sentences(1),
+    status: 0
   )}
 end
 
