@@ -20,3 +20,4 @@ Rails.application.config.assets.precompile += %w( selectboxit/src/javascripts/jq
 Rails.application.config.assets.precompile += %w( selectboxit/custom_selectboxit.js )
 Rails.application.config.assets.precompile += %w( job.js )
 Rails.application.config.assets.precompile += %w( app.js )
+Rails.application.config.assets.precompile += %w( employers/edit_companies.css )

@@ -1,0 +1,95 @@
+<div class="nested-fields branch_nessted margin-bottom-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-11 padding_left_none branch_fields">
+        <div class="col-sm-12">
+          <%= f.hidden_field :is_head_office, value: Branch.is_head_offices.key(0) %>
+          <div class="row">
+            <div class="col-sm-8 form-group">
+              <%= f.label t ".name", class: "control-label" %>
+              <div class="controls">
+                <%= f.text_field :name, placeholder: t(".name"), class: "form-control" %>
+                <%= f.error :name, class: "error-message" %>
+              </div>
+            </div>
+
+            <div class="col-sm-4 form-group">
+              <%= f.label t ".phone", class: "control-label" %>
+              <div class="controls">
+                <%= f.text_field :phone, placeholder: t(".phone"), class: "form-control" %>
+                <%= f.error :phone, class: "error-message" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <%= f.label t ".statuses", class: "control-label" %>
+              <div class="controls">
+                <% Branch.statuses.keys.each do |status| %>
+                  <%= f.radio_button :status, status %>
+                  <%= f.label status.to_sym %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <%= f.label t ".street", class: "control-label" %>
+              <div class="controls">
+                <%= f.text_area :street, cols: 2, rows: 2, placeholder: t(".street"), class: "form-control" %>
+                <%= f.error :street, class: "error-message" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3 form-group">
+              <%= f.label t ".ward", class: "control-label" %>
+              <div class="controls">
+                <%= f.text_field :ward, placeholder: t(".ward"), class: "form-control" %>
+                <%= f.error :ward, class: "error-message" %>
+              </div>
+            </div>
+            <div class="col-sm-3 form-group">
+              <%= f.label t ".district", class: "control-label" %>
+              <div class="controls">
+                <%= f.text_field :district, placeholder: t(".district"), class: "form-control" %>
+                <%= f.error :district, class: "error-message" %>
+              </div>
+            </div>
+
+            <div class="col-sm-3 form-group">
+              <%= f.label t ".province", class: "control-label" %>
+              <div class="controls">
+                <%= f.text_field :province, placeholder: t(".province"), class: "form-control" %>
+                <%= f.error :province, class: "error-message" %>
+              </div>
+            </div>
+            <div class="col-sm-3 form-group">
+              <%= f.label t ".country", class: "control-label" %>
+              <div class="controls">
+                <%= f.text_field :country, placeholder: t(".country"), class: "form-control" %>
+                <%= f.error :country, class: "error-message" %>
+              </div>
+            </div>
+          </div>
+          <hr class="custom_hr" />
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <% if has_owner_job f.object.id %>
+          <a href="#" class="btn btn-danger btn-sm not-active" disabled="disabled" >
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </a>
+        <% else %>
+          <%= link_to_remove_association  f, class: "btn btn-danger btn-sm" do %>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
