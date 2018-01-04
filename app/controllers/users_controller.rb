@@ -14,9 +14,9 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update_attributes user_params
-        format.js{flash[:success] = t "users.new.update_success"}
+        format.js{@message = t "users.new.update_success"}
       else
-        format.js{flash[:danger] = t "users.new.update_fail"}
+        format.js
       end
     end
   end
