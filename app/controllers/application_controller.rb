@@ -22,9 +22,6 @@ class ApplicationController < ActionController::Base
     redirect_root_path
   end
 
-  def load_branches
-    @branches = @company.branches
-  end
 
   def redirect_root_path
     if request.subdomain != Settings.www
@@ -43,6 +40,10 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: %i(name phone address sex birthday))
     devise_parameter_sanitizer.permit(:account_update, keys: %i(name phone address sex birthday))
+  end
+
+  def load_branches
+    @branches = @company.branches
   end
 end
 
