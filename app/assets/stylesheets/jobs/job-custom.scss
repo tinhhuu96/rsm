@@ -80,3 +80,8 @@ abbr {
 .page #header ul li.inactive a, .home #header.white ul li.inactive a{
   color: $gray-strong !important;
 }
+
+.custom-job-view {
+  margin-top: -55px;
+  background-color: $white;
+}

@@ -631,9 +631,7 @@
 .margin-bottom-5 {
   margin-bottom: 5px !important;
 }
-.site-content {
-  min-height: 833px;
-}
+
 .col-branch-addr {
   min-height: 50px;
 }
@@ -645,6 +643,14 @@
   padding-top: 65px !important;
 }
 
+.img-slide {
+  height: 350px;
+}
+
 .help-block{
   color: $red !important;
+}
+
+.footer-custom {
+  color: $white !important;
 }
