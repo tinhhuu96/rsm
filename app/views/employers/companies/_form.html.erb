@@ -35,8 +35,9 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :contact_person, class: "col-sm-3 control-label required" do %>
-      <%= t ".contact_name" %><br>
+     <%= f.label :contact_person, class: "col-sm-3 control-label required" do %>
+      <abbr title="required">*</abbr>
+      <%= t ".contact_name" %>
     <% end %>
     <div class="col-sm-9">
       <%= f.text_field :contact_person, class: "form-control" %>
@@ -46,7 +47,7 @@
   <div class="form-group">
     <%= f.label :phone, class: "col-sm-3 control-label required" do %>
       <abbr title="required">*</abbr>
-      <%= t ".company_phone" %>
+      <%= t ".contact_phone" %>
     <% end %>
     <div class="col-sm-9">
       <%= f.text_field :phone, class: "form-control", required: :true %>
@@ -66,7 +67,7 @@
         </div>
 
         <div class="onoffswitch">
-          <% if @company.errors.full_messages.length > 0 %>
+          <% if @company.errors.full_messages.present? %>
             <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
               id="myonoffswitch_branch" checked>
           <% else %>
@@ -124,9 +125,55 @@
   </div>
 
   <div class="form-group">
+    <%= f.label t("categories"), class: "col-sm-3 control-label required" %>
+    <div class="col-sm-9">
+      <div class="block margin-bottom-0">
+        <div class="block-title">
+          <ul class="nav nav-tabs" data-toggle="tabs">
+            <li class="active"><a href="#category-tab" id="a-toggle"><%= t "list_categories" %></a></li>
+          </ul>
+        </div>
+        <div class="onoffswitch">
+          <% if @company.errors.full_messages.present? %>
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
+              id="myonoffswitch_category" checked>
+          <% else %>
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
+              id="myonoffswitch_category">
+          <% end %>
+          <label class="onoffswitch-label" for="myonoffswitch_category">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+          </label>
+        </div>
+        <div class="tab-content collapse" id="open_category">
+          <div class="tab-pane active" id="category-tab">
+            <div class="clearfix">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <%= f.simple_fields_for :categories, class: "form-control" do |category| %>
+                    <%= render "category_fields", f: category %>
+                  <% end %>
+                  <div class="links add_benefit_links">
+                    <%= link_to_add_association t("add_category"), f, :categories,
+                      class: "btn btn-primary add-object", partial: "category_fields" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="first_show_category"><i><%= t "first_show_category" %></i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label  t("activity_and_partner"), class: "col-sm-3 control-label required" %>
     <div class="col-sm-9">
-      <div class="block">
+      <div class="block margin-bottom-0">
         <div class="block-title">
           <ul class="nav nav-tabs" data-toggle="tabs">
             <li class="active"><a href="#activity-tab" id="a-toggle"><%= t "activity" %></a></li>
@@ -134,7 +181,7 @@
           </ul>
         </div>
         <div class="onoffswitch">
-          <% if @company.errors.full_messages.length > 0 %>
+          <% if @company.errors.full_messages.present? %>
             <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
               id="myonoffswitch" checked>
           <% else %>
